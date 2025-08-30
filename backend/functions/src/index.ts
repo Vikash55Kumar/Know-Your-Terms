@@ -9,9 +9,6 @@ const isFirebaseEnv =
   !!process.env.FIREBASE_CONFIG;
 
 if (isFirebaseEnv) {
-  // Cloud Functions/Emulator
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  // const functions = require("firebase-functions");
   exports.api = functions.https.onRequest(app);
 } else {
   // Local development

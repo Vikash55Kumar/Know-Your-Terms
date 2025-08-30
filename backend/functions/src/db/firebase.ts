@@ -3,15 +3,16 @@ import admin from 'firebase-admin';
 dotenv.config();
 
 // const serviceAccount = require("./serviceAccountKey.json");
-const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG1 || "{}");
+// const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG1 || "{}");
 
-if (!serviceAccount) {
-  throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_KEY ");
-}
+// if (!serviceAccount) {
+//   throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_KEY ");
+// }
 
 if (!admin.apps.length) {
     const connected = admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
+        // credential: admin.credential.cert(serviceAccount),
+        credential: admin.credential.applicationDefault(),
     });
 
     if (connected) {
