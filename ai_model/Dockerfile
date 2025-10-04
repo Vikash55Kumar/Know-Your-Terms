@@ -10,8 +10,12 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . /app
 
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Upgrade pip and install requirements with version pinning
+RUN pip install --upgrade pip==23.3.1
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Pre-download the sentence transformer model to avoid runtime downloads
+#RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2')"
 
 EXPOSE 8000
 ENV PORT=8000
