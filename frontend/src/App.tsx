@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 // import { useAppDispatch } from './hooks/redux';
 import About from './pages/general/About';
@@ -9,15 +9,47 @@ import Navbar from './layouts/Navbar';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import RoleSelection from './pages/dashboard/agreement/RoleSelection';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { getCurrentUserAsync } from './store/authSlice';
 import SummaryPage from './pages/dashboard/agreement/SummaryPage';
-import { useLocation } from 'react-router-dom';
 import CasesList from './pages/dashboard/case/CasesList';
 import AgreementProcess from './pages/dashboard/process/AgreementProcess';
 import Dashboard from './pages/dashboard/Dashboard';
-import Chatbot from './pages/home/Chatbot';
+// import Chatbot from './pages/home/Chatbot';
+import { AuthenticatedApp } from './components/authenticated-app';
+import type { User } from './lib/components';
+
+// Agent Chat Wrapper Component
+const AgentChatWrapper = () => {
+  const { user } = useAppSelector((state) => state.auth);
+  const location = useLocation();
+  
+  // Convert frontend-term user to Stream Chat user format with useMemo to prevent reconnections
+  const streamUser: User = useMemo(() => ({
+    id: user?.uid || 'anonymous',
+    name: user?.displayName || user?.email || 'User',
+    image: user?.photoURL || `https://api.dicebear.com/9.x/avataaars/svg?seed=${user?.uid || 'default'}`,
+  }), [user?.uid, user?.displayName, user?.email, user?.photoURL]);
+
+  // Get summary data from URL params
+  const summaryData = new URLSearchParams(location.search).get('summary') || '';
+  
+  const handleLogout = () => {
+    // You can implement logout logic here if needed
+    console.log('Logout from agent chat');
+  };
+
+  return (
+    <div className="h-screen bg-background">
+      <AuthenticatedApp 
+        user={streamUser}
+        onLogout={handleLogout}
+        summaryData={summaryData}
+      />
+    </div>
+  );
+};
 
 function App() {
   const dispatch = useAppDispatch();
@@ -71,14 +103,15 @@ function App() {
             <Route path="/dashboard/agreement/summary" element={isAuthenticated ? <SummaryPageWithTargetGroup /> : <Login />} />
             <Route path="/dashboard/case/case-details" element={isAuthenticated ? <CasesList /> : <Login />} />
             <Route path="/dashboard/process/summary" element={isAuthenticated ? <AgreementProcess /> : <Login />} />
+            <Route path="/agent/chat" element={ isAuthenticated ? <AgentChatWrapper /> : <Login /> } />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
-        <Chatbot />
+        {/* <Chatbot /> */}
         <Footer />
       </div>
     </>
   );
-}
+};
 
 export default App;
