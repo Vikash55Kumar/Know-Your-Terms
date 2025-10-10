@@ -16,7 +16,7 @@ import SummaryPage from './pages/dashboard/agreement/SummaryPage';
 import CasesList from './pages/dashboard/case/CasesList';
 import AgreementProcess from './pages/dashboard/process/AgreementProcess';
 import Dashboard from './pages/dashboard/Dashboard';
-// import Chatbot from './pages/home/Chatbot';
+import Chatbot from './pages/home/Chatbot';
 import { AuthenticatedApp } from './components/authenticated-app';
 import type { User } from './lib/components';
 
@@ -107,7 +107,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
-        {/* <Chatbot /> */}
+        <Chatbot />
         <Footer />
       </div>
     </>
