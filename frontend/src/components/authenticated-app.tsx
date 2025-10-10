@@ -17,6 +17,7 @@ import {
 import { ChatProvider } from "../providers/chat-provider";
 import { ChatInterface } from "./chat-interface";
 import { ChatSidebar } from "./chat-sidebar";
+import { backend_url } from "../utils/baseApi";
 
 interface AuthenticatedAppProps {
   user: User;
@@ -37,7 +38,6 @@ const AuthenticatedCore = ({ user, onLogout, summaryData }: AuthenticatedAppProp
   const { client, setActiveChannel } = useChatContext();
   const navigate = useNavigate();
   const { channelId } = useParams<{ channelId: string }>();
-  const backendUrl = import.meta.env.VITE_BACKEND_URL as string;
 
   useEffect(() => {
     const syncChannelWithUrl = async () => {
@@ -260,7 +260,7 @@ const AuthenticatedCore = ({ user, onLogout, summaryData }: AuthenticatedAppProp
         <ChatInterface
           onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
           onNewChatMessage={handleNewChatMessage}
-          backendUrl={backendUrl}
+          backendUrl={backend_url}
           summaryData={summaryData}
         />
       </div>
