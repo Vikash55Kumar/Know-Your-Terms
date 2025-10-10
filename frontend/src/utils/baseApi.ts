@@ -5,6 +5,8 @@ const api = axios.create({
 });
 
 const geminiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const backend_url = import.meta.env.VITE_BACKEND_URL;
+const streamKey = import.meta.env.VITE_STREAM_API_KEY;
 
 // Add auth token to requests
 api.interceptors.request.use((config) => {
@@ -15,5 +17,5 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-export { geminiKey };
+export { geminiKey, backend_url, streamKey };
 export default api;
