@@ -1,3 +1,4 @@
+import { backend_url } from '../utils/baseApi';
 import { authService } from './authService';
 
 export interface StartAgentRequest {
@@ -42,7 +43,7 @@ class AgentService {
     try {
       const headers = await this.getAuthHeaders();
       
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/agents/start-ai-agent`, {
+      const response = await fetch(`${backend_url}/api/v1/agents/start-ai-agent`, {
         method: 'POST',
         headers,
         body: JSON.stringify(params),
@@ -65,8 +66,8 @@ class AgentService {
   async stopAgent(channelId: string): Promise<AgentResponse> {
     try {
       const headers = await this.getAuthHeaders();
-      
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/agents/stop-ai-agent`, {
+
+      const response = await fetch(`${backend_url}/api/v1/agents/stop-ai-agent`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ channel_id: channelId }),
@@ -91,7 +92,7 @@ class AgentService {
       const headers = await this.getAuthHeaders();
       
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/agents/agent-status?channel_id=${channelId}`,
+        `${backend_url}/api/v1/agents/agent-status?channel_id=${channelId}`,
         { headers }
       );
 
@@ -118,8 +119,8 @@ class AgentService {
       if (!currentUser) {
         throw new Error('No authenticated user found');
       }
-      
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/agents/token`, {
+
+      const response = await fetch(`${backend_url}/api/v1/agents/token`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ userId: currentUser.uid }),

@@ -7,16 +7,15 @@ import {
 import { LoadingScreen } from "../components/loading-screen";
 import { useTheme } from "../hooks/use-theme";
 import { agentService } from "../services/agentService";
+import { streamKey } from "../utils/baseApi";
 
 interface ChatProviderProps {
   user: User;
   children: ReactNode;
 }
 
-const apiKey = import.meta.env.VITE_STREAM_API_KEY as string;
-
-if (!apiKey) {
-  throw new Error("Missing VITE_STREAM_API_KEY in .env file");
+if (!streamKey) {
+  throw new Error("Missing streamKey");
 }
 
 export const ChatProvider = ({ user, children }: ChatProviderProps) => {
@@ -52,7 +51,7 @@ export const ChatProvider = ({ user, children }: ChatProviderProps) => {
    * - Real-time event handling
    */
   const client = useCreateChatClient({
-    apiKey,
+    apiKey: streamKey,
     tokenOrProvider: tokenProvider,
     userData: user,
   });
