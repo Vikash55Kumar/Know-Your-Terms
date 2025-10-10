@@ -18,6 +18,9 @@ export interface BusinessOutput {
   finalAssessment: { overallRisk: string; comment: string };
 }
 export interface User {
+  name?: string;
+  id: string;
+  image?: string;
   email: string;
   emailVerified?: boolean;
   displayName?: string;
@@ -47,8 +50,4 @@ export interface AgreementSummary {
 export interface AgreementProcess {
   uid: string;
   processType: string;
-}
-
-export interface caseSummary {
-  
 }
