@@ -14,6 +14,8 @@ interface ChatProviderProps {
   children: ReactNode;
 }
 
+console.log("Stream Key:", streamKey);
+
 if (!streamKey) {
   throw new Error("Missing streamKey");
 }
