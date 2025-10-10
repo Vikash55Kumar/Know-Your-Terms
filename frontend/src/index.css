@@ -1,3 +1,5 @@
+@import "stream-chat-react/dist/css/v2/index.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,6 +48,54 @@
   }
 }
 
+@layer base {
+  :root {
+    /* Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+
 @layer components {
   /* Custom font utility classes */
   .font-display {
@@ -63,5 +113,146 @@
     font-family: 'Inter', system-ui, sans-serif;
     font-variant-numeric: tabular-nums;
     font-weight: 400;
+  }
+
+  /* Stream Chat Theme Integration */
+  .str-chat__message-bubble--me {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: 1rem 1rem 0.25rem 1rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .str-chat__message-bubble {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--foreground));
+    border-radius: 1rem 1rem 1rem 0.25rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .str-chat__message-bubble--me ::selection {
+    background-color: hsl(var(--primary-foreground) / 0.3);
+  }
+
+  /* Stream Chat CSS Variables */
+  .str-chat__theme-light {
+    --str-chat__primary-color: hsl(var(--primary));
+    --str-chat__primary-color-alpha-15: hsl(var(--primary) / 0.15);
+    --str-chat__active-primary-color: hsl(var(--primary));
+    --str-chat__surface-color: hsl(var(--background));
+    --str-chat__secondary-surface-color: hsl(var(--card));
+    --str-chat__tertiary-surface-color: hsl(var(--muted));
+    --str-chat__primary-surface-color: hsl(var(--primary) / 0.1);
+    --str-chat__primary-surface-color-low-emphasis: hsl(var(--primary) / 0.05);
+    --str-chat__border-radius-circle: 9999px;
+    --str-chat__border-radius-strong: calc(var(--radius) - 2px);
+    --str-chat__border-color: hsl(var(--border));
+    --str-chat__text-color: hsl(var(--foreground));
+    --str-chat__text-color-low-emphasis: hsl(var(--muted-foreground));
+    --str-chat__own-message-bubble-background: hsl(var(--primary));
+    --str-chat__own-message-bubble-color: hsl(var(--primary-foreground));
+    --str-chat__message-bubble-background: hsl(var(--muted));
+    --str-chat__message-bubble-color: hsl(var(--foreground));
+    --str-chat__input-background-color: hsl(var(--input));
+    --str-chat__avatar-background-color: hsl(var(--secondary));
+    --str-chat__avatar-text-color: hsl(var(--secondary-foreground));
+  }
+
+  .str-chat__theme-dark {
+    --str-chat__primary-color: hsl(var(--primary));
+    --str-chat__primary-color-alpha-15: hsl(var(--primary) / 0.15);
+    --str-chat__active-primary-color: hsl(var(--primary));
+    --str-chat__surface-color: hsl(var(--background));
+    --str-chat__secondary-surface-color: hsl(var(--card));
+    --str-chat__tertiary-surface-color: hsl(var(--muted));
+    --str-chat__primary-surface-color: hsl(var(--primary) / 0.1);
+    --str-chat__primary-surface-color-low-emphasis: hsl(var(--primary) / 0.05);
+    --str-chat__border-radius-circle: 9999px;
+    --str-chat__border-radius-strong: calc(var(--radius) - 2px);
+    --str-chat__border-color: hsl(var(--border));
+    --str-chat__text-color: hsl(var(--foreground));
+    --str-chat__text-color-low-emphasis: hsl(var(--muted-foreground));
+    --str-chat__own-message-bubble-background: hsl(var(--primary));
+    --str-chat__own-message-bubble-color: hsl(var(--primary-foreground));
+    --str-chat__message-bubble-background: hsl(var(--muted));
+    --str-chat__message-bubble-color: hsl(var(--foreground));
+    --str-chat__input-background-color: hsl(var(--input));
+    --str-chat__avatar-background-color: hsl(var(--secondary));
+    --str-chat__avatar-text-color: hsl(var(--secondary-foreground));
+  }
+
+  /* Text Overflow Prevention */
+  .break-anywhere {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  /* Improved Message Container */
+  .message-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .message-content {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Simple chat scrolling */
+  .chat-messages-scroll {
+    overflow-y: auto;
+    flex: 1;
+    height: 100%;
+  }
+
+  /* Minimal Stream Chat Layout Fixes */
+  .str-chat__message-list {
+    flex: 1 !important;
+    min-height: 0 !important;
+  }
+
+  .str-chat__virtual-message__wrapper {
+    height: auto !important;
+  }
+
+  /* Ensure proper height for chat container */
+  .str-chat__channel {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .str-chat__main-panel {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .str-chat__message-input {
+    flex-shrink: 0 !important;
+  }
+
+  /* Responsive text sizing */
+  @media (max-width: 640px) {
+    .message-bubble {
+      max-width: 85%;
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .message-bubble {
+      max-width: 90%;
+      font-size: 0.8125rem;
+    }
   }
 }
