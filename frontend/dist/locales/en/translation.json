@@ -1,0 +1,144 @@
+{
+  "header": {
+    "title": "Know Your Term",
+    "home": "Home",
+    "about": "About",
+    "help": "Help",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "footer": {
+    "contact_us": "Contact Us",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "copyright": "Copyright © 2025 Know Your Term"
+  },
+  "navbar": {
+    "agreements": "Agreements",
+    "cases": "Cases",
+    "agents": "Agents",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "button": {
+    "get_started": "Get Started",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "download": "Download",
+    "upload": "Upload",
+    "next": "Next",
+    "previous": "Previous",
+    "back": "Back",
+    "close": "Close",
+    "view": "View",
+    "search": "Search"
+  },
+  "form": {
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "name": "Name",
+    "phone": "Phone",
+    "submit": "Submit",
+    "reset": "Reset",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "auth": {
+    "login_title": "Login to your account",
+    "register_title": "Register a new account",
+    "forgot_password": "Forgot Password?",
+    "remember_me": "Remember Me",
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up"
+  },
+  "dashboard": {
+    "welcome": "Welcome, {{name}}!",
+    "overview": "Overview",
+    "agreements": "Agreements",
+    "cases": "Cases",
+    "history": "History",
+    "statistics": "Statistics",
+    "recent_activity": "Recent Activity"
+  },
+  "agreement": {
+    "title": "Agreement",
+    "summary": "Summary",
+    "role_selection": "Select Role",
+    "student_summary": "Student Summary",
+    "business_summary": "Business Summary",
+    "citizen_summary": "Citizen Summary",
+    "scores": "Scores",
+    "process": "Agreement Process",
+    "upload_doc": "Upload Document",
+    "download_pdf": "Download PDF"
+  },
+  "case": {
+    "title": "Case",
+    "detail": "Case Detail",
+    "list": "Cases List",
+    "new_case": "New Case",
+    "status": "Status",
+    "agent": "Agent",
+    "history": "Case History"
+  },
+  "chat": {
+    "chatbot": "Chatbot",
+    "send": "Send",
+    "type_message": "Type your message...",
+    "sidebar_title": "Chat History",
+    "prompt_toolbar": "Writing Prompts",
+    "loading": "Loading..."
+  },
+  "notification": {
+    "success": "Success",
+    "error": "Error",
+    "info": "Info",
+    "warning": "Warning",
+    "saved": "Saved successfully!",
+    "deleted": "Deleted successfully!",
+    "updated": "Updated successfully!",
+    "login_success": "Login successful!",
+    "logout_success": "Logout successful!",
+    "register_success": "Registration successful!"
+  },
+  "error": {
+    "not_found": "Page not found",
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Forbidden",
+    "server_error": "Server error",
+    "network_error": "Network error",
+    "required_field": "This field is required"
+  },
+  "misc": {
+    "english": "English",
+    "hindi": "Hindi",
+    "bengali": "Bengali",
+    "tamil": "Tamil",
+    "telugu": "Telugu",
+    "marathi": "Marathi",
+    "gujarati": "Gujarati",
+    "kannada": "Kannada",
+    "malayalam": "Malayalam",
+    "punjabi": "Punjabi",
+    "odia": "Odia",
+    "urdu": "Urdu",
+    "assamese": "Assamese",
+    "maithili": "Maithili",
+    "santali": "Santali",
+    "kashmiri": "Kashmiri",
+    "nepali": "Nepali",
+    "konkani": "Konkani",
+    "sindhi": "Sindhi",
+    "dogri": "Dogri",
+    "manipuri": "Manipuri",
+    "bodo": "Bodo",
+    "sanskrit": "Sanskrit"
+  }
+}
