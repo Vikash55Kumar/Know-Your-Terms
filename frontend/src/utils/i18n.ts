@@ -19,13 +19,6 @@ if (!i18n.isInitialized) {
         loadPath: '/locales/{{lng}}/translation.json',
       },
     });
-
-
-
-
-
-
-    // .init({
     //   resources: {
     //     en: {
     //       translation: {
