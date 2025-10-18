@@ -1,0 +1,144 @@
+{
+  "header": {
+    "title": "మీ పదం తెలుసుకోండి",
+    "home": "హొమ్ పేజ్",
+    "about": "మా గురించి",
+    "help": "సహాయం",
+    "dashboard": "డాష్‌బోర్డ్",
+    "login": "లాగిన్",
+    "register": "నమోదు చేయండి",
+    "logout": "లాగ్అవుట్",
+    "language": "భాష"
+  },
+  "footer": {
+    "contact_us": "మమ్మల్ని సంప్రదించండి",
+    "privacy_policy": "గోప్యతా విధానం",
+    "terms_of_service": "సేవా నిబంధనలు",
+    "copyright": "కాపీరైట్ © 2025 మీ పదాన్ని తెలుసుకోండి"
+  },
+  "navbar": {
+    "agreements": "ఒప్పందాలు",
+    "cases": "కేసులు",
+    "agents": "ఏజెంట్లు",
+    "profile": "ప్రొఫైల్",
+    "settings": "సెట్టింగులు"
+  },
+  "button": {
+    "get_started": "ప్రారంభించడానికి",
+    "submit": "సమర్పించండి",
+    "cancel": "రద్దు చేయి",
+    "save": "సేవ్ చేయండి",
+    "edit": "సవరించు",
+    "delete": "తొలగించు",
+    "download": "డౌన్¬లోడ్ చేయండి",
+    "upload": "అప్‌లోడ్ చేయండి",
+    "next": "తరువాతి",
+    "previous": "మునుపటి",
+    "back": "వెనుకకు",
+    "close": "ముగింపు / ముగింపు",
+    "view": "చూడండి",
+    "search": "వెతకండి"
+  },
+  "form": {
+    "email": "ఇ-మెయిల్",
+    "password": "పాస్‌వర్డ్",
+    "confirm_password": "పాస్‌వర్డ్‌ను నిర్ధారించండి",
+    "name": "పేరు",
+    "phone": "ఫోన్",
+    "submit": "సమర్పించండి",
+    "reset": "తిరిగి నిర్దారించు",
+    "required": "అవసరం",
+    "optional": "ఐచ్ఛికం"
+  },
+  "auth": {
+    "login_title": "మీ ఖాతాకు లాగిన్ అవ్వండి",
+    "register_title": "కొత్త ఖాతాను నమోదు చేసుకోండి",
+    "forgot_password": "పాస్‌వర్డ్ మర్చిపోయారా?",
+    "remember_me": "నన్ను గుర్తుంచుకో",
+    "sign_in": "సైన్ ఇన్ చేయండి",
+    "sign_up": "చేరడం"
+  },
+  "dashboard": {
+    "welcome": "స్వాగతం, {{name}}!",
+    "overview": "అవలోకనం",
+    "agreements": "ఒప్పందాలు",
+    "cases": "కేసులు",
+    "history": "చరిత్ర",
+    "statistics": "గణాంకాలు",
+    "recent_activity": "ఇటీవలి కార్యాచరణ"
+  },
+  "agreement": {
+    "title": "ఒప్పందం",
+    "summary": "సారాంశం",
+    "role_selection": "పాత్రను ఎంచుకోండి",
+    "student_summary": "విద్యార్థి సారాంశం",
+    "business_summary": "వ్యాపార సారాంశం",
+    "citizen_summary": "పౌర సారాంశం",
+    "scores": "స్కోర్‌లు",
+    "process": "ఒప్పంద ప్రక్రియ",
+    "upload_doc": "పత్రాన్ని అప్‌లోడ్ చేయండి",
+    "download_pdf": "PDF డౌన్లోడ్"
+  },
+  "case": {
+    "title": "కేసు",
+    "detail": "కేసు వివరాలు",
+    "list": "కేసుల జాబితా",
+    "new_case": "కొత్త కేసు",
+    "status": "స్థితి",
+    "agent": "ఏజెంట్",
+    "history": "కేసు చరిత్ర"
+  },
+  "chat": {
+    "chatbot": "చాట్‌బాట్",
+    "send": "పంపండి",
+    "type_message": "మీ సందేశాన్ని టైప్ చేయండి...",
+    "sidebar_title": "చాట్ చరిత్ర",
+    "prompt_toolbar": "రైటింగ్ ప్రాంప్ట్‌లు",
+    "loading": "లోడ్ అవుతోంది..."
+  },
+  "notification": {
+    "success": "విజయం",
+    "error": "లోపం",
+    "info": "సమాచారం",
+    "warning": "హెచ్చరిక",
+    "saved": "విజయవంతంగా సేవ్ చేయబడింది!",
+    "deleted": "విజయవంతంగా తొలగించబడింది!",
+    "updated": "విజయవంతంగా నవీకరించబడింది!",
+    "login_success": "లాగిన్ విజయవంతమైంది!",
+    "logout_success": "లాగ్ అవుట్ విజయవంతమైంది!",
+    "register_success": "నమోదు విజయవంతమైంది!"
+  },
+  "error": {
+    "not_found": "పేజీ కనుగొనబడలేదు",
+    "unauthorized": "అనధికార ప్రాప్యత",
+    "forbidden": "నిషేధించబడింది",
+    "server_error": "సర్వర్ లోపం",
+    "network_error": "నెట్‌వర్క్ లోపం",
+    "required_field": "ఈ ఫీల్డ్ తప్పనిసరి"
+  },
+  "misc": {
+    "english": "ఇంగ్లీష్",
+    "hindi": "హిందీ",
+    "bengali": "బెంగాలీ",
+    "tamil": "తమిళం",
+    "telugu": "తెలుగు",
+    "marathi": "మరాఠీ",
+    "gujarati": "గుజరాతీ",
+    "kannada": "కన్నడ",
+    "malayalam": "మలయాళం",
+    "punjabi": "పంజాబీ",
+    "odia": "ఒడియా",
+    "urdu": "ఉర్దూ",
+    "assamese": "అస్సామీలు",
+    "maithili": "మైథిలి",
+    "santali": "సంతాలి",
+    "kashmiri": "కాశ్మీరీ",
+    "nepali": "నేపాలీ",
+    "konkani": "కొంకణి",
+    "sindhi": "సింధీ",
+    "dogri": "డోగ్రి",
+    "manipuri": "మణిపురి",
+    "bodo": "బోడో",
+    "sanskrit": "సంస్కృతం"
+  }
+}

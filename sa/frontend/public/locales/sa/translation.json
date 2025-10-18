@@ -1,0 +1,144 @@
+{
+  "header": {
+    "title": "भवतः पदं ज्ञातव्यम्",
+    "home": "गृहम्‌",
+    "about": "विषये",
+    "help": "साहाय्यम्‌",
+    "dashboard": "डैशबोर्ड",
+    "login": "प्रवेशः",
+    "register": "पंजीकर्",
+    "logout": "लॉगआउट्",
+    "language": "भाषा"
+  },
+  "footer": {
+    "contact_us": "हमसे संपर्क करें",
+    "privacy_policy": "गोपनीयता नीति",
+    "terms_of_service": "सेवानियमाः",
+    "copyright": "प्रतिलिपिधर्मः © 2025 स्वस्य पदं ज्ञातव्यम्"
+  },
+  "navbar": {
+    "agreements": "सम्झौताः",
+    "cases": "प्रकरणाः",
+    "agents": "एजेण्ट्",
+    "profile": "रूपरेखा",
+    "settings": "सेटिंग्स्"
+  },
+  "button": {
+    "get_started": "आरभत",
+    "submit": "उपस्थापयतु",
+    "cancel": "निरसयतु",
+    "save": "रक्ष्",
+    "edit": "सम्पादन",
+    "delete": "लुप्",
+    "download": "अवाहरन",
+    "upload": "अपलोड करें",
+    "next": "अग्रिम",
+    "previous": "पूर्वतनम्‌",
+    "back": "पृष्ठभागः",
+    "close": "पिधानं करोतु",
+    "view": "दृश्यं",
+    "search": "अन्वेषण"
+  },
+  "form": {
+    "email": "ईमेल",
+    "password": "समाभाष्",
+    "confirm_password": "गुप्तशब्दस्य पुष्टिः कुर्वन्तु",
+    "name": "नामः",
+    "phone": "फोनं",
+    "submit": "उपस्थापयतु",
+    "reset": "पुनः सेट् करें",
+    "required": "आवश्यकः",
+    "optional": "वैकल्पिक"
+  },
+  "auth": {
+    "login_title": "स्वस्य खाते प्रवेशं कुर्वन्तु",
+    "register_title": "नूतनं खातं पञ्जीकरणं कुर्वन्तु",
+    "forgot_password": "गुप्तशब्दं विस्मृतवान् वा?",
+    "remember_me": "मां स्मर्यताम्",
+    "sign_in": "साइन इन करें",
+    "sign_up": "पञ्जीकरणं कुर्वन्तु"
+  },
+  "dashboard": {
+    "welcome": "स्वागतम्, {{name}}!",
+    "overview": "अवलोकनम्",
+    "agreements": "सम्झौताः",
+    "cases": "प्रकरणाः",
+    "history": "इतिहास",
+    "statistics": "सांख्यिकी",
+    "recent_activity": "अद्यतन गतिविधि"
+  },
+  "agreement": {
+    "title": "सहमति",
+    "summary": "संक्षेपः",
+    "role_selection": "भूमिका इति चयनं कुर्वन्तु",
+    "student_summary": "छात्र सारांश",
+    "business_summary": "व्यापार सारांश",
+    "citizen_summary": "नागरिक सारांश",
+    "scores": "स्कोर",
+    "process": "सम्झौता प्रक्रिया",
+    "upload_doc": "दस्तावेज अपलोड करें",
+    "download_pdf": "PDF डाउनलोड् कुर्वन्तु"
+  },
+  "case": {
+    "title": "विषय",
+    "detail": "प्रकरणविवरणम्",
+    "list": "प्रकरणसूची",
+    "new_case": "नवीन प्रकरण",
+    "status": "स्थितिः",
+    "agent": "दूत",
+    "history": "प्रकरण इतिहास"
+  },
+  "chat": {
+    "chatbot": "चटबोट्",
+    "send": "प्रेषयतु",
+    "type_message": "स्वसन्देशं टङ्कयन्तु...",
+    "sidebar_title": "गपशप इतिहास",
+    "prompt_toolbar": "लेखनप्रोम्प्ट्",
+    "loading": "लोडिंग..."
+  },
+  "notification": {
+    "success": "सफलता",
+    "error": "त्रुटि",
+    "info": "Info",
+    "warning": "चेतवानी",
+    "saved": "सफलतया रक्षितम् !",
+    "deleted": "सफलतया विलोपितम्!",
+    "updated": "सफलतया अद्यतनं कृतम्!",
+    "login_success": "प्रवेशः सफलः!",
+    "logout_success": "लॉगआउट सफलम्!",
+    "register_success": "पञ्जीकरणं सफलम् !"
+  },
+  "error": {
+    "not_found": "पृष्ठं न प्राप्तम्",
+    "unauthorized": "अनधिकृतप्रवेशः",
+    "forbidden": "प्रतिबंधित",
+    "server_error": "सर्वर त्रुटिः",
+    "network_error": "संजालदोषः",
+    "required_field": "एतत् क्षेत्रम् आवश्यकम् अस्ति"
+  },
+  "misc": {
+    "english": "आंग्ल",
+    "hindi": "हिन्दी",
+    "bengali": "बङ्गला",
+    "tamil": "तमिल",
+    "telugu": "तेलुगु",
+    "marathi": "मराठी",
+    "gujarati": "गुजराती",
+    "kannada": "कन्नड",
+    "malayalam": "मलयालम्",
+    "punjabi": "पंजाबी",
+    "odia": "ओडिया",
+    "urdu": "उर्दू",
+    "assamese": "असमिया",
+    "maithili": "मैथिली",
+    "santali": "सन्तली",
+    "kashmiri": "काश्मीरी",
+    "nepali": "नेपाली",
+    "konkani": "कोंकणी",
+    "sindhi": "सिन्धि",
+    "dogri": "डोगरी",
+    "manipuri": "मणिपुरी",
+    "bodo": "बोडो",
+    "sanskrit": "संस्कृत"
+  }
+}

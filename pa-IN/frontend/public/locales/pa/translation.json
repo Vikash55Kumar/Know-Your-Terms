@@ -1,0 +1,144 @@
+{
+  "header": {
+    "title": "ਆਪਣੀ ਮਿਆਦ ਜਾਣੋ",
+    "home": "ਮੁੱਖ ਪੇਜ",
+    "about": "ਬਾਰੇ",
+    "help": "ਮਦਦ ਕਰੋ",
+    "dashboard": "ਡੈਸ਼ਬੋਰਡ",
+    "login": "ਲਾਗਿਨ",
+    "register": "ਰਜਿਸਟਰ",
+    "logout": "ਲਾਗਆਉਟ",
+    "language": "ਭਾਸ਼ਾ"
+  },
+  "footer": {
+    "contact_us": "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+    "privacy_policy": "ਪਰਾਈਵੇਟ ਨੀਤੀ",
+    "terms_of_service": "ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ",
+    "copyright": "ਕਾਪੀਰਾਈਟ © 2025 ਆਪਣੀ ਮਿਆਦ ਜਾਣੋ"
+  },
+  "navbar": {
+    "agreements": "ਸਮਝੌਤੇ",
+    "cases": "ਮਾਮਲੇ",
+    "agents": "ਏਜੰਟ",
+    "profile": "ਪ੍ਰੋਫਾਈਲ",
+    "settings": "ਸੈਟਿੰਗਾਂ"
+  },
+  "button": {
+    "get_started": "ਸ਼ੁਰੂ ਕਰੋ",
+    "submit": "ਜਮ੍ਹਾਂ ਕਰੋ",
+    "cancel": "ਰੱਦ ਕਰੋ",
+    "save": "ਸੇਵ ਕਰੋ",
+    "edit": "ਸੋਧੋ",
+    "delete": "ਮਿਟਾਓ",
+    "download": "ਡਾਊਨਲੋਡ",
+    "upload": "ਅੱਪਲੋਡ ਕਰੋ",
+    "next": "ਅਗਲਾ",
+    "previous": "ਪਿਛਲਾ",
+    "back": "ਪਿੱਛੇ",
+    "close": "ਬੰਦ ਕਰੋ",
+    "view": "ਵੇਖੋ",
+    "search": "ਖੋਜ"
+  },
+  "form": {
+    "email": "ਈਮੇਲ",
+    "password": "ਪਾਸਵਰਡ",
+    "confirm_password": "ਪਾਸਵਰਡ ਪੱਕਾ ਕਰੋ",
+    "name": "ਨਾਮ",
+    "phone": "ਫ਼ੋਨ",
+    "submit": "ਜਮ੍ਹਾਂ ਕਰੋ",
+    "reset": "ਰੀਸੈੱਟ",
+    "required": "ਲੋੜੀਂਦਾ",
+    "optional": "ਵਿਕਲਪਿਕ"
+  },
+  "auth": {
+    "login_title": "ਆਪਣੇ ਖਾਤੇ ਵਿੱਚ ਲੌਗਇਨ ਕਰੋ",
+    "register_title": "ਇੱਕ ਨਵਾਂ ਖਾਤਾ ਰਜਿਸਟਰ ਕਰੋ",
+    "forgot_password": "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ?",
+    "remember_me": "ਮੇਰੀ ਯਾਦ ਹੈ",
+    "sign_in": "ਸਾਈਨ - ਇਨ",
+    "sign_up": "ਸਾਇਨ ਅਪ"
+  },
+  "dashboard": {
+    "welcome": "ਜੀ ਆਇਆਂ ਨੂੰ, {{name}}!",
+    "overview": "ਸੰਖੇਪ ਜਾਣਕਾਰੀ",
+    "agreements": "ਸਮਝੌਤੇ",
+    "cases": "ਮਾਮਲੇ",
+    "history": "ਇਤਿਹਾਸ",
+    "statistics": "ਅੰਕੜੇ",
+    "recent_activity": "ਹਾਲੀਆ ਗਤੀਵਿਧੀ"
+  },
+  "agreement": {
+    "title": "ਸਮਝੌਤਾ",
+    "summary": "ਸੰਖੇਪ",
+    "role_selection": "ਭੂਮਿਕਾ ਚੁਣੋ",
+    "student_summary": "ਵਿਦਿਆਰਥੀ ਸੰਖੇਪ",
+    "business_summary": "ਕਾਰੋਬਾਰ ਦਾ ਸਾਰ",
+    "citizen_summary": "ਨਾਗਰਿਕ ਸੰਖੇਪ",
+    "scores": "ਸਕੋਰ",
+    "process": "ਸਮਝੌਤਾ ਪ੍ਰਕਿਰਿਆ",
+    "upload_doc": "ਦਸਤਾਵੇਜ਼ ਅੱਪਲੋਡ ਕਰੋ",
+    "download_pdf": "PDF ਡਾਊਨਲੋਡ ਕਰੋ"
+  },
+  "case": {
+    "title": "ਕੇਸ",
+    "detail": "ਕੇਸ ਵੇਰਵਾ",
+    "list": "ਕੇਸਾਂ ਦੀ ਸੂਚੀ",
+    "new_case": "ਨਵਾਂ ਕੇਸ",
+    "status": "ਸਥਿਤੀ",
+    "agent": "ਏਜੰਟ",
+    "history": "ਕੇਸ ਹਿਸਟਰੀ"
+  },
+  "chat": {
+    "chatbot": "ਚੈਟਬੋਟ",
+    "send": "ਭੇਜੋ",
+    "type_message": "ਆਪਣਾ ਸੁਨੇਹਾ ਟਾਈਪ ਕਰੋ...",
+    "sidebar_title": "ਚੈਟ ਇਤਿਹਾਸ",
+    "prompt_toolbar": "ਲਿਖਣ ਦੇ ਸੰਕੇਤ",
+    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ..."
+  },
+  "notification": {
+    "success": "ਸਫਲਤਾ",
+    "error": "ਗਲਤੀ",
+    "info": "ਜਾਣਕਾਰੀ",
+    "warning": "ਚੇਤਾਵਨੀ",
+    "saved": "ਸਫਲਤਾਪੂਰਵਕ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ!",
+    "deleted": "ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾਇਆ ਗਿਆ!",
+    "updated": "ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ!",
+    "login_success": "ਲੌਗਇਨ ਸਫਲ!",
+    "logout_success": "ਲੌਗਆਉਟ ਸਫਲ!",
+    "register_success": "ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਫਲ ਰਹੀ!"
+  },
+  "error": {
+    "not_found": "ਪੰਨਾ ਨਹੀਂ ਮਿਲਿਆ",
+    "unauthorized": "ਅਣਅਧਿਕਾਰਤ ਪਹੁੰਚ",
+    "forbidden": "ਵਰਜਿਤ",
+    "server_error": "ਸਰਵਰ ਗਲਤੀ",
+    "network_error": "ਨੈੱਟਵਰਕ ਗਲਤੀ",
+    "required_field": "ਇਸ ਫੀਲਡ ਦੀ ਲੋੜ ਹੈ"
+  },
+  "misc": {
+    "english": "ਅੰਗਰੇਜ਼ੀ",
+    "hindi": "ਹਿੰਦੀ",
+    "bengali": "ਬੰਗਾਲੀ",
+    "tamil": "ਤਾਮਿਲ",
+    "telugu": "ਤੇਲਗੂ",
+    "marathi": "ਮਰਾਠੀ",
+    "gujarati": "ਗੁਜਰਾਤੀ",
+    "kannada": "ਕੰਨੜ",
+    "malayalam": "ਮਲਿਆਲਮ",
+    "punjabi": "ਪੰਜਾਬੀ",
+    "odia": "ਉੜੀਆ",
+    "urdu": "ਉਰਦੂ",
+    "assamese": "ਅਸਾਮੀ",
+    "maithili": "ਮੈਥਿਲੀ",
+    "santali": "ਸੰਤਾਲੀ",
+    "kashmiri": "ਕਸ਼ਮੀਰੀ",
+    "nepali": "ਨੇਪਾਲੀ",
+    "konkani": "ਕੋਂਕਣੀ",
+    "sindhi": "ਸਿੰਧੀ",
+    "dogri": "ਡੋਗਰੀ",
+    "manipuri": "ਮਨੀਪੁਰੀ",
+    "bodo": "ਬੋਡੋ",
+    "sanskrit": "ਸੰਸਕ੍ਰਿਤ"
+  }
+}

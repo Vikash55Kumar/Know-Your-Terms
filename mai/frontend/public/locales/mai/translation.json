@@ -1,0 +1,144 @@
+{
+  "header": {
+    "title": "अपन टर्म जानू",
+    "home": "घर",
+    "about": "विषय में",
+    "help": "सहायता",
+    "dashboard": "डैशबोर्ड",
+    "login": "लॉगिन करू",
+    "register": "पंजीकरण",
+    "logout": "लॉगआउट",
+    "language": "भाषा"
+  },
+  "footer": {
+    "contact_us": "हमसे संपर्क करें",
+    "privacy_policy": "गोपनीयता नीति",
+    "terms_of_service": "सेवा के शर्तें",
+    "copyright": "कॉपीराइट © 2025 अपन शर्त जानू"
+  },
+  "navbar": {
+    "agreements": "समझौता",
+    "cases": "केस",
+    "agents": "एजेंट",
+    "profile": "रूपरेखा",
+    "settings": "सेटिंग्स"
+  },
+  "button": {
+    "get_started": "शुरू करू",
+    "submit": "जमा",
+    "cancel": "रद्द",
+    "save": "बचाउ",
+    "edit": "संपादित",
+    "delete": "हटानाइ",
+    "download": "डाउनलोड",
+    "upload": "अपलोड करू",
+    "next": "अगिला",
+    "previous": "पहिलुका",
+    "back": "पाछू",
+    "close": "बंद",
+    "view": "देखू",
+    "search": "खोजनाइ"
+  },
+  "form": {
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "confirm_password": "पासवर्ड के पुष्टि करू",
+    "name": "नाम",
+    "phone": "फोन",
+    "submit": "जमा",
+    "reset": "रीसेट करू",
+    "required": "आवश्यक",
+    "optional": "ऐच्छिक"
+  },
+  "auth": {
+    "login_title": "अपन खाता मे लॉगिन करू",
+    "register_title": "एकटा नव खाता रजिस्टर करू",
+    "forgot_password": "पासवर्ड बिसरि गेलौं?",
+    "remember_me": "हमरा याद करू",
+    "sign_in": "साइन इन करू",
+    "sign_up": "साइन अप करू"
+  },
+  "dashboard": {
+    "welcome": "स्वागत अछि, {{name}}!",
+    "overview": "अवलोकन",
+    "agreements": "समझौता",
+    "cases": "केस",
+    "history": "इतिहास",
+    "statistics": "सांख्यिकी",
+    "recent_activity": "हाल के गतिविधि"
+  },
+  "agreement": {
+    "title": "समझौता",
+    "summary": "सार",
+    "role_selection": "भूमिका चुनू",
+    "student_summary": "छात्र सारांश",
+    "business_summary": "व्यवसाय सारांश",
+    "citizen_summary": "नागरिक सारांश",
+    "scores": "स्कोर",
+    "process": "समझौता प्रक्रिया",
+    "upload_doc": "दस्तावेज अपलोड करू",
+    "download_pdf": "पीडीएफ डाउनलोड करू"
+  },
+  "case": {
+    "title": "मामला",
+    "detail": "केस डिटेल",
+    "list": "केस सूची",
+    "new_case": "नया मामला",
+    "status": "स्थिति",
+    "agent": "मुनीम",
+    "history": "केस इतिहास"
+  },
+  "chat": {
+    "chatbot": "चैटबोट",
+    "send": "पठाउ",
+    "type_message": "अपन संदेश टाइप करू...",
+    "sidebar_title": "चैट इतिहास",
+    "prompt_toolbar": "लेखन के संकेत",
+    "loading": "लोड भ रहल अछि..."
+  },
+  "notification": {
+    "success": "सफलता",
+    "error": "दोष",
+    "info": "जानकारी",
+    "warning": "चेतावनी",
+    "saved": "सफलतापूर्वक सहेजल गेल!",
+    "deleted": "सफलतापूर्वक मेटा देल गेल!",
+    "updated": "सफलतापूर्वक अपडेट भेल!",
+    "login_success": "लॉगिन सफल भेल!",
+    "logout_success": "लॉगआउट सफल भेल!",
+    "register_success": "पंजीकरण सफल भेल!"
+  },
+  "error": {
+    "not_found": "पृष्ठ नहीं मिला",
+    "unauthorized": "अनधिकृत पहुँच",
+    "forbidden": "निषिद्ध",
+    "server_error": "सर्वर त्रुटि",
+    "network_error": "नेटवर्क त्रुटि",
+    "required_field": "ई क्षेत्र आवश्यक अछि"
+  },
+  "misc": {
+    "english": "अंग्रेजी",
+    "hindi": "हिन्दी",
+    "bengali": "बंगला",
+    "tamil": "तमिल",
+    "telugu": "तेलुगु",
+    "marathi": "मराठी",
+    "gujarati": "गुजराती",
+    "kannada": "कन्नड़",
+    "malayalam": "मलयालम",
+    "punjabi": "पंजाबी",
+    "odia": "ओडिया",
+    "urdu": "उर्दू",
+    "assamese": "असमिया",
+    "maithili": "मैथिली",
+    "santali": "संताली",
+    "kashmiri": "कश्मीरी",
+    "nepali": "नेपाली",
+    "konkani": "कोंकणी",
+    "sindhi": "सिंधी",
+    "dogri": "डोगरी",
+    "manipuri": "मणिपुरी",
+    "bodo": "बोडो",
+    "sanskrit": "संस्कृत"
+  }
+}
