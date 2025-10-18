@@ -1,4 +1,4 @@
 base_path: .
 files:
-  - source: 'frontend/public/locales/en/translation.json'
-    translation: 'frontend/public/locales/%language_code%/translation.json'
+  - source: frontend/public/locales/en/translation.json
+    translation: frontend/public/locales/%two_letters_code%/translation.json
