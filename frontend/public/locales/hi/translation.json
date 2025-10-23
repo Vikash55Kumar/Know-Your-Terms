@@ -2,92 +2,92 @@
   "header": {
     "title": "अपना कार्यकाल जानें",
     "home": "घर",
-    "about": "के बारे में",
+    "about": "परिचय",
     "help": "मदद",
-    "solutions": "Solutions",
-    "dashboard": "डैशबोर्ड",
+    "solutions": "समाधा",
+    "dashboard": "नियंत्रण पट्ट",
     "login": "लॉग इन करें",
     "register": "पंजीकरण करवाना",
     "logout": "लॉग आउट",
     "language": "भाषा"
   },
   "home": {
-    "badge": "AI-Powered Legal Document Simplification",
-    "title": "Grammarly for Legal Documents",
-    "get_started": "Analyze My Document"
+    "badge": "एआई-संचालित कानूनी दस्तावेज़",
+    "title": "कानूनी दस्तावेजों के लिए  Grammarly",
+    "get_started": "मेरे दस्तावेज़ का विश्लेषण करें"
   },
   "landing": {
-    "features_title": "Key Features",
-    "how_it_works_title": "How It Works",
-    "powered_by_title": "Powered By",
-    "who_is_it_for_title": "Who Is It For?",
-    "cta_title": "Get Started Today",
-    "cta_subtitle": "Upload your first document and see the power of AI simplify the law for you.",
-    "try_demo": "Try Demo →",
+    "features_title": "प्रमुख विशेषताऐं",
+    "how_it_works_title": "यह किस प्रकार काम करता है",
+    "powered_by_title": "द्वारा संचालित",
+    "who_is_it_for_title": "यह किसके लिए है?",
+    "cta_title": "आज ही शुरू करें",
+    "cta_subtitle": "अपना पहला दस्तावेज़ अपलोड करें और देखें कि एआई की शक्ति आपके लिए कानून को कैसे सरल बनाती है।",
+    "try_demo": "डेमो आज़माएँ →",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "AI extracts and simplifies long agreements into clear bullet points."
+        "title": "समझौते का सारांश",
+        "desc": "एआई लंबे समझौतों को स्पष्ट बिंदु में निकालता और सरल बनाता है।"
       },
       "legal_chatbot": {
-        "title": "Legal Chatbot",
-        "desc": "Ask document-related questions and get instant, reliable answers."
+        "title": "कानूनी चैटबॉट",
+        "desc": "दस्तावेज़ से संबंधित प्रश्न पूछें और तत्काल, विश्वसनीय उत्तर प्राप्त करें।"
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Integrated with IndianKanoon API for quick case law insights."
+        "title": "केस सारांश",
+        "desc": "त्वरित केस कानून अंतर्दृष्टि के लिए भारतीय कानून एपीआई के साथ एकीकृत।"
       },
       "language_translation": {
-        "title": "Language Translation",
-        "desc": "Translate agreements into regional languages instantly."
+        "title": "भाषा का अनुवाद",
+        "desc": "समझौतों का तुरन्त क्षेत्रीय भाषाओं में अनुवाद करें।"
       },
       "agreement_process_guides": {
-        "title": "Agreement Process Guides",
-        "desc": "Step-by-step instructions for creating or understanding agreements."
+        "title": "समझौता प्रक्रिया मार्गदर्शिकाएँ",
+        "desc": "समझौते बनाने या समझने के लिए चरण-दर-चरण निर्देश।"
       },
       "template_creation": {
-        "title": "Template Creation",
-        "desc": "Ready-to-use templates for rent, job, loan, and business contracts."
+        "title": "टेम्पलेट निर्माण",
+        "desc": "किराया, नौकरी, ऋण और व्यावसायिक अनुबंधों के लिए उपयोग हेतु तैयार टेम्पलेट।"
       },
       "visual_video_summary": {
-        "title": "Visual/Video Summary",
-        "desc": "Explain agreements using AI-generated videos for better clarity."
+        "title": "दृश्य/वीडियो सारांश",
+        "desc": "बेहतर स्पष्टता के लिए एआई-जनरेटेड वीडियो का उपयोग करके समझौतों को समझाएं।"
       },
       "document_review": {
-        "title": "Document Review",
-        "desc": "Spot hidden clauses, risky terms, and missing essentials."
+        "title": "दस्तावेज़ समीक्षा",
+        "desc": "छिपे हुए प्रावधानों, जोखिमपूर्ण शर्तों और छूटे हुए आवश्यक तत्वों को पहचानें।"
       }
     },
     "how_it_works": {
       "step1": {
         "title": "अपलोड करें",
-        "desc": "Upload your PDF, DOCX, or scanned agreement."
+        "desc": "अपना PDF, DOCX, या स्कैन किया हुआ अनुबंध अपलोड करें।"
       },
       "step2": {
-        "title": "AI Processing",
-        "desc": "Our AI + Gemini extracts text, applies NLP, and summarizes in plain language."
+        "title": "एआई प्रसंस्करण",
+        "desc": "हमारा AI + जेमिनी पाठ को निकालता है, NLP लागू करता है, और सरल भाषा में सारांशित करता है।"
       },
       "step3": {
-        "title": "Get Insights",
-        "desc": "Receive summary, risks, translations, or even a fresh document template."
+        "title": "अंतर्दृष्टि प्राप्त करें",
+        "desc": "सारांश, जोखिम, अनुवाद, या यहां तक कि एक नया दस्तावेज़ टेम्पलेट प्राप्त करें।"
       }
     },
     "tech_stack": {
-      "description": "Built on modern AI and cloud technologies for speed, security, and scale.",
-      "google_gemini": "Google Gemini API",
-      "firebase_auth": "Firebase Authentication",
-      "firebase_db": "Firebase Database",
-      "google_translate": "Google Translate API",
-      "vertex_ai": "Vertex AI",
-      "indiankanoon": "IndianKanoon API"
+      "description": "गति, सुरक्षा और पैमाने के लिए आधुनिक AI और क्लाउड प्रौद्योगिकियों पर निर्मित।",
+      "google_gemini": "गूगल जेमिनी एपीआई",
+      "firebase_auth": "फायरबेस प्रमाणीकरण",
+      "firebase_db": "फायरबेस डेटाबेस",
+      "google_translate": "गूगल अनुवाद एपीआई",
+      "vertex_ai": "वर्टेक्स एआई",
+      "indiankanoon": "भारतीय कानून एपीआई"
     },
     "audience": {
-      "students": "Students",
-      "business_owners": "Business Owners",
-      "judges": "Judges",
-      "journalists": "Journalists",
-      "law_students": "Law Students",
-      "citizens": "Citizens"
+      "students": "छात्र",
+      "business_owners": "व्यवसाय स्वामी",
+      "judges": "न्यायाधीशों",
+      "journalists": "पत्रकारों",
+      "law_students": "कानून के छात्र",
+      "citizens": "नागरिकों"
     }
   },
   "footer": {
@@ -139,31 +139,31 @@
     "sign_up": "साइन अप करें"
   },
   "login": {
-    "welcome_title": "Welcome Back!",
-    "welcome_left_desc": "Login to your account and simplify your legal journey with AI-powered document analysis.",
-    "welcome_right_subtitle": "Please login to your account",
-    "or_login_with": "Or Login with",
-    "test_account_label": "Test Account:",
-    "remember_me": "Remember me",
-    "dont_have_account": "Don't have an account?",
-    "create_one": "Create one"
+    "welcome_title": "वापसी पर स्वागत है!",
+    "welcome_left_desc": "अपने खाते में लॉग इन करें और AI-संचालित दस्तावेज़ विश्लेषण के साथ अपनी कानूनी यात्रा को सरल बनाएं।",
+    "welcome_right_subtitle": "कृपया अपने खाते लॉग इन करें",
+    "or_login_with": "या लॉगिन करें",
+    "test_account_label": "परीक्षण खाता:",
+    "remember_me": "मुझे याद करो",
+    "dont_have_account": "क्या आपके पास खाता नहीं है?",
+    "create_one": "एक तैयार करें"
   },
   "register": {
-    "title": "Create an account",
+    "title": "खाता बनाएं",
     "subtitle": "एक नया खाता रजिस्टर करे",
-    "success": "Account created successfully!",
-    "failure": "Failed to create account.",
-    "password_mismatch": "Passwords do not match",
-    "email_in_use": "Email is already in use.",
-    "invalid_email": "Invalid email address.",
-    "weak_password": "Password should be at least 6 characters.",
-    "have_account": "Already have an account?",
+    "success": "खाता सफलतापूर्वक बनाया गया!",
+    "failure": "खाता बनाने में विफल.",
+    "password_mismatch": "सांकेतिक शब्द मेल नहीं खाते",
+    "email_in_use": "ईमेल पहले से ही प्रयोग में है.",
+    "invalid_email": "अमान्य ईमेल पता।",
+    "weak_password": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।",
+    "have_account": "क्या आपके पास पहले से एक खाता मौजूद है?",
     "sign_in": "दाखिल करना",
-    "secure_account": "This is a secure government portal. By registering, you agree to comply with data protection regulations and official usage policies."
+    "secure_account": "यह एक सुरक्षित सरकारी पोर्टल है। पंजीकरण करके, आप डेटा सुरक्षा नियमों और आधिकारिक उपयोग नीतियों का पालन करने के लिए सहमत होते हैं।"
   },
   "dashboard": {
-    "title": "⚖️ Legal Dashboard",
-    "subtitle": "Access all your legal tools and services in one place",
+    "title": "⚖️ कानूनी डैशबोर्ड",
+    "subtitle": "अपने सभी कानूनी उपकरणों और सेवाओं तक एक ही स्थान पर पहुँच प्राप्त करें",
     "welcome": "स्वागत है, {{name}}!",
     "overview": "अवलोकन",
     "agreements": "करार",
@@ -173,39 +173,39 @@
     "recent_activity": "हाल की गतिविधि",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "Quickly understand key points of contracts and agreements."
+        "title": "समझौते का सारांश",
+        "desc": "अनुबंधों और समझौतों के मुख्य बिंदुओं को शीघ्रता से समझें।"
       },
       "process_agreement": {
         "title": "समझौता प्रक्रिया",
-        "desc": "Step-by-step guidance for drafting and executing agreements."
+        "desc": "समझौतों का मसौदा तैयार करने और उन्हें क्रियान्वित करने के लिए चरण-दर-चरण मार्गदर्शन।"
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Search, review, and analyze landmark legal cases."
+        "title": "केस सारांश",
+        "desc": "महत्वपूर्ण कानूनी मामलों की खोज, समीक्षा और विश्लेषण करें।"
       },
       "chatbot_assistant": {
-        "title": "Chatbot Assistant",
-        "desc": "Ask questions and get instant legal insights."
+        "title": "चैटबॉट सहायक",
+        "desc": "प्रश्न पूछें और तुरंत कानूनी जानकारी प्राप्त करें।"
       }
     }
   },
   "solutions": {
     "agreement_summary": {
-      "title": "Agreement Summary",
-      "desc": "Instantly grasp the main points, obligations, and risks in any contract or agreement."
+      "title": "समझौते का सारांश",
+      "desc": "किसी भी अनुबंध या समझौते के मुख्य बिंदुओं, दायित्वों और जोखिमों को तुरंत समझें।"
     },
     "process_agreement": {
-      "title": "Process Agreement",
-      "desc": "Guided, step-by-step workflow for drafting, reviewing, and executing agreements with confidence."
+      "title": "प्रक्रिया समझौता",
+      "desc": "आत्मविश्वास के साथ समझौतों का मसौदा तैयार करने, समीक्षा करने और उन्हें क्रियान्वित करने के लिए निर्देशित, चरण-दर-चरण कार्यप्रवाह।"
     },
     "case_summary": {
-      "title": "Case Summary",
-      "desc": "Effortlessly search, review, and analyze landmark legal cases for actionable insights."
+      "title": "केस सारांश",
+      "desc": "कार्रवाई योग्य अंतर्दृष्टि के लिए ऐतिहासिक कानूनी मामलों की सहजता से खोज, समीक्षा और विश्लेषण करें।"
     },
     "chatbot_assistant": {
-      "title": "Chatbot Assistant",
-      "desc": "Ask legal questions and receive instant, AI-powered guidance and explanations."
+      "title": "चैटबॉट सहायक",
+      "desc": "कानूनी प्रश्न पूछें और तत्काल, AI-संचालित मार्गदर्शन और स्पष्टीकरण प्राप्त करें।"
     }
   },
   "agreement": {
@@ -277,97 +277,97 @@
     "sanskrit": "संस्कृत"
   },
   "roleSelection": {
-    "badge": "User Category Selection",
-    "title": "Choose Your Category",
-    "subtitle": "Select the option that best describes you to access personalized features and content.",
-    "show_examples": "Show Examples",
-    "hide_examples": "Hide Examples",
-    "continue_as": "Continue as {{role}}",
-    "help_text": "Not sure which role fits you best? Each role comes with tailored features and content. You can always change your selection later in your profile settings.",
-    "help_link_text": "Need help choosing? Learn more about each role →",
+    "badge": "उपयोगकर्ता श्रेणी चयन",
+    "title": "अपनी श्रेणी चुनें",
+    "subtitle": "वैयक्तिकृत सुविधाओं और सामग्री तक पहुँचने के लिए वह विकल्प चुनें जो आपको सबसे बेहतर ढंग से वर्णित करता हो।",
+    "show_examples": "उदाहरण दिखाएं",
+    "hide_examples": "उदाहरण छिपाएँ",
+    "continue_as": "{{role}}के रूप में जारी रखें",
+    "help_text": "आपको समझ नहीं आ रहा कि कौन सी भूमिका आपके लिए सबसे उपयुक्त है? हर भूमिका के साथ खास सुविधाएँ और सामग्री जुड़ी होती है। आप बाद में अपनी प्रोफ़ाइल सेटिंग में जाकर अपनी पसंद बदल सकते हैं।",
+    "help_link_text": "चुनने में मदद चाहिए? हर भूमिका के बारे में ज़्यादा जानें →",
     "roles": {
       "student": {
-        "title": "Student",
-        "description": "Access educational resources and tools tailored for your learning journey.",
+        "title": "विद्यार्थी",
+        "description": "अपनी सीखने की यात्रा के लिए अनुकूलित शैक्षिक संसाधनों और उपकरणों तक पहुँच प्राप्त करें।",
         "examples": [
-          "Internship Agreement",
-          "Offer Letter / Employment Contract",
-          "Freelance Project Contract",
-          "NDA (Non-Disclosure Agreement)"
+          "इंटर्नशिप समझौता",
+          "प्रस्ताव पत्र / रोजगार अनुबंध",
+          "फ्रीलांस परियोजना अनुबंध",
+          "एनडीए (गैर-प्रकटीकरण समझौता)"
         ]
       },
       "business": {
-        "title": "Business",
-        "description": "Utilize powerful features to grow and manage your business effectively.",
+        "title": "व्यापार",
+        "description": "अपने व्यवसाय को प्रभावी ढंग से बढ़ाने और प्रबंधित करने के लिए शक्तिशाली सुविधाओं का उपयोग करें।",
         "examples": [
-          "MoA / LLP Agreement",
-          "Vendor / Client Contract",
-          "Employment Agreement",
-          "Service Agreement",
-          "IP Assignment Agreement"
+          "एमओए / एलएलपी समझौता",
+          "विक्रेता / ग्राहक अनुबंध",
+          "रोजगार समझौता",
+          "सेवा अनुबंध",
+          "आईपी असाइनमेंट समझौता"
         ]
       },
       "citizen": {
-        "title": "Citizen",
-        "description": "Engage with your community and access public services with ease.",
+        "title": "नागरिक",
+        "description": "अपने समुदाय के साथ जुड़ें और सार्वजनिक सेवाओं तक आसानी से पहुंचें।",
         "examples": [
-          "Rental / Lease Agreement",
-          "Loan Agreement",
-          "Sale Agreement (Property/Vehicle)",
-          "Will / Inheritance Agreement",
-          "Power of Attorney"
+          "किराया / पट्टा समझौता",
+          "ऋण समझौता",
+          "बिक्री समझौता (संपत्ति/वाहन)",
+          "वसीयत / उत्तराधिकार समझौता",
+          "पॉवर ऑफ़ अटॉर्नी"
         ]
       }
     }
   },
   "summaryPage": {
     "targetGroupLabels": {
-      "citizen": "Citizen Document Summary",
-      "student": "Student / Young Professional Summary",
-      "business_owner": "Small Business Owner Summary"
+      "citizen": "नागरिक दस्तावेज़ सारांश",
+      "student": "छात्र / युवा पेशेवर सारांश",
+      "business_owner": "लघु व्यवसाय स्वामी सारांश"
     },
     "header": {
-      "subtitle": "Upload a legal document to get a clear, AI-powered summary tailored for you.",
-      "powered_by": "Powered by"
+      "subtitle": "आपके लिए अनुकूलित स्पष्ट, AI-संचालित सारांश प्राप्त करने के लिए एक कानूनी दस्तावेज़ अपलोड करें।",
+      "powered_by": "द्वारा संचालित"
     },
     "upload": {
-      "placeholder": "Drag & drop or click to upload a document",
-      "supported_formats": "Only PDF, DOC, and DOCX file formats are supported.",
+      "placeholder": "दस्तावेज़ अपलोड करने के लिए खींचें और छोड़ें या क्लिक करें",
+      "supported_formats": "केवल PDF, DOC, और DOCX फ़ाइल स्वरूप समर्थित हैं।",
       "button": "दस्तावेज़ अपलोड करें"
     },
     "examples": {
-      "title": "Example documents you can upload:",
+      "title": "उदाहरण दस्तावेज़ जिन्हें आप अपलोड कर सकते हैं:",
       "citizen": [
-        "Rental/Lease Agreement",
-        "Loan Agreement",
-        "Sale Agreement (Property/Vehicle)",
-        "Will/Inheritance Agreement",
-        "Power of Attorney"
+        "किराया/पट्टा समझौता",
+        "ऋण समझौता",
+        "बिक्री समझौता (संपत्ति/वाहन)",
+        "वसीयत/विरासत समझौता",
+        "पॉवर ऑफ़ अटॉर्नी"
       ],
       "student": [
-        "Internship Agreement",
-        "Offer Letter / Employment Contract",
-        "Freelance Project Contract",
-        "NDA (Non-Disclosure Agreement)"
+        "इंटर्नशिप समझौता",
+        "प्रस्ताव पत्र / रोजगार अनुबंध",
+        "फ्रीलांस परियोजना अनुबंध",
+        "एनडीए (गैर-प्रकटीकरण समझौता)"
       ],
       "business_owner": [
-        "MoA / LLP Agreement",
-        "Vendor / Client Contract",
-        "Employment Agreement",
-        "Service Agreement",
-        "IP Assignment Agreement"
+        "एमओए / एलएलपी समझौता",
+        "विक्रेता / ग्राहक अनुबंध",
+        "रोजगार समझौता",
+        "सेवा अनुबंध",
+        "आईपी असाइनमेंट समझौता"
       ]
     },
-    "reupload": "Re-upload Document",
-    "loader": "Analyzing your document... Please wait.",
-    "warning_no_file": "Please upload a document to see the summary.",
+    "reupload": "दस्तावेज़ पुनः अपलोड करें",
+    "loader": "आपके दस्तावेज़ का विश्लेषण किया जा रहा है... कृपया प्रतीक्षा करें.",
+    "warning_no_file": "कृपया सारांश देखने के लिए दस्तावेज़ अपलोड करें।",
     "actions": {
       "download_pdf": "पीडीएफ डाउनलोड करें",
-      "share": "Share",
-      "ask_agent": "Ask with Agent",
-      "pdf_unavailable": "PDF export is only available for Citizen and Business Owner summaries.",
-      "share_title": "Know Your Terms - Summary",
-      "share_text": "Here’s the contract summary I generated using Know Your Terms."
+      "share": "शेयर करना",
+      "ask_agent": "एजेंट से पूछें",
+      "pdf_unavailable": "पीडीएफ निर्यात केवल नागरिक और व्यवसाय स्वामी सारांश के लिए उपलब्ध है।",
+      "share_title": "अपनी शर्तें जानें - सारांश",
+      "share_text": "यहां वह अनुबंध सारांश दिया गया है जिसे मैंने \"अपनी शर्तें जानें\" का उपयोग करके तैयार किया है।"
     }
   }
 }
