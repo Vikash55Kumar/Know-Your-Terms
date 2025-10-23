@@ -4,7 +4,7 @@
     "home": "گھر",
     "about": "بابت",
     "help": "مدد",
-    "solutions": "Solutions",
+    "solutions": "حل",
     "dashboard": "ڊيش بورڊ",
     "login": "لاگ ان",
     "register": "رجسٽر",
@@ -12,82 +12,82 @@
     "language": "ٻولي"
   },
   "home": {
-    "badge": "AI-Powered Legal Document Simplification",
-    "title": "Grammarly for Legal Documents",
-    "get_started": "Analyze My Document"
+    "badge": "اي آءِ سان هلندڙ قانوني دستاويز جي سادگي",
+    "title": "قانوني دستاويزن لاءِ گرامرلي",
+    "get_started": "منهنجي دستاويز جو تجزيو ڪريو"
   },
   "landing": {
-    "features_title": "Key Features",
-    "how_it_works_title": "How It Works",
-    "powered_by_title": "Powered By",
-    "who_is_it_for_title": "Who Is It For?",
-    "cta_title": "Get Started Today",
-    "cta_subtitle": "Upload your first document and see the power of AI simplify the law for you.",
-    "try_demo": "Try Demo →",
+    "features_title": "اهم خصوصيتون",
+    "how_it_works_title": "اهو ڪيئن ڪم ڪري ٿو",
+    "powered_by_title": "طاقتور پاران",
+    "who_is_it_for_title": "اهو ڪنهن لاءِ آهي؟",
+    "cta_title": "اڄ ئي شروع ڪريو",
+    "cta_subtitle": "پنھنجو پھريون دستاويز اپلوڊ ڪريو ۽ AI جي طاقت ڏسو پنھنجي لاءِ قانون کي آسان بڻايو.",
+    "try_demo": "ڊيمو آزمايو →",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "AI extracts and simplifies long agreements into clear bullet points."
+        "title": "معاهدي جو خلاصو",
+        "desc": "AI ڊگهن معاهدن کي واضح نقطن ۾ ڪڍي ٿو ۽ آسان بڻائي ٿو."
       },
       "legal_chatbot": {
-        "title": "Legal Chatbot",
-        "desc": "Ask document-related questions and get instant, reliable answers."
+        "title": "قانوني چيٽ بوٽ",
+        "desc": "دستاويز سان لاڳاپيل سوال پڇو ۽ فوري، قابل اعتماد جواب حاصل ڪريو."
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Integrated with IndianKanoon API for quick case law insights."
+        "title": "ڪيس جو خلاصو",
+        "desc": "ڪيس جي قانون جي تڪڙي بصيرت لاءِ انڊين ڪينون API سان ضم ٿيل."
       },
       "language_translation": {
-        "title": "Language Translation",
-        "desc": "Translate agreements into regional languages instantly."
+        "title": "ٻولي ترجمو",
+        "desc": "معاهدن کي فوري طور تي علائقائي ٻولين ۾ ترجمو ڪريو."
       },
       "agreement_process_guides": {
-        "title": "Agreement Process Guides",
-        "desc": "Step-by-step instructions for creating or understanding agreements."
+        "title": "معاهدي جي عمل جي رهنمائي",
+        "desc": "معاهدا ٺاهڻ يا سمجهڻ لاءِ قدم بہ قدم هدايتون."
       },
       "template_creation": {
-        "title": "Template Creation",
-        "desc": "Ready-to-use templates for rent, job, loan, and business contracts."
+        "title": "ٽيمپليٽ ٺاهڻ",
+        "desc": "ڪرائي، نوڪري، قرض، ۽ ڪاروباري معاهدن لاءِ استعمال لاءِ تيار ٽيمپليٽ."
       },
       "visual_video_summary": {
-        "title": "Visual/Video Summary",
-        "desc": "Explain agreements using AI-generated videos for better clarity."
+        "title": "بصري/وڊيو خلاصو",
+        "desc": "بهتر وضاحت لاءِ AI پاران تيار ڪيل وڊيوز استعمال ڪندي معاهدن جي وضاحت ڪريو."
       },
       "document_review": {
-        "title": "Document Review",
-        "desc": "Spot hidden clauses, risky terms, and missing essentials."
+        "title": "دستاويز جو جائزو",
+        "desc": "لڪيل شقن، خطرناڪ اصطلاحن، ۽ گم ٿيل ضروري شين کي سڃاڻو."
       }
     },
     "how_it_works": {
       "step1": {
         "title": "اپلوڊ ڪريو",
-        "desc": "Upload your PDF, DOCX, or scanned agreement."
+        "desc": "پنھنجي PDF، DOCX، يا اسڪين ٿيل معاهدي کي اپلوڊ ڪريو."
       },
       "step2": {
-        "title": "AI Processing",
-        "desc": "Our AI + Gemini extracts text, applies NLP, and summarizes in plain language."
+        "title": "اي آءِ پروسيسنگ",
+        "desc": "اسان جو AI + Gemini متن ڪڍي ٿو، NLP لاڳو ڪري ٿو، ۽ سادي ٻولي ۾ خلاصو ڪري ٿو."
       },
       "step3": {
-        "title": "Get Insights",
-        "desc": "Receive summary, risks, translations, or even a fresh document template."
+        "title": "بصيرت حاصل ڪريو",
+        "desc": "خلاصو، خطرا، ترجما، يا هڪ تازو دستاويز ٽيمپليٽ پڻ حاصل ڪريو."
       }
     },
     "tech_stack": {
-      "description": "Built on modern AI and cloud technologies for speed, security, and scale.",
-      "google_gemini": "Google Gemini API",
-      "firebase_auth": "Firebase Authentication",
-      "firebase_db": "Firebase Database",
-      "google_translate": "Google Translate API",
-      "vertex_ai": "Vertex AI",
-      "indiankanoon": "IndianKanoon API"
+      "description": "رفتار، سيڪيورٽي، ۽ پيماني لاءِ جديد AI ۽ ڪلائوڊ ٽيڪنالاجي تي ٺهيل.",
+      "google_gemini": "گوگل جيمينائي API",
+      "firebase_auth": "فائر بيس جي تصديق",
+      "firebase_db": "فائر بيس ڊيٽابيس",
+      "google_translate": "گوگل ترجمو API",
+      "vertex_ai": "ورٽيڪس اي آءِ",
+      "indiankanoon": "انڊين ڪينون API"
     },
     "audience": {
-      "students": "Students",
-      "business_owners": "Business Owners",
-      "judges": "Judges",
-      "journalists": "Journalists",
-      "law_students": "Law Students",
-      "citizens": "Citizens"
+      "students": "شاگرد",
+      "business_owners": "ڪاروباري مالڪ",
+      "judges": "جج",
+      "journalists": "صحافي",
+      "law_students": "قانون جا شاگرد",
+      "citizens": "شهري"
     }
   },
   "footer": {
@@ -139,31 +139,31 @@
     "sign_up": "سائن اپ ڪريو"
   },
   "login": {
-    "welcome_title": "Welcome Back!",
-    "welcome_left_desc": "Login to your account and simplify your legal journey with AI-powered document analysis.",
-    "welcome_right_subtitle": "Please login to your account",
-    "or_login_with": "Or Login with",
-    "test_account_label": "Test Account:",
-    "remember_me": "Remember me",
-    "dont_have_account": "Don't have an account?",
-    "create_one": "Create one"
+    "welcome_title": "واپس ڀلي ڪري آيا!",
+    "welcome_left_desc": "پنهنجي اڪائونٽ ۾ لاگ ان ٿيو ۽ AI سان هلندڙ دستاويز جي تجزيي سان پنهنجي قانوني سفر کي آسان بڻايو.",
+    "welcome_right_subtitle": "مھرباني ڪري پنھنجي اڪائونٽ ۾ لاگ ان ٿيو.",
+    "or_login_with": "يا سان لاگ ان ٿيو",
+    "test_account_label": "ٽيسٽ اڪائونٽ:",
+    "remember_me": "مونکي ياد ڪيو",
+    "dont_have_account": "اڪائونٽ ناهي؟",
+    "create_one": "هڪ ٺاهيو"
   },
   "register": {
-    "title": "Create an account",
+    "title": "اڪائونٽ ٺاهيو",
     "subtitle": "نئون اڪائونٽ رجسٽر ڪريو",
-    "success": "Account created successfully!",
-    "failure": "Failed to create account.",
-    "password_mismatch": "Passwords do not match",
-    "email_in_use": "Email is already in use.",
-    "invalid_email": "Invalid email address.",
-    "weak_password": "Password should be at least 6 characters.",
-    "have_account": "Already have an account?",
+    "success": "اڪائونٽ ڪاميابي سان ٺهيو!",
+    "failure": "اڪائونٽ ٺاهڻ ۾ ناڪام ٿيو.",
+    "password_mismatch": "پاسورڊ نه ٿا ملن.",
+    "email_in_use": "اي ميل اڳ ۾ ئي استعمال ۾ آهي.",
+    "invalid_email": "غلط اي ميل ايڊريس.",
+    "weak_password": "پاسورڊ گهٽ ۾ گهٽ 6 اکرن جو هجڻ گهرجي.",
+    "have_account": "اڳ ۾ ئي اڪائونٽ آهي؟",
     "sign_in": "سائن ان ڪريو",
-    "secure_account": "This is a secure government portal. By registering, you agree to comply with data protection regulations and official usage policies."
+    "secure_account": "هي هڪ محفوظ سرڪاري پورٽل آهي. رجسٽريشن ڪندي، توهان ڊيٽا جي تحفظ جي ضابطن ۽ سرڪاري استعمال جي پاليسين جي تعميل ڪرڻ تي متفق آهيو."
   },
   "dashboard": {
-    "title": "⚖️ Legal Dashboard",
-    "subtitle": "Access all your legal tools and services in one place",
+    "title": "⚖️ قانوني ڊيش بورڊ",
+    "subtitle": "پنهنجي سڀني قانوني اوزارن ۽ خدمتن تائين هڪ جاءِ تي رسائي حاصل ڪريو",
     "welcome": "ڀليڪار، {{name}}!",
     "overview": "جائزو",
     "agreements": "معاهدا",
@@ -173,39 +173,39 @@
     "recent_activity": "تازي سرگرمي",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "Quickly understand key points of contracts and agreements."
+        "title": "معاهدي جو خلاصو",
+        "desc": "معاهدن ۽ معاهدن جي اهم نقطن کي جلدي سمجھو."
       },
       "process_agreement": {
         "title": "معاهدي جو عمل",
-        "desc": "Step-by-step guidance for drafting and executing agreements."
+        "desc": "معاهدن جي مسودي ۽ عمل درآمد لاءِ قدم بہ قدم هدايت."
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Search, review, and analyze landmark legal cases."
+        "title": "ڪيس جو خلاصو",
+        "desc": "اهم قانوني ڪيسن جي ڳولا، جائزو، ۽ تجزيو ڪريو."
       },
       "chatbot_assistant": {
-        "title": "Chatbot Assistant",
-        "desc": "Ask questions and get instant legal insights."
+        "title": "چيٽ بوٽ اسسٽنٽ",
+        "desc": "سوال پڇو ۽ فوري قانوني بصيرت حاصل ڪريو."
       }
     }
   },
   "solutions": {
     "agreement_summary": {
-      "title": "Agreement Summary",
-      "desc": "Instantly grasp the main points, obligations, and risks in any contract or agreement."
+      "title": "معاهدي جو خلاصو",
+      "desc": "ڪنهن به معاهدي يا معاهدي ۾ مکيه نقطن، ذميدارين ۽ خطرن کي فوري طور تي سمجهو."
     },
     "process_agreement": {
-      "title": "Process Agreement",
-      "desc": "Guided, step-by-step workflow for drafting, reviewing, and executing agreements with confidence."
+      "title": "عمل جو معاهدو",
+      "desc": "اعتماد سان معاهدن جي مسودي، جائزو وٺڻ ۽ عمل ڪرڻ لاءِ هدايت يافته، قدم بہ قدم ورڪ فلو."
     },
     "case_summary": {
-      "title": "Case Summary",
-      "desc": "Effortlessly search, review, and analyze landmark legal cases for actionable insights."
+      "title": "ڪيس جو خلاصو",
+      "desc": "قابلِ عمل بصيرت لاءِ تاريخي قانوني ڪيسن جي ڪوشش سان ڳولا، جائزو ۽ تجزيو ڪريو."
     },
     "chatbot_assistant": {
-      "title": "Chatbot Assistant",
-      "desc": "Ask legal questions and receive instant, AI-powered guidance and explanations."
+      "title": "چيٽ بوٽ اسسٽنٽ",
+      "desc": "قانوني سوال پڇو ۽ فوري، AI سان هلندڙ هدايت ۽ وضاحتون حاصل ڪريو."
     }
   },
   "agreement": {
@@ -277,97 +277,97 @@
     "sanskrit": "سنسڪرت"
   },
   "roleSelection": {
-    "badge": "User Category Selection",
-    "title": "Choose Your Category",
-    "subtitle": "Select the option that best describes you to access personalized features and content.",
-    "show_examples": "Show Examples",
-    "hide_examples": "Hide Examples",
-    "continue_as": "Continue as {{role}}",
-    "help_text": "Not sure which role fits you best? Each role comes with tailored features and content. You can always change your selection later in your profile settings.",
-    "help_link_text": "Need help choosing? Learn more about each role →",
+    "badge": "استعمال ڪندڙ جي درجي جي چونڊ",
+    "title": "پنھنجي ڪيٽيگري چونڊيو",
+    "subtitle": "ذاتي ڪيل خاصيتن ۽ مواد تائين رسائي حاصل ڪرڻ لاءِ اهو اختيار چونڊيو جيڪو توهان کي بهترين طور تي بيان ڪري.",
+    "show_examples": "مثال ڏيکاريو",
+    "hide_examples": "مثال لڪايو",
+    "continue_as": "جاري رکو جيئن {{role}}",
+    "help_text": "پڪ ناهي ته ڪهڙو ڪردار توهان لاءِ بهترين آهي؟ هر ڪردار پنهنجي مرضي مطابق خاصيتون ۽ مواد سان گڏ اچي ٿو. توهان هميشه پنهنجي پروفائل سيٽنگن ۾ بعد ۾ پنهنجي چونڊ کي تبديل ڪري سگهو ٿا.",
+    "help_link_text": "چونڊڻ ۾ مدد جي ضرورت آهي؟ هر ڪردار بابت وڌيڪ سکو →",
     "roles": {
       "student": {
-        "title": "Student",
-        "description": "Access educational resources and tools tailored for your learning journey.",
+        "title": "شاگرد",
+        "description": "توهان جي سکيا جي سفر لاءِ تيار ڪيل تعليمي وسيلن ۽ اوزارن تائين رسائي حاصل ڪريو.",
         "examples": [
-          "Internship Agreement",
-          "Offer Letter / Employment Contract",
-          "Freelance Project Contract",
-          "NDA (Non-Disclosure Agreement)"
+          "انٽرنشپ جو معاهدو",
+          "آڇ خط / ملازمت جو معاهدو",
+          "فري لانس پروجيڪٽ ڪانٽريڪٽ",
+          "اين ڊي اي (غير ظاهر ڪرڻ وارو معاهدو)"
         ]
       },
       "business": {
-        "title": "Business",
-        "description": "Utilize powerful features to grow and manage your business effectively.",
+        "title": "ڪاروبار",
+        "description": "پنهنجي ڪاروبار کي اثرائتي طريقي سان وڌائڻ ۽ منظم ڪرڻ لاءِ طاقتور خصوصيتن کي استعمال ڪريو.",
         "examples": [
-          "MoA / LLP Agreement",
-          "Vendor / Client Contract",
-          "Employment Agreement",
-          "Service Agreement",
-          "IP Assignment Agreement"
+          "ايم او اي / ايل ايل پي معاهدو",
+          "وينڊر / ڪلائنٽ جو معاهدو",
+          "ملازمت جو معاهدو",
+          "سروس جو معاهدو",
+          "IP اسائنمنٽ معاهدو"
         ]
       },
       "citizen": {
-        "title": "Citizen",
-        "description": "Engage with your community and access public services with ease.",
+        "title": "شهري",
+        "description": "پنهنجي برادري سان ڳنڍجو ۽ آساني سان عوامي خدمتن تائين رسائي حاصل ڪريو.",
         "examples": [
-          "Rental / Lease Agreement",
-          "Loan Agreement",
-          "Sale Agreement (Property/Vehicle)",
-          "Will / Inheritance Agreement",
-          "Power of Attorney"
+          "ڪرائي تي / ليز جو معاهدو",
+          "قرض جو معاهدو",
+          "وڪري جو معاهدو (ملڪيت/گاڏي)",
+          "وصيت / وراثت جو معاهدو",
+          "پاور آف اٽارني"
         ]
       }
     }
   },
   "summaryPage": {
     "targetGroupLabels": {
-      "citizen": "Citizen Document Summary",
-      "student": "Student / Young Professional Summary",
-      "business_owner": "Small Business Owner Summary"
+      "citizen": "شهري دستاويز جو خلاصو",
+      "student": "شاگرد / نوجوان پيشه ور خلاصو",
+      "business_owner": "ننڍي ڪاروبار مالڪ جو خلاصو"
     },
     "header": {
-      "subtitle": "Upload a legal document to get a clear, AI-powered summary tailored for you.",
-      "powered_by": "Powered by"
+      "subtitle": "توهان لاءِ تيار ڪيل هڪ واضح، AI-طاقتور خلاصو حاصل ڪرڻ لاءِ هڪ قانوني دستاويز اپلوڊ ڪريو.",
+      "powered_by": "پاران طاقتور"
     },
     "upload": {
-      "placeholder": "Drag & drop or click to upload a document",
-      "supported_formats": "Only PDF, DOC, and DOCX file formats are supported.",
+      "placeholder": "دستاويز اپلوڊ ڪرڻ لاءِ ڇڪيو ۽ ڇڏيو يا ڪلڪ ڪريو",
+      "supported_formats": "صرف PDF، DOC، ۽ DOCX فائل فارميٽ سپورٽ ٿيل آهن.",
       "button": "دستاويز اپلوڊ ڪريو"
     },
     "examples": {
-      "title": "Example documents you can upload:",
+      "title": "مثال دستاويز جيڪي توهان اپلوڊ ڪري سگهو ٿا:",
       "citizen": [
-        "Rental/Lease Agreement",
-        "Loan Agreement",
-        "Sale Agreement (Property/Vehicle)",
-        "Will/Inheritance Agreement",
-        "Power of Attorney"
+        "ڪرائي تي ڏيڻ/ليز جو معاهدو",
+        "قرض جو معاهدو",
+        "وڪري جو معاهدو (ملڪيت/گاڏي)",
+        "وصيت/وراثت جو معاهدو",
+        "پاور آف اٽارني"
       ],
       "student": [
-        "Internship Agreement",
-        "Offer Letter / Employment Contract",
-        "Freelance Project Contract",
-        "NDA (Non-Disclosure Agreement)"
+        "انٽرنشپ جو معاهدو",
+        "آڇ خط / ملازمت جو معاهدو",
+        "فري لانس پروجيڪٽ ڪانٽريڪٽ",
+        "اين ڊي اي (غير ظاهر ڪرڻ وارو معاهدو)"
       ],
       "business_owner": [
-        "MoA / LLP Agreement",
-        "Vendor / Client Contract",
-        "Employment Agreement",
-        "Service Agreement",
-        "IP Assignment Agreement"
+        "ايم او اي / ايل ايل پي معاهدو",
+        "وينڊر / ڪلائنٽ جو معاهدو",
+        "ملازمت جو معاهدو",
+        "سروس جو معاهدو",
+        "IP اسائنمنٽ معاهدو"
       ]
     },
-    "reupload": "Re-upload Document",
-    "loader": "Analyzing your document... Please wait.",
-    "warning_no_file": "Please upload a document to see the summary.",
+    "reupload": "دستاويز ٻيهر اپلوڊ ڪريو",
+    "loader": "توهان جي دستاويز جو تجزيو ڪري رهيو آهيان... مهرباني ڪري انتظار ڪريو.",
+    "warning_no_file": "خلاصو ڏسڻ لاءِ مهرباني ڪري هڪ دستاويز اپلوڊ ڪريو.",
     "actions": {
       "download_pdf": "پي ڊي ايف ڊائون لوڊ ڪريو",
-      "share": "Share",
-      "ask_agent": "Ask with Agent",
-      "pdf_unavailable": "PDF export is only available for Citizen and Business Owner summaries.",
-      "share_title": "Know Your Terms - Summary",
-      "share_text": "Here’s the contract summary I generated using Know Your Terms."
+      "share": "شيئر ڪريو",
+      "ask_agent": "ايجنٽ سان پڇو",
+      "pdf_unavailable": "PDF ايڪسپورٽ صرف شهري ۽ ڪاروباري مالڪ جي خلاصن لاءِ موجود آهي.",
+      "share_title": "پنهنجا شرط ڄاڻو - خلاصو",
+      "share_text": "هتي معاهدي جو خلاصو آهي جيڪو مون \"پنهنجي شرطن کي ڄاڻو\" استعمال ڪندي تيار ڪيو آهي."
     }
   }
 }
