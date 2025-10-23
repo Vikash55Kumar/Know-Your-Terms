@@ -4,7 +4,7 @@
     "home": "హొమ్ పేజ్",
     "about": "మా గురించి",
     "help": "సహాయం",
-    "solutions": "Solutions",
+    "solutions": "పరిష్కారాలు",
     "dashboard": "డాష్‌బోర్డ్",
     "login": "లాగిన్",
     "register": "నమోదు చేయండి",
@@ -12,82 +12,82 @@
     "language": "భాష"
   },
   "home": {
-    "badge": "AI-Powered Legal Document Simplification",
-    "title": "Grammarly for Legal Documents",
-    "get_started": "Analyze My Document"
+    "badge": "AI- ఆధారిత చట్టపరమైన పత్ర సరళీకరణ",
+    "title": "చట్టపరమైన పత్రాల కోసం గ్రామర్లీ",
+    "get_started": "నా పత్రాన్ని విశ్లేషించండి"
   },
   "landing": {
-    "features_title": "Key Features",
-    "how_it_works_title": "How It Works",
-    "powered_by_title": "Powered By",
-    "who_is_it_for_title": "Who Is It For?",
-    "cta_title": "Get Started Today",
-    "cta_subtitle": "Upload your first document and see the power of AI simplify the law for you.",
-    "try_demo": "Try Demo →",
+    "features_title": "ముఖ్య లక్షణాలు",
+    "how_it_works_title": "అది ఎలా పని చేస్తుంది",
+    "powered_by_title": "ద్వారా ఆధారితం",
+    "who_is_it_for_title": "ఇది ఎవరి కోసం?",
+    "cta_title": "ఈరోజే ప్రారంభించండి",
+    "cta_subtitle": "మీ మొదటి పత్రాన్ని అప్‌లోడ్ చేయండి మరియు AI యొక్క శక్తిని మీ కోసం చట్టాన్ని సులభతరం చేయడాన్ని చూడండి.",
+    "try_demo": "డెమో ప్రయత్నించండి →",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "AI extracts and simplifies long agreements into clear bullet points."
+        "title": "ఒప్పంద సారాంశం",
+        "desc": "AI దీర్ఘ ఒప్పందాలను స్పష్టమైన బుల్లెట్ పాయింట్లుగా సంగ్రహించి సులభతరం చేస్తుంది."
       },
       "legal_chatbot": {
-        "title": "Legal Chatbot",
-        "desc": "Ask document-related questions and get instant, reliable answers."
+        "title": "లీగల్ చాట్‌బాట్",
+        "desc": "డాక్యుమెంట్ సంబంధిత ప్రశ్నలు అడగండి మరియు తక్షణ, నమ్మదగిన సమాధానాలను పొందండి."
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Integrated with IndianKanoon API for quick case law insights."
+        "title": "కేసు సారాంశం",
+        "desc": "త్వరిత కేసు చట్ట అంతర్దృష్టుల కోసం ఇండియన్ కానూన్ APIతో అనుసంధానించబడింది."
       },
       "language_translation": {
-        "title": "Language Translation",
-        "desc": "Translate agreements into regional languages instantly."
+        "title": "భాషా అనువాదం",
+        "desc": "ఒప్పందాలను తక్షణమే ప్రాంతీయ భాషలలోకి అనువదించండి."
       },
       "agreement_process_guides": {
-        "title": "Agreement Process Guides",
-        "desc": "Step-by-step instructions for creating or understanding agreements."
+        "title": "ఒప్పంద ప్రక్రియ మార్గదర్శకాలు",
+        "desc": "ఒప్పందాలను సృష్టించడానికి లేదా అర్థం చేసుకోవడానికి దశలవారీ సూచనలు."
       },
       "template_creation": {
-        "title": "Template Creation",
-        "desc": "Ready-to-use templates for rent, job, loan, and business contracts."
+        "title": "టెంప్లేట్ సృష్టి",
+        "desc": "అద్దె, ఉద్యోగం, రుణం మరియు వ్యాపార ఒప్పందాల కోసం ఉపయోగించడానికి సిద్ధంగా ఉన్న టెంప్లేట్‌లు."
       },
       "visual_video_summary": {
-        "title": "Visual/Video Summary",
-        "desc": "Explain agreements using AI-generated videos for better clarity."
+        "title": "దృశ్య/వీడియో సారాంశం",
+        "desc": "మెరుగైన స్పష్టత కోసం AI- రూపొందించిన వీడియోలను ఉపయోగించి ఒప్పందాలను వివరించండి."
       },
       "document_review": {
-        "title": "Document Review",
-        "desc": "Spot hidden clauses, risky terms, and missing essentials."
+        "title": "పత్ర సమీక్ష",
+        "desc": "దాచిన నిబంధనలు, ప్రమాదకర పదాలు మరియు తప్పిపోయిన ముఖ్యమైన అంశాలను గుర్తించండి."
       }
     },
     "how_it_works": {
       "step1": {
         "title": "అప్‌లోడ్ చేయండి",
-        "desc": "Upload your PDF, DOCX, or scanned agreement."
+        "desc": "మీ PDF, DOCX లేదా స్కాన్ చేసిన ఒప్పందాన్ని అప్‌లోడ్ చేయండి."
       },
       "step2": {
-        "title": "AI Processing",
-        "desc": "Our AI + Gemini extracts text, applies NLP, and summarizes in plain language."
+        "title": "AI ప్రాసెసింగ్",
+        "desc": "మా AI + జెమిని టెక్స్ట్‌ను సంగ్రహిస్తుంది, NLPని వర్తింపజేస్తుంది మరియు సాధారణ భాషలో సంగ్రహిస్తుంది."
       },
       "step3": {
-        "title": "Get Insights",
-        "desc": "Receive summary, risks, translations, or even a fresh document template."
+        "title": "అంతర్దృష్టులను పొందండి",
+        "desc": "సారాంశం, నష్టాలు, అనువాదాలు లేదా కొత్త డాక్యుమెంట్ టెంప్లేట్‌ను కూడా స్వీకరించండి."
       }
     },
     "tech_stack": {
-      "description": "Built on modern AI and cloud technologies for speed, security, and scale.",
-      "google_gemini": "Google Gemini API",
-      "firebase_auth": "Firebase Authentication",
-      "firebase_db": "Firebase Database",
-      "google_translate": "Google Translate API",
-      "vertex_ai": "Vertex AI",
-      "indiankanoon": "IndianKanoon API"
+      "description": "వేగం, భద్రత మరియు స్కేల్ కోసం ఆధునిక AI మరియు క్లౌడ్ టెక్నాలజీలపై నిర్మించబడింది.",
+      "google_gemini": "గూగుల్ జెమిని API",
+      "firebase_auth": "ఫైర్‌బేస్ ప్రామాణీకరణ",
+      "firebase_db": "ఫైర్‌బేస్ డేటాబేస్",
+      "google_translate": "గూగుల్ ట్రాన్స్‌లేట్ API",
+      "vertex_ai": "వెర్టెక్స్ AI",
+      "indiankanoon": "ఇండియన్ కానూన్ API"
     },
     "audience": {
-      "students": "Students",
-      "business_owners": "Business Owners",
-      "judges": "Judges",
-      "journalists": "Journalists",
-      "law_students": "Law Students",
-      "citizens": "Citizens"
+      "students": "విద్యార్థులు",
+      "business_owners": "వ్యాపార యజమానులు",
+      "judges": "న్యాయాధిపతులు",
+      "journalists": "జర్నలిస్టులు",
+      "law_students": "లా విద్యార్థులు",
+      "citizens": "పౌరులు"
     }
   },
   "footer": {
@@ -139,31 +139,31 @@
     "sign_up": "చేరడం"
   },
   "login": {
-    "welcome_title": "Welcome Back!",
-    "welcome_left_desc": "Login to your account and simplify your legal journey with AI-powered document analysis.",
-    "welcome_right_subtitle": "Please login to your account",
-    "or_login_with": "Or Login with",
-    "test_account_label": "Test Account:",
-    "remember_me": "Remember me",
-    "dont_have_account": "Don't have an account?",
-    "create_one": "Create one"
+    "welcome_title": "పునఃస్వాగతం!",
+    "welcome_left_desc": "మీ ఖాతాకు లాగిన్ అవ్వండి మరియు AI- ఆధారిత పత్ర విశ్లేషణతో మీ చట్టపరమైన ప్రయాణాన్ని సులభతరం చేసుకోండి.",
+    "welcome_right_subtitle": "దయచేసి మీ ఖాతాకు లాగిన్ అవ్వండి.",
+    "or_login_with": "లేదా దీనితో లాగిన్ అవ్వండి",
+    "test_account_label": "పరీక్ష ఖాతా:",
+    "remember_me": "నన్ను గుర్తుంచుకో",
+    "dont_have_account": "ఖాతా లేదా?",
+    "create_one": "ఒకటి సృష్టించండి"
   },
   "register": {
-    "title": "Create an account",
+    "title": "ఒక ఖాతాను సృష్టించండి",
     "subtitle": "కొత్త ఖాతాను నమోదు చేసుకోండి",
-    "success": "Account created successfully!",
-    "failure": "Failed to create account.",
-    "password_mismatch": "Passwords do not match",
-    "email_in_use": "Email is already in use.",
-    "invalid_email": "Invalid email address.",
-    "weak_password": "Password should be at least 6 characters.",
-    "have_account": "Already have an account?",
+    "success": "ఖాతా విజయవంతంగా సృష్టించబడింది!",
+    "failure": "ఖాతాను సృష్టించడంలో విఫలమైంది.",
+    "password_mismatch": "పాస్‌వర్డ్‌లు సరిపోలడం లేదు.",
+    "email_in_use": "ఈమెయిల్ ఇప్పటికే వాడుకలో ఉంది.",
+    "invalid_email": "చెల్లని ఇమెయిల్ చిరునామా.",
+    "weak_password": "పాస్‌వర్డ్ కనీసం 6 అక్షరాలు ఉండాలి.",
+    "have_account": "ఖాతా ఉందా?",
     "sign_in": "సైన్ ఇన్ చేయండి",
-    "secure_account": "This is a secure government portal. By registering, you agree to comply with data protection regulations and official usage policies."
+    "secure_account": "ఇది సురక్షితమైన ప్రభుత్వ పోర్టల్. నమోదు చేసుకోవడం ద్వారా, మీరు డేటా రక్షణ నిబంధనలు మరియు అధికారిక వినియోగ విధానాలకు అనుగుణంగా ఉండటానికి అంగీకరిస్తున్నారు."
   },
   "dashboard": {
-    "title": "⚖️ Legal Dashboard",
-    "subtitle": "Access all your legal tools and services in one place",
+    "title": "⚖️ చట్టపరమైన డాష్‌బోర్డ్",
+    "subtitle": "మీ అన్ని చట్టపరమైన సాధనాలు మరియు సేవలను ఒకే చోట యాక్సెస్ చేయండి",
     "welcome": "స్వాగతం, {{name}}!",
     "overview": "అవలోకనం",
     "agreements": "ఒప్పందాలు",
@@ -173,39 +173,39 @@
     "recent_activity": "ఇటీవలి కార్యాచరణ",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "Quickly understand key points of contracts and agreements."
+        "title": "ఒప్పంద సారాంశం",
+        "desc": "ఒప్పందాలు మరియు ఒప్పందాల యొక్క ముఖ్య అంశాలను త్వరగా అర్థం చేసుకోండి."
       },
       "process_agreement": {
         "title": "ఒప్పంద ప్రక్రియ",
-        "desc": "Step-by-step guidance for drafting and executing agreements."
+        "desc": "ఒప్పందాలను రూపొందించడానికి మరియు అమలు చేయడానికి దశలవారీ మార్గదర్శకత్వం."
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Search, review, and analyze landmark legal cases."
+        "title": "కేసు సారాంశం",
+        "desc": "ల్యాండ్‌మార్క్ చట్టపరమైన కేసులను శోధించండి, సమీక్షించండి మరియు విశ్లేషించండి."
       },
       "chatbot_assistant": {
-        "title": "Chatbot Assistant",
-        "desc": "Ask questions and get instant legal insights."
+        "title": "చాట్‌బాట్ అసిస్టెంట్",
+        "desc": "ప్రశ్నలు అడగండి మరియు తక్షణ చట్టపరమైన అంతర్దృష్టులను పొందండి."
       }
     }
   },
   "solutions": {
     "agreement_summary": {
-      "title": "Agreement Summary",
-      "desc": "Instantly grasp the main points, obligations, and risks in any contract or agreement."
+      "title": "ఒప్పంద సారాంశం",
+      "desc": "ఏదైనా ఒప్పందం లేదా ఒప్పందంలోని ముఖ్య అంశాలు, బాధ్యతలు మరియు నష్టాలను తక్షణమే గ్రహించండి."
     },
     "process_agreement": {
-      "title": "Process Agreement",
-      "desc": "Guided, step-by-step workflow for drafting, reviewing, and executing agreements with confidence."
+      "title": "ప్రాసెస్ ఒప్పందం",
+      "desc": "నమ్మకంగా ఒప్పందాలను రూపొందించడం, సమీక్షించడం మరియు అమలు చేయడం కోసం మార్గనిర్దేశం చేయబడిన, దశలవారీ వర్క్‌ఫ్లో."
     },
     "case_summary": {
-      "title": "Case Summary",
-      "desc": "Effortlessly search, review, and analyze landmark legal cases for actionable insights."
+      "title": "కేసు సారాంశం",
+      "desc": "చర్య తీసుకోదగిన అంతర్దృష్టుల కోసం మైలురాయి చట్టపరమైన కేసులను అప్రయత్నంగా శోధించండి, సమీక్షించండి మరియు విశ్లేషించండి."
     },
     "chatbot_assistant": {
-      "title": "Chatbot Assistant",
-      "desc": "Ask legal questions and receive instant, AI-powered guidance and explanations."
+      "title": "చాట్‌బాట్ అసిస్టెంట్",
+      "desc": "చట్టపరమైన ప్రశ్నలు అడగండి మరియు తక్షణ, AI- ఆధారిత మార్గదర్శకత్వం మరియు వివరణలను పొందండి."
     }
   },
   "agreement": {
@@ -277,97 +277,97 @@
     "sanskrit": "సంస్కృతం"
   },
   "roleSelection": {
-    "badge": "User Category Selection",
-    "title": "Choose Your Category",
-    "subtitle": "Select the option that best describes you to access personalized features and content.",
-    "show_examples": "Show Examples",
-    "hide_examples": "Hide Examples",
-    "continue_as": "Continue as {{role}}",
-    "help_text": "Not sure which role fits you best? Each role comes with tailored features and content. You can always change your selection later in your profile settings.",
-    "help_link_text": "Need help choosing? Learn more about each role →",
+    "badge": "వినియోగదారు వర్గం ఎంపిక",
+    "title": "మీ వర్గాన్ని ఎంచుకోండి",
+    "subtitle": "వ్యక్తిగతీకరించిన ఫీచర్‌లు మరియు కంటెంట్‌ను యాక్సెస్ చేయడానికి మిమ్మల్ని ఉత్తమంగా వివరించే ఎంపికను ఎంచుకోండి.",
+    "show_examples": "ఉదాహరణలు చూపించు",
+    "hide_examples": "ఉదాహరణలను దాచు",
+    "continue_as": "{{role}}గా కొనసాగండి",
+    "help_text": "మీకు ఏ పాత్ర బాగా సరిపోతుందో తెలియదా? ప్రతి పాత్రకు అనుకూలీకరించిన లక్షణాలు మరియు కంటెంట్ ఉంటుంది. మీరు తర్వాత మీ ప్రొఫైల్ సెట్టింగ్‌లలో మీ ఎంపికను ఎల్లప్పుడూ మార్చవచ్చు.",
+    "help_link_text": "ఎంచుకోవడంలో సహాయం కావాలా? ప్రతి పాత్ర గురించి మరింత తెలుసుకోండి →",
     "roles": {
       "student": {
-        "title": "Student",
-        "description": "Access educational resources and tools tailored for your learning journey.",
+        "title": "విద్యార్థి",
+        "description": "మీ అభ్యాస ప్రయాణానికి అనుగుణంగా రూపొందించబడిన విద్యా వనరులు మరియు సాధనాలను యాక్సెస్ చేయండి.",
         "examples": [
-          "Internship Agreement",
-          "Offer Letter / Employment Contract",
-          "Freelance Project Contract",
-          "NDA (Non-Disclosure Agreement)"
+          "ఇంటర్న్‌షిప్ ఒప్పందం",
+          "ఆఫర్ లెటర్ / ఉద్యోగ ఒప్పందం",
+          "ఫ్రీలాన్స్ ప్రాజెక్ట్ కాంట్రాక్ట్",
+          "NDA (బహిర్గతం కాని ఒప్పందం)"
         ]
       },
       "business": {
-        "title": "Business",
-        "description": "Utilize powerful features to grow and manage your business effectively.",
+        "title": "బిజినెస్‌",
+        "description": "మీ వ్యాపారాన్ని సమర్థవంతంగా అభివృద్ధి చేసుకోవడానికి మరియు నిర్వహించడానికి శక్తివంతమైన లక్షణాలను ఉపయోగించండి.",
         "examples": [
-          "MoA / LLP Agreement",
-          "Vendor / Client Contract",
-          "Employment Agreement",
-          "Service Agreement",
-          "IP Assignment Agreement"
+          "MoA / LLP ఒప్పందం",
+          "విక్రేత / క్లయింట్ ఒప్పందం",
+          "ఉద్యోగ ఒప్పందం",
+          "సేవా ఒప్పందం",
+          "IP కేటాయింపు ఒప్పందం"
         ]
       },
       "citizen": {
-        "title": "Citizen",
-        "description": "Engage with your community and access public services with ease.",
+        "title": "పౌరుడు",
+        "description": "మీ కమ్యూనిటీతో పాలుపంచుకోండి మరియు ప్రజా సేవలను సులభంగా యాక్సెస్ చేయండి.",
         "examples": [
-          "Rental / Lease Agreement",
-          "Loan Agreement",
-          "Sale Agreement (Property/Vehicle)",
-          "Will / Inheritance Agreement",
-          "Power of Attorney"
+          "అద్దె / లీజు ఒప్పందం",
+          "రుణ ఒప్పందం",
+          "అమ్మకపు ఒప్పందం (ఆస్తి/వాహనం)",
+          "వీలునామా / వారసత్వ ఒప్పందం",
+          "పవర్ ఆఫ్ అటార్నీ"
         ]
       }
     }
   },
   "summaryPage": {
     "targetGroupLabels": {
-      "citizen": "Citizen Document Summary",
-      "student": "Student / Young Professional Summary",
-      "business_owner": "Small Business Owner Summary"
+      "citizen": "పౌర పత్రం సారాంశం",
+      "student": "విద్యార్థి / యువ నిపుణుల సారాంశం",
+      "business_owner": "చిన్న వ్యాపార యజమాని సారాంశం"
     },
     "header": {
-      "subtitle": "Upload a legal document to get a clear, AI-powered summary tailored for you.",
-      "powered_by": "Powered by"
+      "subtitle": "మీ కోసం రూపొందించిన స్పష్టమైన, AI- ఆధారిత సారాంశాన్ని పొందడానికి చట్టపరమైన పత్రాన్ని అప్‌లోడ్ చేయండి.",
+      "powered_by": "ద్వారా ఆధారితం"
     },
     "upload": {
-      "placeholder": "Drag & drop or click to upload a document",
-      "supported_formats": "Only PDF, DOC, and DOCX file formats are supported.",
+      "placeholder": "పత్రాన్ని అప్‌లోడ్ చేయడానికి లాగి వదలండి లేదా క్లిక్ చేయండి",
+      "supported_formats": "PDF, DOC మరియు DOCX ఫైల్ ఫార్మాట్‌లకు మాత్రమే మద్దతు ఉంది.",
       "button": "పత్రాన్ని అప్‌లోడ్ చేయండి"
     },
     "examples": {
-      "title": "Example documents you can upload:",
+      "title": "మీరు అప్‌లోడ్ చేయగల ఉదాహరణ పత్రాలు:",
       "citizen": [
-        "Rental/Lease Agreement",
-        "Loan Agreement",
-        "Sale Agreement (Property/Vehicle)",
-        "Will/Inheritance Agreement",
-        "Power of Attorney"
+        "అద్దె/లీజు ఒప్పందం",
+        "రుణ ఒప్పందం",
+        "అమ్మకపు ఒప్పందం (ఆస్తి/వాహనం)",
+        "వీలునామా/వారసత్వ ఒప్పందం",
+        "పవర్ ఆఫ్ అటార్నీ"
       ],
       "student": [
-        "Internship Agreement",
-        "Offer Letter / Employment Contract",
-        "Freelance Project Contract",
-        "NDA (Non-Disclosure Agreement)"
+        "ఇంటర్న్‌షిప్ ఒప్పందం",
+        "ఆఫర్ లెటర్ / ఉద్యోగ ఒప్పందం",
+        "ఫ్రీలాన్స్ ప్రాజెక్ట్ కాంట్రాక్ట్",
+        "NDA (బహిర్గతం కాని ఒప్పందం)"
       ],
       "business_owner": [
-        "MoA / LLP Agreement",
-        "Vendor / Client Contract",
-        "Employment Agreement",
-        "Service Agreement",
-        "IP Assignment Agreement"
+        "MoA / LLP ఒప్పందం",
+        "విక్రేత / క్లయింట్ ఒప్పందం",
+        "ఉద్యోగ ఒప్పందం",
+        "సేవా ఒప్పందం",
+        "IP కేటాయింపు ఒప్పందం"
       ]
     },
-    "reupload": "Re-upload Document",
-    "loader": "Analyzing your document... Please wait.",
-    "warning_no_file": "Please upload a document to see the summary.",
+    "reupload": "పత్రాన్ని తిరిగి అప్‌లోడ్ చేయండి",
+    "loader": "మీ పత్రాన్ని విశ్లేషిస్తోంది... దయచేసి వేచి ఉండండి.",
+    "warning_no_file": "సారాంశాన్ని చూడటానికి దయచేసి ఒక పత్రాన్ని అప్‌లోడ్ చేయండి.",
     "actions": {
       "download_pdf": "PDF డౌన్లోడ్",
-      "share": "Share",
-      "ask_agent": "Ask with Agent",
-      "pdf_unavailable": "PDF export is only available for Citizen and Business Owner summaries.",
-      "share_title": "Know Your Terms - Summary",
-      "share_text": "Here’s the contract summary I generated using Know Your Terms."
+      "share": "షేర్ చేయి",
+      "ask_agent": "ఏజెంట్‌తో అడగండి",
+      "pdf_unavailable": "PDF ఎగుమతి పౌరుడు మరియు వ్యాపార యజమాని సారాంశాలకు మాత్రమే అందుబాటులో ఉంది.",
+      "share_title": "మీ నిబంధనలను తెలుసుకోండి - సారాంశం",
+      "share_text": "మీ నిబంధనలను తెలుసుకోండి ఉపయోగించి నేను రూపొందించిన ఒప్పంద సారాంశం ఇక్కడ ఉంది."
     }
   }
 }
