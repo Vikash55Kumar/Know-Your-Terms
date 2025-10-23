@@ -4,7 +4,7 @@
     "home": "ଘର",
     "about": "ବିଷୟରେ",
     "help": "ସାହାଯ୍ୟ",
-    "solutions": "Solutions",
+    "solutions": "ସମାଧାନ",
     "dashboard": "ଡ୍ୟାସବୋର୍ଡ",
     "login": "ଲଗ୍ଇନ୍",
     "register": "ପଞ୍ଜୀକୃତ କରନ୍ତୁ",
@@ -12,82 +12,82 @@
     "language": "ଭାଷା"
   },
   "home": {
-    "badge": "AI-Powered Legal Document Simplification",
-    "title": "Grammarly for Legal Documents",
-    "get_started": "Analyze My Document"
+    "badge": "ଏଆଇ-ଚାଳିତ ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ସରଳୀକରଣ",
+    "title": "ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ପାଇଁ ବ୍ୟାକରଣ",
+    "get_started": "ମୋ ଡକ୍ୟୁମେଣ୍ଟ ବିଶ୍ଳେଷଣ କରନ୍ତୁ"
   },
   "landing": {
-    "features_title": "Key Features",
-    "how_it_works_title": "How It Works",
-    "powered_by_title": "Powered By",
-    "who_is_it_for_title": "Who Is It For?",
-    "cta_title": "Get Started Today",
-    "cta_subtitle": "Upload your first document and see the power of AI simplify the law for you.",
-    "try_demo": "Try Demo →",
+    "features_title": "ପ୍ରମୁଖ ବୈଶିଷ୍ଟ୍ୟଗୁଡ଼ିକ",
+    "how_it_works_title": "ଏହା କିପରି କାମ କରେ",
+    "powered_by_title": "ଦ୍ଵାରା ପରିଚାଳିତ",
+    "who_is_it_for_title": "ଏହା କାହା ପାଇଁ?",
+    "cta_title": "ଆଜି ହିଁ ଆରମ୍ଭ କରନ୍ତୁ",
+    "cta_subtitle": "ଆପଣଙ୍କର ପ୍ରଥମ ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ ଏବଂ AI ର ଶକ୍ତି ଦେଖନ୍ତୁ, ଆପଣଙ୍କ ପାଇଁ ଆଇନକୁ ସରଳ କରନ୍ତୁ।",
+    "try_demo": "ଡେମୋ ଚେଷ୍ଟା କରନ୍ତୁ →",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "AI extracts and simplifies long agreements into clear bullet points."
+        "title": "ଚୁକ୍ତିନାମା ସାରାଂଶ",
+        "desc": "AI ଦୀର୍ଘ ଚୁକ୍ତିନାମାଗୁଡ଼ିକୁ ସ୍ପଷ୍ଟ ବୁଲେଟ୍ ପଏଣ୍ଟରେ ବାହାର କରେ ଏବଂ ସରଳ କରେ।"
       },
       "legal_chatbot": {
-        "title": "Legal Chatbot",
-        "desc": "Ask document-related questions and get instant, reliable answers."
+        "title": "ଲିଗାଲ୍ ଚାଟବଟ୍",
+        "desc": "ଡକ୍ୟୁମେଣ୍ଟ ସମ୍ବନ୍ଧୀୟ ପ୍ରଶ୍ନ ପଚାରନ୍ତୁ ଏବଂ ତୁରନ୍ତ, ନିର୍ଭରଯୋଗ୍ୟ ଉତ୍ତର ପାଆନ୍ତୁ।"
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Integrated with IndianKanoon API for quick case law insights."
+        "title": "କେସ୍ ସାରାଂଶ",
+        "desc": "ମାମଲା ଆଇନ ବିଷୟରେ ଶୀଘ୍ର ସୂଚନା ପାଇଁ IndianKanoon API ସହିତ ସଂଯୁକ୍ତ।"
       },
       "language_translation": {
-        "title": "Language Translation",
-        "desc": "Translate agreements into regional languages instantly."
+        "title": "ଭାଷା ଅନୁବାଦ",
+        "desc": "ଚୁକ୍ତିନାମାଗୁଡ଼ିକୁ ତୁରନ୍ତ ଆଞ୍ଚଳିକ ଭାଷାରେ ଅନୁବାଦ କରନ୍ତୁ।"
       },
       "agreement_process_guides": {
-        "title": "Agreement Process Guides",
-        "desc": "Step-by-step instructions for creating or understanding agreements."
+        "title": "ଚୁକ୍ତିନାମା ପ୍ରକ୍ରିୟା ମାର୍ଗଦର୍ଶିକା",
+        "desc": "ଚୁକ୍ତିନାମା ତିଆରି କରିବା କିମ୍ବା ବୁଝିବା ପାଇଁ ପର୍ଯ୍ୟାୟକ୍ରମେ ନିର୍ଦ୍ଦେଶାବଳୀ।"
       },
       "template_creation": {
-        "title": "Template Creation",
-        "desc": "Ready-to-use templates for rent, job, loan, and business contracts."
+        "title": "ଟେମ୍ପଲେଟ୍ ତିଆରି",
+        "desc": "ଭଡ଼ା, ଚାକିରି, ଋଣ ଏବଂ ବ୍ୟବସାୟ ଚୁକ୍ତିନାମା ପାଇଁ ବ୍ୟବହାର କରିବାକୁ ପ୍ରସ୍ତୁତ ଟେମ୍ପଲେଟ୍।"
       },
       "visual_video_summary": {
-        "title": "Visual/Video Summary",
-        "desc": "Explain agreements using AI-generated videos for better clarity."
+        "title": "ଭିଜୁଆଲ୍/ଭିଡିଓ ସାରାଂଶ",
+        "desc": "ଭଲ ସ୍ପଷ୍ଟତା ପାଇଁ AI-ଜେନେରେଟେଡ୍ ଭିଡିଓ ବ୍ୟବହାର କରି ଚୁକ୍ତିନାମା ବ୍ୟାଖ୍ୟା କରନ୍ତୁ।"
       },
       "document_review": {
-        "title": "Document Review",
-        "desc": "Spot hidden clauses, risky terms, and missing essentials."
+        "title": "ଡକ୍ୟୁମେଣ୍ଟ ସମୀକ୍ଷା",
+        "desc": "ଲୁଚି ରହିଥିବା ଧାରା, ବିପଦପୂର୍ଣ୍ଣ ଶବ୍ଦ ଏବଂ ଅନୁପସ୍ଥିତ ଜରୁରୀ ଜିନିଷଗୁଡ଼ିକୁ ଚିହ୍ନଟ କରନ୍ତୁ।"
       }
     },
     "how_it_works": {
       "step1": {
         "title": "ଅପଲୋଡ୍ କରନ୍ତୁ",
-        "desc": "Upload your PDF, DOCX, or scanned agreement."
+        "desc": "ଆପଣଙ୍କର PDF, DOCX, କିମ୍ବା ସ୍କାନ ହୋଇଥିବା ଚୁକ୍ତିନାମା ଅପଲୋଡ୍ କରନ୍ତୁ।"
       },
       "step2": {
-        "title": "AI Processing",
-        "desc": "Our AI + Gemini extracts text, applies NLP, and summarizes in plain language."
+        "title": "AI ପ୍ରକ୍ରିୟାକରଣ",
+        "desc": "ଆମର AI + Gemini ପାଠ୍ୟ ବାହାର କରେ, NLP ପ୍ରୟୋଗ କରେ, ଏବଂ ସରଳ ଭାଷାରେ ସାରାଂଶ ପ୍ରଦାନ କରେ।"
       },
       "step3": {
-        "title": "Get Insights",
-        "desc": "Receive summary, risks, translations, or even a fresh document template."
+        "title": "ସୂଚନା ପାଆନ୍ତୁ",
+        "desc": "ସାରାଂଶ, ବିପଦ, ଅନୁବାଦ, କିମ୍ବା ଏକ ନୂତନ ଡକ୍ୟୁମେଣ୍ଟ ଟେମ୍ପଲେଟ୍ ମଧ୍ୟ ପ୍ରାପ୍ତ କରନ୍ତୁ।"
       }
     },
     "tech_stack": {
-      "description": "Built on modern AI and cloud technologies for speed, security, and scale.",
-      "google_gemini": "Google Gemini API",
-      "firebase_auth": "Firebase Authentication",
-      "firebase_db": "Firebase Database",
-      "google_translate": "Google Translate API",
-      "vertex_ai": "Vertex AI",
-      "indiankanoon": "IndianKanoon API"
+      "description": "ଗତି, ସୁରକ୍ଷା ଏବଂ ପରିମାଣ ପାଇଁ ଆଧୁନିକ AI ଏବଂ କ୍ଲାଉଡ୍ ପ୍ରଯୁକ୍ତିବିଦ୍ୟାରେ ନିର୍ମିତ।",
+      "google_gemini": "ଗୁଗୁଲ୍ ଜେମିନି ଏପିଆଇ",
+      "firebase_auth": "ଫାୟାରବେସ୍ ପ୍ରାମାଣିକତା",
+      "firebase_db": "ଫାୟାରବେସ୍ ଡାଟାବେସ୍",
+      "google_translate": "Google ଅନୁବାଦ API",
+      "vertex_ai": "ଭର୍ଟେକ୍ସ AI",
+      "indiankanoon": "ଇଣ୍ଡିଆନକାନୁନ୍ API"
     },
     "audience": {
-      "students": "Students",
-      "business_owners": "Business Owners",
-      "judges": "Judges",
-      "journalists": "Journalists",
-      "law_students": "Law Students",
-      "citizens": "Citizens"
+      "students": "ଛାତ୍ରମାନେ",
+      "business_owners": "ବ୍ୟବସାୟ ମାଲିକମାନେ",
+      "judges": "ବିଚାରପତିମାନେ",
+      "journalists": "ସାମ୍ବାଦିକମାନେ",
+      "law_students": "ଆଇନ ଛାତ୍ର",
+      "citizens": "ନାଗରିକମାନେ"
     }
   },
   "footer": {
@@ -139,31 +139,31 @@
     "sign_up": "ସାଇନ୍ ଅପ୍ କରନ୍ତୁ"
   },
   "login": {
-    "welcome_title": "Welcome Back!",
-    "welcome_left_desc": "Login to your account and simplify your legal journey with AI-powered document analysis.",
-    "welcome_right_subtitle": "Please login to your account",
-    "or_login_with": "Or Login with",
-    "test_account_label": "Test Account:",
-    "remember_me": "Remember me",
-    "dont_have_account": "Don't have an account?",
-    "create_one": "Create one"
+    "welcome_title": "ପୁନଃ ସ୍ୱାଗତ!",
+    "welcome_left_desc": "ଆପଣଙ୍କ ଆକାଉଣ୍ଟରେ ଲଗଇନ୍ କରନ୍ତୁ ଏବଂ AI-ଚାଳିତ ଡକ୍ୟୁମେଣ୍ଟ ବିଶ୍ଳେଷଣ ସହିତ ଆପଣଙ୍କର ଆଇନଗତ ଯାତ୍ରାକୁ ସରଳ କରନ୍ତୁ।",
+    "welcome_right_subtitle": "ଦୟାକରି ଆପଣଙ୍କ ଆକାଉଣ୍ଟରେ ଲଗଇନ୍ କରନ୍ତୁ।",
+    "or_login_with": "କିମ୍ବା ଲଗଇନ୍ କରନ୍ତୁ",
+    "test_account_label": "ପରୀକ୍ଷା ଖାତା:",
+    "remember_me": "ମୋତେ ମନେରଖନ୍ତୁ",
+    "dont_have_account": "ଆପଣଙ୍କର ଆକାଉଣ୍ଟ ନାହିଁ?",
+    "create_one": "ଗୋଟିଏ ତିଆରି କରନ୍ତୁ"
   },
   "register": {
-    "title": "Create an account",
+    "title": "ଏକ ଆକାଉଣ୍ଟ ତିଆରି କରନ୍ତୁ",
     "subtitle": "ଏକ ନୂଆ ଆକାଉଣ୍ଟ ପଞ୍ଜିକରଣ କରନ୍ତୁ",
-    "success": "Account created successfully!",
-    "failure": "Failed to create account.",
-    "password_mismatch": "Passwords do not match",
-    "email_in_use": "Email is already in use.",
-    "invalid_email": "Invalid email address.",
-    "weak_password": "Password should be at least 6 characters.",
-    "have_account": "Already have an account?",
+    "success": "ଆକାଉଣ୍ଟ ସଫଳତାର ସହ ତିଆରି ହୋଇଛି!",
+    "failure": "ଆକାଉଣ୍ଟ ତିଆରି କରିପାରିଲା ନାହିଁ।",
+    "password_mismatch": "ପାସୱାର୍ଡଗୁଡ଼ିକ ମେଳ ଖାଉନାହିଁ।",
+    "email_in_use": "ଇମେଲ୍ ପୂର୍ବରୁ ବ୍ୟବହୃତ।",
+    "invalid_email": "ଅବୈଧ ଇମେଲ୍ ଠିକଣା।",
+    "weak_password": "ପାସୱାର୍ଡ ଅତି କମରେ 6 ଅକ୍ଷରର ହେବା ଉଚିତ।",
+    "have_account": "ପୂର୍ବରୁ ଏକ ଖାତା ଅଛି କି?",
     "sign_in": "ସାଇନ୍ ଇନ୍",
-    "secure_account": "This is a secure government portal. By registering, you agree to comply with data protection regulations and official usage policies."
+    "secure_account": "ଏହା ଏକ ସୁରକ୍ଷିତ ସରକାରୀ ପୋର୍ଟାଲ। ପଞ୍ଜୀକରଣ କରି, ଆପଣ ତଥ୍ୟ ସୁରକ୍ଷା ନିୟମ ଏବଂ ସରକାରୀ ବ୍ୟବହାର ନୀତି ପାଳନ କରିବାକୁ ରାଜି ହେଉଛନ୍ତି।"
   },
   "dashboard": {
-    "title": "⚖️ Legal Dashboard",
-    "subtitle": "Access all your legal tools and services in one place",
+    "title": "⚖️ ଆଇନଗତ ଡ୍ୟାସବୋର୍ଡ",
+    "subtitle": "ଆପଣଙ୍କର ସମସ୍ତ ଆଇନଗତ ଉପକରଣ ଏବଂ ସେବାଗୁଡ଼ିକୁ ଗୋଟିଏ ସ୍ଥାନରେ ଆକ୍ସେସ୍ କରନ୍ତୁ",
     "welcome": "ସ୍ୱାଗତ, {{name}}!",
     "overview": "ସଂକ୍ଷିପ୍ତ ବିବରଣୀ",
     "agreements": "ଚୁକ୍ତିନାମା",
@@ -173,39 +173,39 @@
     "recent_activity": "ସାମ୍ପ୍ରତିକ କାର୍ଯ୍ୟକଳାପ",
     "features": {
       "agreement_summary": {
-        "title": "Agreement Summary",
-        "desc": "Quickly understand key points of contracts and agreements."
+        "title": "ଚୁକ୍ତିନାମା ସାରାଂଶ",
+        "desc": "ଚୁକ୍ତିନାମା ଏବଂ ଚୁକ୍ତିନାମାର ମୁଖ୍ୟ ବିନ୍ଦୁଗୁଡ଼ିକୁ ଶୀଘ୍ର ବୁଝନ୍ତୁ।"
       },
       "process_agreement": {
         "title": "ଚୁକ୍ତିନାମା ପ୍ରକ୍ରିୟା",
-        "desc": "Step-by-step guidance for drafting and executing agreements."
+        "desc": "ଚୁକ୍ତିନାମା ପ୍ରସ୍ତୁତ ଏବଂ କାର୍ଯ୍ୟକାରୀ କରିବା ପାଇଁ ପର୍ଯ୍ୟାୟକ୍ରମେ ମାର୍ଗଦର୍ଶନ।"
       },
       "case_summary": {
-        "title": "Case Summary",
-        "desc": "Search, review, and analyze landmark legal cases."
+        "title": "କେସ୍ ସାରାଂଶ",
+        "desc": "ଐତିହାସିକ ଆଇନଗତ ମାମଲାଗୁଡ଼ିକୁ ଖୋଜନ୍ତୁ, ସମୀକ୍ଷା କରନ୍ତୁ ଏବଂ ବିଶ୍ଳେଷଣ କରନ୍ତୁ।"
       },
       "chatbot_assistant": {
-        "title": "Chatbot Assistant",
-        "desc": "Ask questions and get instant legal insights."
+        "title": "ଚାଟବଟ୍ ଆସିଷ୍ଟାଣ୍ଟ",
+        "desc": "ପ୍ରଶ୍ନ ପଚାରନ୍ତୁ ଏବଂ ତୁରନ୍ତ ଆଇନଗତ ଅନ୍ତର୍ଦୃଷ୍ଟି ପାଆନ୍ତୁ।"
       }
     }
   },
   "solutions": {
     "agreement_summary": {
-      "title": "Agreement Summary",
-      "desc": "Instantly grasp the main points, obligations, and risks in any contract or agreement."
+      "title": "ଚୁକ୍ତିନାମା ସାରାଂଶ",
+      "desc": "ଯେକୌଣସି ଚୁକ୍ତିନାମା କିମ୍ବା ଚୁକ୍ତିନାମାର ମୁଖ୍ୟ ବିନ୍ଦୁ, ଦାୟିତ୍ୱ ଏବଂ ବିପଦଗୁଡ଼ିକୁ ତୁରନ୍ତ ବୁଝନ୍ତୁ।"
     },
     "process_agreement": {
-      "title": "Process Agreement",
-      "desc": "Guided, step-by-step workflow for drafting, reviewing, and executing agreements with confidence."
+      "title": "ପ୍ରକ୍ରିୟା ଚୁକ୍ତିନାମା",
+      "desc": "ଆତ୍ମବିଶ୍ୱାସର ସହିତ ଚୁକ୍ତିନାମା ପ୍ରସ୍ତୁତ, ସମୀକ୍ଷା ଏବଂ କାର୍ଯ୍ୟକାରୀ କରିବା ପାଇଁ ମାର୍ଗଦର୍ଶିତ, ପର୍ଯ୍ୟାୟକ୍ରମେ କାର୍ଯ୍ୟପ୍ରଣାଳୀ।"
     },
     "case_summary": {
-      "title": "Case Summary",
-      "desc": "Effortlessly search, review, and analyze landmark legal cases for actionable insights."
+      "title": "କେସ୍ ସାରାଂଶ",
+      "desc": "କାର୍ଯ୍ୟକ୍ଷମ ଅନ୍ତର୍ଦୃଷ୍ଟି ପାଇଁ ଐତିହାସିକ ଆଇନଗତ ମାମଲାଗୁଡ଼ିକୁ ସହଜରେ ସନ୍ଧାନ, ସମୀକ୍ଷା ଏବଂ ବିଶ୍ଳେଷଣ କରନ୍ତୁ।"
     },
     "chatbot_assistant": {
-      "title": "Chatbot Assistant",
-      "desc": "Ask legal questions and receive instant, AI-powered guidance and explanations."
+      "title": "ଚାଟବଟ୍ ଆସିଷ୍ଟାଣ୍ଟ",
+      "desc": "ଆଇନଗତ ପ୍ରଶ୍ନ ପଚାରନ୍ତୁ ଏବଂ ତୁରନ୍ତ, AI-ଚାଳିତ ମାର୍ଗଦର୍ଶନ ଏବଂ ବ୍ୟାଖ୍ୟା ପାଆନ୍ତୁ।"
     }
   },
   "agreement": {
@@ -277,97 +277,97 @@
     "sanskrit": "ସଂସ୍କୃତ"
   },
   "roleSelection": {
-    "badge": "User Category Selection",
-    "title": "Choose Your Category",
-    "subtitle": "Select the option that best describes you to access personalized features and content.",
-    "show_examples": "Show Examples",
-    "hide_examples": "Hide Examples",
-    "continue_as": "Continue as {{role}}",
-    "help_text": "Not sure which role fits you best? Each role comes with tailored features and content. You can always change your selection later in your profile settings.",
-    "help_link_text": "Need help choosing? Learn more about each role →",
+    "badge": "ଉପଯୋଗକର୍ତ୍ତା ବର୍ଗ ଚୟନ",
+    "title": "ଆପଣଙ୍କର ବର୍ଗ ବାଛନ୍ତୁ",
+    "subtitle": "ବ୍ୟକ୍ତିଗତ ବୈଶିଷ୍ଟ୍ୟ ଏବଂ ବିଷୟବସ୍ତୁକୁ ପ୍ରବେଶ କରିବା ପାଇଁ ଆପଣଙ୍କୁ ସର୍ବୋତ୍ତମ ଭାବରେ ବର୍ଣ୍ଣନା କରୁଥିବା ବିକଳ୍ପକୁ ଚୟନ କରନ୍ତୁ।",
+    "show_examples": "ଉଦାହରଣ ଦେଖାନ୍ତୁ",
+    "hide_examples": "ଉଦାହରଣଗୁଡ଼ିକୁ ଲୁଚାନ୍ତୁ",
+    "continue_as": "{{role}}ଭାବରେ ଜାରି ରଖନ୍ତୁ",
+    "help_text": "କେଉଁ ଭୂମିକା ଆପଣଙ୍କ ପାଇଁ ସବୁଠାରୁ ଭଲ ଫିଟ୍ ହେବ ତାହା ନିଶ୍ଚିତ ନୁହଁନ୍ତି କି? ପ୍ରତ୍ୟେକ ଭୂମିକା ଉପଯୁକ୍ତ ବୈଶିଷ୍ଟ୍ୟ ଏବଂ ବିଷୟବସ୍ତୁ ସହିତ ଆସିଥାଏ। ଆପଣ ଆପଣଙ୍କ ପ୍ରୋଫାଇଲ୍ ସେଟିଂସରେ ପରେ ସର୍ବଦା ଆପଣଙ୍କର ଚୟନ ପରିବର୍ତ୍ତନ କରିପାରିବେ।",
+    "help_link_text": "ବାଛିବାରେ ସାହାଯ୍ୟ ଦରକାର କି? ପ୍ରତ୍ୟେକ ଭୂମିକା ବିଷୟରେ ଅଧିକ ଜାଣନ୍ତୁ →",
     "roles": {
       "student": {
-        "title": "Student",
-        "description": "Access educational resources and tools tailored for your learning journey.",
+        "title": "ଛାତ୍ର",
+        "description": "ଆପଣଙ୍କ ଶିକ୍ଷଣ ଯାତ୍ରା ପାଇଁ ଉପଯୁକ୍ତ ଶିକ୍ଷା ସମ୍ବଳ ଏବଂ ଉପକରଣଗୁଡ଼ିକୁ ପ୍ରବେଶ କରନ୍ତୁ।",
         "examples": [
-          "Internship Agreement",
-          "Offer Letter / Employment Contract",
-          "Freelance Project Contract",
-          "NDA (Non-Disclosure Agreement)"
+          "ଇଣ୍ଟର୍ନସିପ୍ ଚୁକ୍ତିନାମା",
+          "ପ୍ରସ୍ତାବ ପତ୍ର / ନିଯୁକ୍ତି ଚୁକ୍ତିନାମା",
+          "ଫ୍ରିଲାନ୍ସ ପ୍ରୋଜେକ୍ଟ ଚୁକ୍ତିନାମା",
+          "NDA (ପ୍ରକାଶନ-ବିହୀନ ଚୁକ୍ତିନାମା)"
         ]
       },
       "business": {
-        "title": "Business",
-        "description": "Utilize powerful features to grow and manage your business effectively.",
+        "title": "ବ୍ୟବସାୟ",
+        "description": "ଆପଣଙ୍କ ବ୍ୟବସାୟକୁ ପ୍ରଭାବଶାଳୀ ଭାବରେ ବୃଦ୍ଧି ଏବଂ ପରିଚାଳନା କରିବା ପାଇଁ ଶକ୍ତିଶାଳୀ ବୈଶିଷ୍ଟ୍ୟଗୁଡ଼ିକର ବ୍ୟବହାର କରନ୍ତୁ।",
         "examples": [
-          "MoA / LLP Agreement",
-          "Vendor / Client Contract",
-          "Employment Agreement",
-          "Service Agreement",
-          "IP Assignment Agreement"
+          "MoA / LLP ଚୁକ୍ତିନାମା",
+          "ବିକ୍ରେତା / କ୍ଲାଏଣ୍ଟ ଚୁକ୍ତି",
+          "ନିଯୁକ୍ତି ଚୁକ୍ତିନାମା",
+          "ସେବା ଚୁକ୍ତିନାମା",
+          "IP ଆସାଇନମେଣ୍ଟ ଚୁକ୍ତିନାମା"
         ]
       },
       "citizen": {
-        "title": "Citizen",
-        "description": "Engage with your community and access public services with ease.",
+        "title": "ନାଗରିକ",
+        "description": "ଆପଣଙ୍କ ସମ୍ପ୍ରଦାୟ ସହିତ ଜଡ଼ିତ ହୁଅନ୍ତୁ ଏବଂ ସହଜରେ ସାର୍ବଜନୀନ ସେବାଗୁଡ଼ିକ ପ୍ରାପ୍ତ କରନ୍ତୁ।",
         "examples": [
-          "Rental / Lease Agreement",
-          "Loan Agreement",
-          "Sale Agreement (Property/Vehicle)",
-          "Will / Inheritance Agreement",
-          "Power of Attorney"
+          "ଭଡା / ଲିଜ୍ ଚୁକ୍ତିନାମା",
+          "ଋଣ ଚୁକ୍ତିନାମା",
+          "ବିକ୍ରୟ ଚୁକ୍ତିନାମା (ସମ୍ପତ୍ତି/ଯାନବାହନ)",
+          "ଇଚ୍ଛାପତ୍ର / ଉତ୍ତରାଧିକାର ଚୁକ୍ତିନାମା",
+          "ପାୱାର ଅଫ୍ ଆଟର୍ଣ୍ଣି"
         ]
       }
     }
   },
   "summaryPage": {
     "targetGroupLabels": {
-      "citizen": "Citizen Document Summary",
-      "student": "Student / Young Professional Summary",
-      "business_owner": "Small Business Owner Summary"
+      "citizen": "ନାଗରିକ ଡକ୍ୟୁମେଣ୍ଟ ସାରାଂଶ",
+      "student": "ଛାତ୍ର / ଯୁବ ବୃତ୍ତିଗତ ସାରାଂଶ",
+      "business_owner": "ଛୋଟ ବ୍ୟବସାୟ ମାଲିକଙ୍କ ସାରାଂଶ"
     },
     "header": {
-      "subtitle": "Upload a legal document to get a clear, AI-powered summary tailored for you.",
-      "powered_by": "Powered by"
+      "subtitle": "ଆପଣଙ୍କ ପାଇଁ ପ୍ରସ୍ତୁତ ଏକ ସ୍ପଷ୍ଟ, AI-ଚାଳିତ ସାରାଂଶ ପାଇବା ପାଇଁ ଏକ ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ।",
+      "powered_by": "ଦ୍ଵାରା ପରିଚାଳିତ"
     },
     "upload": {
-      "placeholder": "Drag & drop or click to upload a document",
-      "supported_formats": "Only PDF, DOC, and DOCX file formats are supported.",
+      "placeholder": "ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ କରିବାକୁ ଡ୍ରାଗ୍ ଏବଂ ଡ୍ରପ୍ କିମ୍ବା କ୍ଲିକ୍ କରନ୍ତୁ",
+      "supported_formats": "କେବଳ PDF, DOC, ଏବଂ DOCX ଫାଇଲ୍ ଫର୍ମାଟ୍ ସମର୍ଥିତ।",
       "button": "ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ"
     },
     "examples": {
-      "title": "Example documents you can upload:",
+      "title": "ଆପଣ ଅପଲୋଡ୍ କରିପାରୁଥିବା ଡକ୍ୟୁମେଣ୍ଟଗୁଡ଼ିକର ଉଦାହରଣ:",
       "citizen": [
-        "Rental/Lease Agreement",
-        "Loan Agreement",
-        "Sale Agreement (Property/Vehicle)",
-        "Will/Inheritance Agreement",
-        "Power of Attorney"
+        "ଭଡା/ଲିଜ୍ ଚୁକ୍ତିନାମା",
+        "ଋଣ ଚୁକ୍ତିନାମା",
+        "ବିକ୍ରୟ ଚୁକ୍ତିନାମା (ସମ୍ପତ୍ତି/ଯାନବାହନ)",
+        "ଇଚ୍ଛାପତ୍ର/ଉତ୍ପତ୍ତି ଚୁକ୍ତିନାମା",
+        "ପାୱାର ଅଫ୍ ଆଟର୍ଣ୍ଣି"
       ],
       "student": [
-        "Internship Agreement",
-        "Offer Letter / Employment Contract",
-        "Freelance Project Contract",
-        "NDA (Non-Disclosure Agreement)"
+        "ଇଣ୍ଟର୍ନସିପ୍ ଚୁକ୍ତିନାମା",
+        "ପ୍ରସ୍ତାବ ପତ୍ର / ନିଯୁକ୍ତି ଚୁକ୍ତିନାମା",
+        "ଫ୍ରିଲାନ୍ସ ପ୍ରୋଜେକ୍ଟ ଚୁକ୍ତିନାମା",
+        "NDA (ପ୍ରକାଶନ-ବିହୀନ ଚୁକ୍ତିନାମା)"
       ],
       "business_owner": [
-        "MoA / LLP Agreement",
-        "Vendor / Client Contract",
-        "Employment Agreement",
-        "Service Agreement",
-        "IP Assignment Agreement"
+        "MoA / LLP ଚୁକ୍ତିନାମା",
+        "ବିକ୍ରେତା / କ୍ଲାଏଣ୍ଟ ଚୁକ୍ତି",
+        "ନିଯୁକ୍ତି ଚୁକ୍ତିନାମା",
+        "ସେବା ଚୁକ୍ତିନାମା",
+        "IP ଆସାଇନମେଣ୍ଟ ଚୁକ୍ତିନାମା"
       ]
     },
-    "reupload": "Re-upload Document",
-    "loader": "Analyzing your document... Please wait.",
-    "warning_no_file": "Please upload a document to see the summary.",
+    "reupload": "ଡକ୍ୟୁମେଣ୍ଟ ପୁନଃ-ଅପଲୋଡ୍ କରନ୍ତୁ",
+    "loader": "ଆପଣଙ୍କ ଡକ୍ୟୁମେଣ୍ଟର ବିଶ୍ଳେଷଣ କରାଯାଉଛି... ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ।",
+    "warning_no_file": "ସାରାଂଶ ଦେଖିବା ପାଇଁ ଦୟାକରି ଏକ ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ।",
     "actions": {
       "download_pdf": "PDF ଡାଉନଲୋଡ୍ କରନ୍ତୁ",
-      "share": "Share",
-      "ask_agent": "Ask with Agent",
-      "pdf_unavailable": "PDF export is only available for Citizen and Business Owner summaries.",
-      "share_title": "Know Your Terms - Summary",
-      "share_text": "Here’s the contract summary I generated using Know Your Terms."
+      "share": "ସେୟାର୍‍ କରନ୍ତୁ",
+      "ask_agent": "ଏଜେଣ୍ଟଙ୍କ ସହିତ ପଚାରନ୍ତୁ",
+      "pdf_unavailable": "PDF ଏକ୍ସପୋର୍ଟ କେବଳ ନାଗରିକ ଏବଂ ବ୍ୟବସାୟ ମାଲିକ ସାରାଂଶ ପାଇଁ ଉପଲବ୍ଧ।",
+      "share_title": "ଆପଣଙ୍କର ସର୍ତ୍ତାବଳୀ ଜାଣନ୍ତୁ - ସାରାଂଶ",
+      "share_text": "\"ତୁମର ସର୍ତ୍ତାବଳୀ ଜାଣନ୍ତୁ\" ବ୍ୟବହାର କରି ମୁଁ ଯେଉଁ ଚୁକ୍ତିନାମା ସାରାଂଶ ସୃଷ୍ଟି କରିଛି ତାହା ଏଠାରେ ଅଛି।"
     }
   }
 }
