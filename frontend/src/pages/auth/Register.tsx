@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../utils/firebase';
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,6 +14,7 @@ const Register: React.FC = () => {
  
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -39,7 +41,7 @@ const Register: React.FC = () => {
 
 
     if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
+      newErrors.confirmPassword = t('register.password_mismatch');
     }
 
     setErrors(newErrors);
@@ -98,20 +100,16 @@ const Register: React.FC = () => {
         {/* Left: Illustration/Brand */}
         <div className="hidden md:flex flex-col justify-center items-center w-1/2 bg-[#e5e7eb] p-10">
           <img src="/logo.png" alt="Know Your Terms Logo" className="h-36 w-36 object-contain mb-6" />
-          <h2 className="text-3xl font-bold text-black mb-2 text-center">Create Your Account</h2>
-          <p className="text-lg text-gray-700 text-center max-w-xs">
-            Register to access AI-powered legal document analysis and more.
-          </p>
+          <h2 className="text-3xl font-bold text-black mb-2 text-center">{t('register.title')}</h2>
+          <p className="text-lg text-gray-700 text-center max-w-xs">{t('register.subtitle')}</p>
           <img src={signup} alt="Legal Illustration" className="mt-8 w-40" />
         </div>
         {/* Right: Register Form */}
         <div className="w-full md:w-1/2 bg-[#f9fafb] p-8 md:p-6 flex flex-col justify-center border-l border-[#e0e3ef]">
           <div className="flex flex-col items-center mb-6">
             <img src="https://www.svgrepo.com/show/499964/law-legal-justice-10.svg" alt="Legal Platform Logo" className="h-14 w-14 object-contain md:hidden mb-4" />
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-2">Sign up Know your terms</h2>
-            <p className="text-gray-700 text-sm">
-              Please sign up for your account
-            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-2">{t('register.title')}</h2>
+            <p className="text-gray-700 text-sm">{t('register.subtitle')}</p>
           </div>
           <form className="space-y-6" onSubmit={handleSubmit}>
             {errors.general && (
@@ -279,21 +277,18 @@ const Register: React.FC = () => {
             </Button>
             <div className="text-center">
               <p className="text-sm text-gray-700">
-                Already have an account?{' '}
+                {t('register.have_account')}{' '}
                 <Link
                   to="/login"
                   className="font-bold text-black hover:underline"
                 >
-                  Sign in here
+                  {t('register.sign_in')}
                 </Link>
               </p>
             </div>
             {/* Government Disclaimer */}
             <div className="mt-6 pt-4 border-t border-[#e0e3ef]">
-              <p className="text-xs text-gray-600 text-center">
-                This is a secure government portal. By registering, you agree to comply with 
-                data protection regulations and official usage policies.
-              </p>
+              <p className="text-xs text-gray-600 text-center">{t('register.secure_account')}</p>
             </div>
           </form>
         </div>

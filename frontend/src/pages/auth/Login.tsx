@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 import {
@@ -16,6 +17,7 @@ import { useAppDispatch } from "../../hooks/redux";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -144,11 +146,10 @@ const Login: React.FC = () => {
             className="h-36 w-36 object-contain mb-6"
           />
           <h2 className="text-3xl font-bold text-black mb-2 text-center">
-            Welcome Back!
+            {t("login.welcome_title")}
           </h2>
           <p className="text-lg text-gray-700 text-center max-w-xs">
-            Login to your account and simplify your legal journey with
-            AI-powered document analysis.
+            {t("login.welcome_left_desc")}
           </p>
           <img src={login_svg} alt="Legal Illustration" className="mt-8 w-40" />
         </div>
@@ -157,10 +158,10 @@ const Login: React.FC = () => {
         <div className="w-full md:w-1/2 bg-[#f9fafb] p-8 md:p-6 flex flex-col justify-center border-l border-[#e0e3ef]">
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold text-black mb-1">
-              Welcome Back!
+              {t("login.welcome_title")}
             </h2>
             <p className="text-gray-700 text-sm">
-              Please login to your account
+              {t("login.welcome_right_subtitle")}
             </p>
           </div>
 
@@ -185,7 +186,7 @@ const Login: React.FC = () => {
 
           <div className="flex items-center my-4">
             <div className="flex-grow h-px bg-gray-200"></div>
-            <span className="mx-2 text-gray-400 text-sm">Or Login with</span>
+            <span className="mx-2 text-gray-400 text-sm">{t("login.or_login_with")}</span>
             <div className="flex-grow h-px bg-gray-200"></div>
           </div>
 
@@ -216,14 +217,14 @@ const Login: React.FC = () => {
               <p className="text-sm text-orange-600">{errors.general}</p>
             )}
             <div className="flex items-center justify-between mt-2">
-              <label className="flex items-center text-sm text-black">
+                <label className="flex items-center text-sm text-black">
                 <input
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
                   className="h-4 w-4 text-[#CDA047] focus:ring-[#CDA047] border-[#e6e1d5]"
                 />
-                <span className="ml-2">Remember me</span>
+                <span className="ml-2">{t("login.remember_me")}</span>
               </label>
               {/* <Link
                 to="/forgot-password"
@@ -234,15 +235,15 @@ const Login: React.FC = () => {
             </div>
 
             <Button type="submit" className="w-full bg-gradient-to-br from-[#e5e7eb] via-[#f3f4f6] to-[#f9fafb] text-[#1a237e] font-bold text-lg rounded-full shadow-lg transition border border-[#b1b4b6] hover:bg-[#e0e7ef]" size="lg" loading={loading}>
-              Login
+              {t("auth.sign_in")}
             </Button>
             <p className="text-center text-sm text-gray-700 mt-4">
-              Don't have an account?{" "}
+              {t("login.dont_have_account")} {" "}
               <Link
                 to="/register"
                 className="font-bold text-black hover:underline"
               >
-                Create one
+                {t("login.create_one")}
               </Link>
             </p>
           </form>

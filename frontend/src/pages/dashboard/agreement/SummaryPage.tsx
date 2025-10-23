@@ -33,6 +33,7 @@ import { agreementSummaryAsync } from "../../../store/agreementSlice";
 import { toast } from "react-toastify";
 import Button from "../../../components/common/Button";
 import { generateStudentPDF } from "../../../components/pdf/studentPdf";
+import { useTranslation } from 'react-i18next';
 interface CitizenOutput {
   title: string;
   about: string;
@@ -64,10 +65,11 @@ export default function SummaryPage({ targetGroup }: Props) {
     const [loading, setLoading] = useState(false);
     const [showUpload, setShowUpload] = useState(true);
     const { user } = useAppSelector((state) => state.auth);
+    const { t } = useTranslation();
     const targetGroupLabel: Record<Props["targetGroup"], string> = {
-        citizen: "Citizen Document Summary",
-        student: "Student / Young Professional Summary",
-        business_owner: "Small Business Owner Summary",
+        citizen: t('summaryPage.targetGroupLabels.citizen'),
+        student: t('summaryPage.targetGroupLabels.student'),
+        business_owner: t('summaryPage.targetGroupLabels.business_owner'),
     };
 
     const language = "en";
@@ -172,10 +174,10 @@ export default function SummaryPage({ targetGroup }: Props) {
                     📄 {targetGroupLabel[targetGroup]}
                 </h1>
                 <p className="text-gray-800 text-lg mt-2">
-                    Upload a legal document to get a clear, AI-powered summary tailored for you.
+                    {t('summaryPage.header.subtitle')}
                 </p>
                 <p className="text-sm text-gray-500 mt-1">
-                    Powered by <span className="font-semibold text-[#F6A507]">Know Your Terms</span>
+                    {t('summaryPage.header.powered_by')} <span className="font-semibold text-[#F6A507]">Know Your Terms</span>
                 </p>
                 <div className="mt-4 w-16 border-b-2 border-[#CDA047] mx-auto"></div>
             </header>
@@ -188,10 +190,10 @@ export default function SummaryPage({ targetGroup }: Props) {
                         <div className="flex flex-col items-center justify-center p-10">
                             <Upload className="w-10 h-10 text-gray-500 mb-4" />
                             <p className="text-gray-700 mb-2">
-                                {file ? file.name : "Drag & drop or click to upload a document"}
+                                {file ? file.name : t('summaryPage.upload.placeholder')}
                             </p>
                             <p className="text-gray-700 mb-2">
-                                Only PDF, DOC, and DOCX file formats are supported.
+                                {t('summaryPage.upload.supported_formats')}
                             </p>
                             <input
                                 type="file"
@@ -204,38 +206,33 @@ export default function SummaryPage({ targetGroup }: Props) {
                                 htmlFor="file-upload"
                                 className="cursor-pointer px-4 py-2 mt-2 rounded-md bg-gradient-to-br from-[#e5e7eb] via-[#f3f4f6] to-[#f9fafb] text-gray-800 hover:bg-[#e0e7ef] focus:ring-[#b1b4b6] border border-[#b1b4b6] hover:from-[#e0e7ef] hover:via-[#f3f4f6] hover:to-[#f9fafb]"
                             >
-                                Upload Document
+                                {t('summaryPage.upload.button')}
                             </label>
                         </div>
                     </div>
 
                     {/* Example Uploaded Document based on role */}
                     <div className="max-w-6xl mx-auto mt-4">
-                        <p className="text-gray-700 font-medium mb-1">Example documents you can upload:</p>
+                        <p className="text-gray-700 font-medium mb-1">{t('summaryPage.examples.title')}</p>
                         {targetGroup === "citizen" && (
                             <ul className="text-gray-600 text-sm list-disc pl-5">
-                                <li>Rental/Lease Agreement</li>
-                                <li>Loan Agreement</li>
-                                <li>Sale Agreement (Property/Vehicle)</li>
-                                <li>Will/Inheritance Agreement</li>
-                                <li>Power of Attorney</li>
+                                {((t('summaryPage.examples.citizen', { returnObjects: true }) as unknown) as string[]).map((ex: string, i: number) => (
+                                    <li key={i}>{ex}</li>
+                                ))}
                             </ul>
                         )}
                         {targetGroup === "student" && (
                             <ul className="text-gray-600 text-sm list-disc pl-5">
-                                <li>Internship Agreement</li>
-                                <li>Offer Letter / Employment Contract</li>
-                                <li>Freelance Project Contract</li>
-                                <li>NDA (Non-Disclosure Agreement)</li>
+                                {((t('summaryPage.examples.student', { returnObjects: true }) as unknown) as string[]).map((ex: string, i: number) => (
+                                    <li key={i}>{ex}</li>
+                                ))}
                             </ul>
                         )}
                         {targetGroup === "business_owner" && (
                             <ul className="text-gray-600 text-sm list-disc pl-5">
-                                <li>MoA / LLP Agreement</li>
-                                <li>Vendor / Client Contract</li>
-                                <li>Employment Agreement</li>
-                                <li>Service Agreement</li>
-                                <li>IP Assignment Agreement</li>
+                                {((t('summaryPage.examples.business_owner', { returnObjects: true }) as unknown) as string[]).map((ex: string, i: number) => (
+                                    <li key={i}>{ex}</li>
+                                ))}
                             </ul>
                         )}
                     </div>
@@ -251,7 +248,7 @@ export default function SummaryPage({ targetGroup }: Props) {
                             setFile(null);
                         }}
                     >
-                        Re-upload Document
+                        {t('summaryPage.reupload')}
                     </Button>
                 </div>
             )}
@@ -263,7 +260,7 @@ export default function SummaryPage({ targetGroup }: Props) {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
                     </svg>
-                    <p className="text-gray-700 font-medium">Analyzing your document... Please wait.</p>
+                    <p className="text-gray-700 font-medium">{t('summaryPage.loader')}</p>
                 </div>
             )}
 
@@ -272,7 +269,7 @@ export default function SummaryPage({ targetGroup }: Props) {
                 <div className="flex max-w-6xl mx-auto items-center text-yellow-600 bg-yellow-50 p-3 rounded-lg shadow-sm">
                     <AlertCircle className="w-5 h-5 mr-2" />
                     <p className="text-sm">
-                        Please upload a document to see the summary.
+                        {t('summaryPage.warning_no_file')}
                     </p>
                 </div>
             )}
@@ -292,24 +289,22 @@ export default function SummaryPage({ targetGroup }: Props) {
                             } else if (summary.type === "student") {
                                 generateStudentPDF(summary);
                             } else {
-                                alert(
-                                    "PDF export is only available for Citizen and Business Owner summaries."
-                                );
+                                alert(t('summaryPage.actions.pdf_unavailable'));
                             }
                         }}
                         className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow transition-colors"
                     >
-                        Download PDF
+                        {t('summaryPage.actions.download_pdf')}
                     </button>
                     <button
                         onClick={() =>
                             navigator.share
-                                ? navigator.share({
-                                    title: "Know Your Terms - Summary",
-                                    text: "Here’s the contract summary I generated using Know Your Terms.",
-                                    url: window.location.href,
-                                })
-                                : alert("Sharing not supported on this browser.")
+                                    ? navigator.share({
+                                        title: t('summaryPage.actions.share_title'),
+                                        text: t('summaryPage.actions.share_text'),
+                                        url: window.location.href,
+                                    })
+                                    : alert(t('summaryPage.actions.share'))
                         }
                         className="border px-4 py-2 rounded-lg shadow hover:bg-gray-100 transition-colors"
                     >
@@ -321,7 +316,7 @@ export default function SummaryPage({ targetGroup }: Props) {
                         onClick={handleAskWithAgent}
                         className="border px-4 py-2 rounded-lg shadow hover:bg-gray-100 transition-colors"
                     >
-                        Asked with Agent
+                        {t('summaryPage.actions.ask_agent')}
                     </button>
                 </div>
             )}

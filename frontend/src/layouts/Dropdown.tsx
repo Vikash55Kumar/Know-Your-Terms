@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { t } from "i18next";
 
 const LanguageDropdown = ({ show, onEnter, onLeave, onChange }: {
     show: boolean;
@@ -21,107 +20,107 @@ const LanguageDropdown = ({ show, onEnter, onLeave, onChange }: {
           {/* All Indian languages from i18n */}
           <button onClick={() => onChange("en")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{("English")}</button>
+          >English</button>
           <button onClick={() => onChange("hi")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Hindi")}</button>
+          >Hindi</button>
           <button onClick={() => onChange("bn")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Bengali")}</button>
+          >Bengali</button>
           <button onClick={() => onChange("ta")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Tamil")}</button>
+          >Tamil</button>
           <button onClick={() => onChange("te")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Telugu")}</button>
+          >Telugu</button>
           <button onClick={() => onChange("mr")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Marathi")}</button>
+          >Marathi</button>
           <button onClick={() => onChange("gu")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Gujarati")}</button>
+          >Gujarati</button>
           <button onClick={() => onChange("kn")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Kannada")}</button>
+          >Kannada</button>
           <button onClick={() => onChange("ml")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Malayalam")}</button>
+          >Malayalam</button>
           <button onClick={() => onChange("pa")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Punjabi")}</button>
+          >Punjabi</button>
           <button onClick={() => onChange("or")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Odia")}</button>
+          >Odia</button>
           <button onClick={() => onChange("ur")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Urdu")}</button>
+          >Urdu</button>
           <button onClick={() => onChange("as")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Assamese")}</button>
+          >Assamese</button>
           <button onClick={() => onChange("mai")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Maithili")}</button>
+          >Maithili</button>
           <button onClick={() => onChange("sat")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Santali")}</button>
+          >Santali</button>
           <button onClick={() => onChange("ks")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Kashmiri")}</button>
+          >Kashmiri</button>
           <button onClick={() => onChange("ne")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Nepali")}</button>
+          >Nepali</button>
           <button onClick={() => onChange("kok")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Konkani")}</button>
+          >Konkani</button>
           <button onClick={() => onChange("sd")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Sindhi")}</button>
+          >Sindhi</button>
           <button onClick={() => onChange("doi")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Dogri")}</button>
+          >Dogri</button>
           <button onClick={() => onChange("mni")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Manipuri")}</button>
+          >Manipuri</button>
           <button onClick={() => onChange("brx")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Bodo")}</button>
+          >Bodo</button>
           <button onClick={() => onChange("sa")}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          >{t("Sanskrit")}</button>
+          >Sanskrit</button>
         </motion.div>
       )}
     </AnimatePresence>
 );
 
 
-const solutionsDropdown = [
+const SolutionsDropdown = [
   {
-    title: "Agreement Summary",
-    desc: "Instantly grasp the main points, obligations, and risks in any contract or agreement.",
+    titleKey: "solutions.agreement_summary.title",
+    descKey: "solutions.agreement_summary.desc",
     icon: "📄",
     href: "/dashboard/role-selection",
   },
   {
-    title: "Process Agreement",
-    desc: "Guided, step-by-step workflow for drafting, reviewing, and executing agreements with confidence.",
+    titleKey: "solutions.process_agreement.title",
+    descKey: "solutions.process_agreement.desc",
     icon: "📝",
     href: "/dashboard/process/summary",
   },
   {
-    title: "Case Summary",
-    desc: "Effortlessly search, review, and analyze landmark legal cases for actionable insights.",
+    titleKey: "solutions.case_summary.title",
+    descKey: "solutions.case_summary.desc",
     icon: "⚖️",
     href: "/dashboard/case/case-details",
   },
   {
-    title: "Chatbot Assistant",
-    desc: "Ask legal questions and receive instant, AI-powered guidance and explanations.",
+    titleKey: "solutions.chatbot_assistant.title",
+    descKey: "solutions.chatbot_assistant.desc",
     icon: "🤖",
     href: "/chatbot",
   },
 ];
 
-export { LanguageDropdown, solutionsDropdown };
+export { LanguageDropdown, SolutionsDropdown };
 
 
 
