@@ -4,11 +4,91 @@
     "home": "হোম",
     "about": "সম্পর্কে",
     "help": "সাহায্য",
+    "solutions": "Solutions",
     "dashboard": "ড্যাশবোর্ড",
     "login": "লগইন",
     "register": "নিবন্ধন",
     "logout": "লগআউট",
     "language": "ভাষা"
+  },
+  "home": {
+    "badge": "AI-Powered Legal Document Simplification",
+    "title": "Grammarly for Legal Documents",
+    "get_started": "Analyze My Document"
+  },
+  "landing": {
+    "features_title": "Key Features",
+    "how_it_works_title": "How It Works",
+    "powered_by_title": "Powered By",
+    "who_is_it_for_title": "Who Is It For?",
+    "cta_title": "Get Started Today",
+    "cta_subtitle": "Upload your first document and see the power of AI simplify the law for you.",
+    "try_demo": "Try Demo →",
+    "features": {
+      "agreement_summary": {
+        "title": "Agreement Summary",
+        "desc": "AI extracts and simplifies long agreements into clear bullet points."
+      },
+      "legal_chatbot": {
+        "title": "Legal Chatbot",
+        "desc": "Ask document-related questions and get instant, reliable answers."
+      },
+      "case_summary": {
+        "title": "Case Summary",
+        "desc": "Integrated with IndianKanoon API for quick case law insights."
+      },
+      "language_translation": {
+        "title": "Language Translation",
+        "desc": "Translate agreements into regional languages instantly."
+      },
+      "agreement_process_guides": {
+        "title": "Agreement Process Guides",
+        "desc": "Step-by-step instructions for creating or understanding agreements."
+      },
+      "template_creation": {
+        "title": "Template Creation",
+        "desc": "Ready-to-use templates for rent, job, loan, and business contracts."
+      },
+      "visual_video_summary": {
+        "title": "Visual/Video Summary",
+        "desc": "Explain agreements using AI-generated videos for better clarity."
+      },
+      "document_review": {
+        "title": "Document Review",
+        "desc": "Spot hidden clauses, risky terms, and missing essentials."
+      }
+    },
+    "how_it_works": {
+      "step1": {
+        "title": "আপলোড করুন",
+        "desc": "Upload your PDF, DOCX, or scanned agreement."
+      },
+      "step2": {
+        "title": "AI Processing",
+        "desc": "Our AI + Gemini extracts text, applies NLP, and summarizes in plain language."
+      },
+      "step3": {
+        "title": "Get Insights",
+        "desc": "Receive summary, risks, translations, or even a fresh document template."
+      }
+    },
+    "tech_stack": {
+      "description": "Built on modern AI and cloud technologies for speed, security, and scale.",
+      "google_gemini": "Google Gemini API",
+      "firebase_auth": "Firebase Authentication",
+      "firebase_db": "Firebase Database",
+      "google_translate": "Google Translate API",
+      "vertex_ai": "Vertex AI",
+      "indiankanoon": "IndianKanoon API"
+    },
+    "audience": {
+      "students": "Students",
+      "business_owners": "Business Owners",
+      "judges": "Judges",
+      "journalists": "Journalists",
+      "law_students": "Law Students",
+      "citizens": "Citizens"
+    }
   },
   "footer": {
     "contact_us": "আমাদের সাথে যোগাযোগ করুন",
@@ -58,14 +138,75 @@
     "sign_in": "লগ ইন",
     "sign_up": "নিবন্ধন করুন"
   },
+  "login": {
+    "welcome_title": "Welcome Back!",
+    "welcome_left_desc": "Login to your account and simplify your legal journey with AI-powered document analysis.",
+    "welcome_right_subtitle": "Please login to your account",
+    "or_login_with": "Or Login with",
+    "test_account_label": "Test Account:",
+    "remember_me": "Remember me",
+    "dont_have_account": "Don't have an account?",
+    "create_one": "Create one"
+  },
+  "register": {
+    "title": "Create an account",
+    "subtitle": "একটি নতুন অ্যাকাউন্ট নিবন্ধন করুন",
+    "success": "Account created successfully!",
+    "failure": "Failed to create account.",
+    "password_mismatch": "Passwords do not match",
+    "email_in_use": "Email is already in use.",
+    "invalid_email": "Invalid email address.",
+    "weak_password": "Password should be at least 6 characters.",
+    "have_account": "Already have an account?",
+    "sign_in": "লগ ইন",
+    "secure_account": "This is a secure government portal. By registering, you agree to comply with data protection regulations and official usage policies."
+  },
   "dashboard": {
+    "title": "⚖️ Legal Dashboard",
+    "subtitle": "Access all your legal tools and services in one place",
     "welcome": "স্বাগতম, {{name}}!",
     "overview": "সংক্ষিপ্ত বিবরণ",
     "agreements": "চুক্তি",
     "cases": "মামলা",
     "history": "ইতিহাস",
     "statistics": "পরিসংখ্যান",
-    "recent_activity": "সাম্প্রতিক কার্যকলাপ"
+    "recent_activity": "সাম্প্রতিক কার্যকলাপ",
+    "features": {
+      "agreement_summary": {
+        "title": "Agreement Summary",
+        "desc": "Quickly understand key points of contracts and agreements."
+      },
+      "process_agreement": {
+        "title": "চুক্তি প্রক্রিয়া",
+        "desc": "Step-by-step guidance for drafting and executing agreements."
+      },
+      "case_summary": {
+        "title": "Case Summary",
+        "desc": "Search, review, and analyze landmark legal cases."
+      },
+      "chatbot_assistant": {
+        "title": "Chatbot Assistant",
+        "desc": "Ask questions and get instant legal insights."
+      }
+    }
+  },
+  "solutions": {
+    "agreement_summary": {
+      "title": "Agreement Summary",
+      "desc": "Instantly grasp the main points, obligations, and risks in any contract or agreement."
+    },
+    "process_agreement": {
+      "title": "Process Agreement",
+      "desc": "Guided, step-by-step workflow for drafting, reviewing, and executing agreements with confidence."
+    },
+    "case_summary": {
+      "title": "Case Summary",
+      "desc": "Effortlessly search, review, and analyze landmark legal cases for actionable insights."
+    },
+    "chatbot_assistant": {
+      "title": "Chatbot Assistant",
+      "desc": "Ask legal questions and receive instant, AI-powered guidance and explanations."
+    }
   },
   "agreement": {
     "title": "চুক্তি",
@@ -134,5 +275,99 @@
     "sindhi": "সিন্ধি",
     "dogri": "ডোগরি",
     "sanskrit": "সংস্কৃত"
+  },
+  "roleSelection": {
+    "badge": "User Category Selection",
+    "title": "Choose Your Category",
+    "subtitle": "Select the option that best describes you to access personalized features and content.",
+    "show_examples": "Show Examples",
+    "hide_examples": "Hide Examples",
+    "continue_as": "Continue as {{role}}",
+    "help_text": "Not sure which role fits you best? Each role comes with tailored features and content. You can always change your selection later in your profile settings.",
+    "help_link_text": "Need help choosing? Learn more about each role →",
+    "roles": {
+      "student": {
+        "title": "Student",
+        "description": "Access educational resources and tools tailored for your learning journey.",
+        "examples": [
+          "Internship Agreement",
+          "Offer Letter / Employment Contract",
+          "Freelance Project Contract",
+          "NDA (Non-Disclosure Agreement)"
+        ]
+      },
+      "business": {
+        "title": "Business",
+        "description": "Utilize powerful features to grow and manage your business effectively.",
+        "examples": [
+          "MoA / LLP Agreement",
+          "Vendor / Client Contract",
+          "Employment Agreement",
+          "Service Agreement",
+          "IP Assignment Agreement"
+        ]
+      },
+      "citizen": {
+        "title": "Citizen",
+        "description": "Engage with your community and access public services with ease.",
+        "examples": [
+          "Rental / Lease Agreement",
+          "Loan Agreement",
+          "Sale Agreement (Property/Vehicle)",
+          "Will / Inheritance Agreement",
+          "Power of Attorney"
+        ]
+      }
+    }
+  },
+  "summaryPage": {
+    "targetGroupLabels": {
+      "citizen": "Citizen Document Summary",
+      "student": "Student / Young Professional Summary",
+      "business_owner": "Small Business Owner Summary"
+    },
+    "header": {
+      "subtitle": "Upload a legal document to get a clear, AI-powered summary tailored for you.",
+      "powered_by": "Powered by"
+    },
+    "upload": {
+      "placeholder": "Drag & drop or click to upload a document",
+      "supported_formats": "Only PDF, DOC, and DOCX file formats are supported.",
+      "button": "ডকুমেন্ট আপলোড করুন"
+    },
+    "examples": {
+      "title": "Example documents you can upload:",
+      "citizen": [
+        "Rental/Lease Agreement",
+        "Loan Agreement",
+        "Sale Agreement (Property/Vehicle)",
+        "Will/Inheritance Agreement",
+        "Power of Attorney"
+      ],
+      "student": [
+        "Internship Agreement",
+        "Offer Letter / Employment Contract",
+        "Freelance Project Contract",
+        "NDA (Non-Disclosure Agreement)"
+      ],
+      "business_owner": [
+        "MoA / LLP Agreement",
+        "Vendor / Client Contract",
+        "Employment Agreement",
+        "Service Agreement",
+        "IP Assignment Agreement"
+      ]
+    },
+    "reupload": "Re-upload Document",
+    "loader": "Analyzing your document... Please wait.",
+    "warning_no_file": "Please upload a document to see the summary.",
+    "actions": {
+      "download_pdf": "পিডিএফ ডাউনলোড করুন",
+      "share": "Share",
+      "ask_agent": "Ask with Agent",
+      "pdf_unavailable": "PDF export is only available for Citizen and Business Owner summaries.",
+      "share_title": "Know Your Terms - Summary",
+      "share_text": "Here’s the contract summary I generated using Know Your Terms."
+    }
   }
 }
