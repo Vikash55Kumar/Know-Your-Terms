@@ -4,58 +4,21 @@ import Card from "../../../components/common/Card";
 import Button from "../../../components/common/Button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
-const exampleAgreements: Record<string, string[]> = {
-  student: [
-    "Internship Agreement",
-    "Offer Letter / Employment Contract",
-    "Freelance Project Contract",
-    "NDA (Non-Disclosure Agreement)"
-  ],
-  business: [
-    "MoA / LLP Agreement",
-    "Vendor / Client Contract",
-    "Employment Agreement",
-    "Service Agreement",
-    "IP Assignment Agreement"
-  ],
-  citizen: [
-    "Rental / Lease Agreement",
-    "Loan Agreement",
-    "Sale Agreement (Property/Vehicle)",
-    "Will / Inheritance Agreement",
-    "Power of Attorney"
-  ],
-};
+// example agreements moved to translation strings
 
 const roles = [
-    {
-    id: "business",
-    title: "Business",
-    description:
-      "Utilize powerful features to grow and manage your business effectively.",
-    icon: <Building2 className="w-10 h-10" />,
-  },
-  {
-    id: "citizen",
-    title: "Citizen",
-    description:
-      "Engage with your community and access public services with ease.",
-    icon: <User className="w-10 h-10" />,
-  },
-  {
-    id: "student",
-    title: "Student",
-    description:
-      "Access educational resources and tools tailored for your learning journey.",
-    icon: <GraduationCap className="w-10 h-10" />,
-  }
+  { id: 'business', icon: <Building2 className="w-10 h-10" /> },
+  { id: 'citizen', icon: <User className="w-10 h-10" /> },
+  { id: 'student', icon: <GraduationCap className="w-10 h-10" /> },
 ];
 
 const RoleSelection = () => {
   // All examples open by default
   const [expandedRoles, setExpandedRoles] = useState<string[]>(roles.map(r => r.id));
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const handleSelect = (roleId: string) => {
     navigate(`/dashboard/agreement/summary?targetGroup=${roleId}`);
   };
@@ -77,20 +40,22 @@ const RoleSelection = () => {
       >
         <div className="mb-6">
           <div className="inline-block px-4 py-2 rounded-full border border-gray-200 text-gray-700 font-semibold text-xs tracking-wide uppercase shadow-sm bg-white">
-            User Category Selection
+            {t('roleSelection.badge')}
           </div>
         </div>
         <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
-          Choose Your Category
+          {t('roleSelection.title')}
         </h1>
         <p className="text-lg font-body text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          Select the option that best describes you to access personalized features and content.
+          {t('roleSelection.subtitle')}
         </p>
       </motion.div>
 
       {/* Role Selection */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
-        {roles.map((role, index) => (
+        {roles.map((role, index) => {
+          const examples = t(`roleSelection.roles.${role.id}.examples`, { returnObjects: true }) as string[];
+          return (
           <motion.div
             key={role.id}
             initial={{ opacity: 0, y: 40 }}
@@ -103,20 +68,20 @@ const RoleSelection = () => {
                 <div className="p-6 rounded-full border shadow-sm bg-white">
                   {role.icon}
                 </div>
-                <h2 className="text-xl font-semibold text-gray-900">{role.title}</h2>
-                <p className="text-sm text-gray-600">{role.description}</p>
+                <h2 className="text-xl font-semibold text-gray-900">{t(`roleSelection.roles.${role.id}.title`)}</h2>
+                <p className="text-sm text-gray-600">{t(`roleSelection.roles.${role.id}.description`)}</p>
 
                 {/* Example agreements preview */}
                 <span
                   className="w-full text-left text-gray-700 py-2 cursor-pointer select-none"
                   onClick={() => handleToggle(role.id)}
                 >
-                  {expandedRoles.includes(role.id) ? "Hide Examples" : "Show Examples"} {expandedRoles.includes(role.id) ? <ChevronUp className="w-4 h-4 inline" /> : <ChevronDown className="w-4 h-4 inline" />}
+                  {expandedRoles.includes(role.id) ? t('roleSelection.hide_examples') : t('roleSelection.show_examples')} {expandedRoles.includes(role.id) ? <ChevronUp className="w-4 h-4 inline" /> : <ChevronDown className="w-4 h-4 inline" />}
                 </span>
 
                 {expandedRoles.includes(role.id) && (
                   <ul className="text-left text-sm text-gray-700 w-full list-disc pl-5 border border-gray-100 rounded bg-gray-50 py-2 mt-1">
-                    {exampleAgreements[role.id].map((doc, i) => (
+                    {examples.map((doc: string, i: number) => (
                       <li key={i}>{doc}</li>
                     ))}
                   </ul>
@@ -126,12 +91,13 @@ const RoleSelection = () => {
                   className="mt-2 w-full"
                   onClick={() => handleSelect(role.id)}
                 >
-                  Continue as {role.title}
+                  {t('roleSelection.continue_as', { role: t(`roleSelection.roles.${role.id}.title`) })}
                 </Button>
               </div>
             </Card>
           </motion.div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Additional Help Section */}
@@ -142,15 +108,14 @@ const RoleSelection = () => {
         className="mt-16 text-center max-w-2xl"
       >
         <p className="text-gray-600 font-body text-sm leading-relaxed">
-          Not sure which role fits you best? Each role comes with tailored features and content. 
-          You can always change your selection later in your profile settings.
+          {t('roleSelection.help_text')}
         </p>
         <div className="mt-6">
           <a 
             href="/help" 
             className="text-gray-700 font-semibold hover:text-gray-900 transition-colors duration-300 text-sm border-b border-gray-300 hover:border-gray-700 pb-1"
           >
-            Need help choosing? Learn more about each role →
+            {t('roleSelection.help_link_text')}
           </a>
         </div>
       </motion.div>
