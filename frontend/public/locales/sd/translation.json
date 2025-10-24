@@ -90,46 +90,46 @@
       "citizens": "شهري"
     },
     "audience_desc": {
-      "students": "Learn legal basics and understand agreements easily.",
-      "business_owners": "Simplify contracts and reduce legal risks.",
-      "judges": "Quickly review and summarize case documents.",
-      "journalists": "Analyze legal docs for accurate reporting.",
-      "law_students": "Study real agreements and case summaries.",
-      "citizens": "Understand your rights in plain language."
+      "students": "قانوني بنيادي ڳالهيون سکو ۽ معاهدن کي آساني سان سمجهو.",
+      "business_owners": "معاهدن کي آسان بڻايو ۽ قانوني خطرن کي گھٽايو.",
+      "judges": "ڪيس جي دستاويزن جو جلدي جائزو وٺو ۽ خلاصو ڪريو.",
+      "journalists": "صحيح رپورٽنگ لاءِ قانوني دستاويزن جو تجزيو ڪريو.",
+      "law_students": "حقيقي معاهدن ۽ ڪيس جي خلاصن جو مطالعو ڪريو.",
+      "citizens": "پنهنجن حقن کي سادي ٻولي ۾ سمجهو."
     }
   },
   "footer": {
     "brand": {
-      "title": "Know Your Terms",
-      "subtitle": "AI Legal Document Platform",
-      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+      "title": "پنهنجا شرط ڄاڻو",
+      "subtitle": "AI قانوني دستاويز پليٽ فارم",
+      "description": "قانوني دستاويزن کي آسان بڻائڻ - معاهدا، معاهدا، ۽ وڌيڪ - سڀني لاءِ واضح، قابل عمل هدايت لاءِ."
     },
-    "quick_links_title": "Quick Links",
+    "quick_links_title": "تڪڙا لنڪس",
     "quick_links": {
       "home": "گھر",
       "about": "بابت",
-      "help": "User Guide",
+      "help": "استعمال ڪندڙ جي ھدايت",
       "dashboard": "ڊيش بورڊ",
-      "contact": "Contact"
+      "contact": "رابطو"
     },
-    "features_title": "Features",
+    "features_title": "خاصيتون",
     "features": [
-      "AI Summarization",
-      "Agreement Templates",
-      "Case Law Insights",
+      "AI خلاصو",
+      "معاهدي جا نمونا",
+      "ڪيس جي قانون جي بصيرت",
       "دستاويز جو جائزو",
-      "Chatbot Support"
+      "چيٽ بوٽ سپورٽ"
     ],
     "contact": {
-      "title": "Contact"
+      "title": "رابطو"
     },
     "bottom": {
-      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
-      "last_updated": "Last Updated: August 2025",
-      "version": "Version 1.0",
-      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
-      "powered_by": "Powered by AI",
-      "secure_private": "Secure & Private"
+      "copyright": "© {{year}} پنهنجيون شرطون ڄاڻو. سڀ حق محفوظ آهن.",
+      "last_updated": "آخري اپڊيٽ: آگسٽ 2025",
+      "version": "نسخو 1.0",
+      "best_viewed": "ڪروم، فائر فاڪس، سفاري ۾ بهترين ڏٺو ويندو آهي",
+      "powered_by": "AI پاران طاقتور",
+      "secure_private": "محفوظ ۽ خانگي"
     },
     "contact_us": "اسان سان رابطو ڪريو",
     "privacy_policy": "رازداري پاليسي",
@@ -262,20 +262,20 @@
   },
   "agreementProcess": {
     "header": {
-      "title": "Agreement / Contract Process",
-      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "title": "معاهدو / معاهدي جو عمل",
+      "subtitle": "معاهدن جي مسودي، جائزو وٺڻ ۽ عمل درآمد لاءِ مرحليوار عمل",
       "powered_by": "پاران طاقتور"
     },
     "search": {
-      "placeholder": "Search agreement type...",
-      "view_button": "View Process",
-      "query_required": "Query is required.",
-      "login_required": "You must be logged in to upload and summarize a document.",
-      "example_label": "Example:",
-      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+      "placeholder": "ڳولا جي معاهدي جو قسم...",
+      "view_button": "عمل ڏسو",
+      "query_required": "سوال گهربل آهي.",
+      "login_required": "دستاويز اپلوڊ ڪرڻ ۽ خلاصو ڪرڻ لاءِ توهان کي لاگ ان ٿيڻ گهرجي.",
+      "example_label": "مثال:",
+      "examples": "گھر جي قرض جو معاهدو، شادي جو معاهدو، ڪرائي جو معاهدو، ملازمت جو معاهدو"
     },
     "spinner": {
-      "loading": "Loading process details..."
+      "loading": "عمل جي تفصيل لوڊ ٿي رهي آهي..."
     }
   },
   "case": {
@@ -286,22 +286,22 @@
     "status": "اسٽيٽس",
     "agent": "ايجنٽ",
     "history": "ڪيس جي تاريخ",
-    "explorer_title": "Case Explorer",
-    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
-    "powered_by_source": "IndianKanoon.org",
-    "search_placeholder": "Search by case title, citation, or keywords...",
+    "explorer_title": "ڪيس ايڪسپلورر",
+    "explorer_subtitle": "آساني سان تاريخي هندستاني قانوني ڪيسن کي ڳوليو ۽ جائزو وٺو.",
+    "powered_by_source": "انڊين ڪينون ڊاٽ آرگ",
+    "search_placeholder": "ڪيس جي عنوان، اقتباس، يا ڪي ورڊز ذريعي ڳولا ڪريو...",
     "search_button": "ڳولا",
     "spinner": {
-      "fetching_details": "Fetching Case Details...",
-      "fetching_summary": "Fetching Case Summary..."
+      "fetching_details": "ڪيس جي تفصيل حاصل ڪري رهيو آهي...",
+      "fetching_summary": "ڪيس جو خلاصو آڻي رهيو آهي..."
     },
-    "results_title": "Case Results",
-    "no_results": "No results yet. Try searching above.",
-    "view_summary": "View Summary",
-    "invalid_case_id": "Invalid case ID.",
+    "results_title": "ڪيس جا نتيجا",
+    "no_results": "اڃا تائين ڪو به نتيجو ناهي. مٿي ڳولا ڪرڻ جي ڪوشش ڪريو.",
+    "view_summary": "خلاصو ڏسو",
+    "invalid_case_id": "غلط ڪيس ID.",
     "errors": {
-      "search_failed": "Error fetching search results.",
-      "summary_failed": "Error fetching case summary."
+      "search_failed": "ڳولا جا نتيجا حاصل ڪرڻ ۾ غلطي.",
+      "summary_failed": "ڪيس جو خلاصو آڻڻ ۾ غلطي."
     }
   },
   "chat": {
@@ -311,15 +311,15 @@
     "sidebar_title": "چيٽ جي تاريخ",
     "prompt_toolbar": "لکڻ جا اشارا",
     "loading": "لوڊ ٿي رهيو آهي...",
-    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "greeting": "سلام! مان هڪ چيٽ بوٽ آهيان جيڪو هندستاني قانوني سوالن ۾ ماهر آهي. مان توهان جي ڪيئن مدد ڪري سگهان ٿو؟",
     "disclaimer": {
-      "title": "Disclaimer:",
-      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+      "title": "دستبرداري:",
+      "body": "مهيا ڪيل معلومات صرف عام ڄاڻ لاءِ آهي ۽ ان کي قانوني صلاح نه سمجهيو وڃي."
     },
-    "ask_placeholder": "Ask a question about Indian law...",
-    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
-    "api_error": "An error occurred. Please try again.",
-    "sources_label": "Sources:"
+    "ask_placeholder": "هندستاني قانون بابت سوال پڇو...",
+    "generation_error": "معاف ڪجو، مان جواب نه ڏئي سگهيس. مهرباني ڪري ٻيهر ڪوشش ڪريو.",
+    "api_error": "هڪ غلطي ٿي وئي. مهرباني ڪري ٻيهر ڪوشش ڪريو.",
+    "sources_label": "ذريعن:"
   },
   "notification": {
     "success": "ڪاميابي",
