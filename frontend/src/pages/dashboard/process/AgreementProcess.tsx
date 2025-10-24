@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import Button from "../../../components/common/Button";
 import { agreementProcessAsync } from "../../../store/agreementSlice";
 import { toast } from "react-toastify";
@@ -19,6 +20,7 @@ export default function AgreementProcess() {
     const [loading, setLoading] = useState(false);
     const [showDetails, setShowDetails] = useState<any>(false);
     const [query, setQuery] = useState("");
+    const { t } = useTranslation();
 
     const handleView = async () => {
         setLoading(true);
@@ -56,13 +58,13 @@ export default function AgreementProcess() {
         {/* Header */}
         <header className="mb-8 text-center">
             <h1 className="text-4xl font-bold text-black flex items-center justify-center gap-2 tracking-tight">
-            📑 Agreement / Contract Process
+            📑 {t('agreementProcess.header.title')}
             </h1>
             <p className="text-gray-800 text-lg mt-2">
-            Step-by-step process for drafting, reviewing, and executing agreements
+            {t('agreementProcess.header.subtitle')}
             </p>
             <p className="text-sm text-gray-500 mt-1">
-            Powered by <span className="font-semibold text-[#F6A507]">Know Your Terms</span>
+            {t('agreementProcess.header.powered_by')} <span className="font-semibold text-[#F6A507]">{t('footer.brand.title')}</span>
             </p>
             <div className="mt-4 w-16 border-b-2 border-[#CDA047] mx-auto"></div>
         </header>
@@ -74,18 +76,18 @@ export default function AgreementProcess() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search agreement type..."
+                placeholder={t('agreementProcess.search.placeholder')}
                 className="border border-[#CDA047] rounded-lg px-4 py-2 flex-1 focus:ring-2 focus:ring-[#F6A507] outline-none bg-white text-black"
             />
             <Button
                 onClick={handleView}
                 loading={loading}
             >
-                View Process
+                {t('agreementProcess.search.view_button')}
             </Button>
             </div>
             <div className="text-gray-500 italic text-sm mt-1 pl-1">
-            Example: <span className="text-gray-600">Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract</span>
+            {t('agreementProcess.search.example_label')} <span className="text-gray-600">{t('agreementProcess.search.examples')}</span>
             </div>
         </div>
 

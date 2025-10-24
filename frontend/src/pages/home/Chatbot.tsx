@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import hammer from "../../assets/hammer-Photoroom.png"
 import { geminiKey } from '../../utils/baseApi';
 
@@ -14,10 +15,12 @@ const Chatbot: React.FC = () => {
     // State to control chatbot visibility
     const [isOpen, setIsOpen] = useState(false);
     
+    const { t } = useTranslation();
+
     // State to hold the conversation messages
     const [messages, setMessages] = useState<Message[]>([
         {
-            text: 'Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?',
+            text: t('chat.greeting'),
             sender: 'bot',
         },
     ]);
@@ -173,10 +176,9 @@ const Chatbot: React.FC = () => {
 
                         {/* Disclaimer */}
                         <div className="p-2 bg-[#e8eaf6] text-gray-700 rounded-lg text-xs m-2 border border-[#c5cae9]">
-                            <p className="font-bold text-[#1a7e38]">Disclaimer:</p>
+                            <p className="font-bold text-[#1a7e38]">{t('chat.disclaimer.title')}</p>
                             <p>
-                                The information provided is for general knowledge only and should not
-                                be considered legal advice. 
+                                {t('chat.disclaimer.body')}
                             </p>
                         </div>
 
@@ -222,7 +224,7 @@ const Chatbot: React.FC = () => {
                                                 </p>
                                                 {msg.citations && msg.citations.length > 0 && (
                                                     <div className="mt-2 text-xs text-gray-500">
-                                                        Sources:{" "}
+                                                        {t('chat.sources_label')} {" "}
                                                         {msg.citations.map((source, idx) => (
                                                             <a
                                                                 key={idx}
