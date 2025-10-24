@@ -90,46 +90,46 @@
       "citizens": "ನಾಗರಿಕರು"
     },
     "audience_desc": {
-      "students": "Learn legal basics and understand agreements easily.",
-      "business_owners": "Simplify contracts and reduce legal risks.",
-      "judges": "Quickly review and summarize case documents.",
-      "journalists": "Analyze legal docs for accurate reporting.",
-      "law_students": "Study real agreements and case summaries.",
-      "citizens": "Understand your rights in plain language."
+      "students": "ಕಾನೂನು ಮೂಲಭೂತ ಅಂಶಗಳನ್ನು ಕಲಿಯಿರಿ ಮತ್ತು ಒಪ್ಪಂದಗಳನ್ನು ಸುಲಭವಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.",
+      "business_owners": "ಒಪ್ಪಂದಗಳನ್ನು ಸರಳಗೊಳಿಸಿ ಮತ್ತು ಕಾನೂನು ಅಪಾಯಗಳನ್ನು ಕಡಿಮೆ ಮಾಡಿ.",
+      "judges": "ಪ್ರಕರಣದ ದಾಖಲೆಗಳನ್ನು ತ್ವರಿತವಾಗಿ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಸಂಕ್ಷೇಪಿಸಿ.",
+      "journalists": "ನಿಖರವಾದ ವರದಿಗಾಗಿ ಕಾನೂನು ದಾಖಲೆಗಳನ್ನು ವಿಶ್ಲೇಷಿಸಿ.",
+      "law_students": "ನಿಜವಾದ ಒಪ್ಪಂದಗಳು ಮತ್ತು ಪ್ರಕರಣ ಸಾರಾಂಶಗಳನ್ನು ಅಧ್ಯಯನ ಮಾಡಿ.",
+      "citizens": "ನಿಮ್ಮ ಹಕ್ಕುಗಳನ್ನು ಸರಳ ಭಾಷೆಯಲ್ಲಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ."
     }
   },
   "footer": {
     "brand": {
-      "title": "Know Your Terms",
-      "subtitle": "AI Legal Document Platform",
-      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+      "title": "ನಿಮ್ಮ ನಿಯಮಗಳನ್ನು ತಿಳಿದುಕೊಳ್ಳಿ",
+      "subtitle": "AI ಕಾನೂನು ದಾಖಲೆ ವೇದಿಕೆ",
+      "description": "ಒಪ್ಪಂದಗಳು, ಒಪ್ಪಂದಗಳು ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚಿನ ಕಾನೂನು ದಾಖಲೆಗಳನ್ನು ಎಲ್ಲರಿಗೂ ಸ್ಪಷ್ಟವಾದ, ಕಾರ್ಯಸಾಧ್ಯವಾದ ಮಾರ್ಗದರ್ಶನವಾಗಿ ಸರಳಗೊಳಿಸುವುದು."
     },
-    "quick_links_title": "Quick Links",
+    "quick_links_title": "ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",
     "quick_links": {
       "home": "ಮರಳಿ ಪ್ರಥಮ ಪುಟಕ್ಕೆ",
       "about": "ನಮ್ಮ ಬಗ್ಗೆ",
-      "help": "User Guide",
+      "help": "ಬಳಕೆದಾರ ಮಾರ್ಗದರ್ಶಿ",
       "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
-      "contact": "Contact"
+      "contact": "ಸಂಪರ್ಕಿಸಿ"
     },
-    "features_title": "Features",
+    "features_title": "ವೈಶಿಷ್ಟ್ಯಗಳು",
     "features": [
-      "AI Summarization",
-      "Agreement Templates",
-      "Case Law Insights",
+      "AI ಸಾರಾಂಶ",
+      "ಒಪ್ಪಂದದ ಟೆಂಪ್ಲೇಟ್‌ಗಳು",
+      "ಪ್ರಕರಣ ಕಾನೂನು ಒಳನೋಟಗಳು",
       "ದಾಖಲೆ ವಿಮರ್ಶೆ",
-      "Chatbot Support"
+      "ಚಾಟ್‌ಬಾಟ್ ಬೆಂಬಲ"
     ],
     "contact": {
-      "title": "Contact"
+      "title": "ಸಂಪರ್ಕಿಸಿ"
     },
     "bottom": {
-      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
-      "last_updated": "Last Updated: August 2025",
-      "version": "Version 1.0",
-      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
-      "powered_by": "Powered by AI",
-      "secure_private": "Secure & Private"
+      "copyright": "© {{year}} ನಿಮ್ಮ ನಿಯಮಗಳನ್ನು ತಿಳಿದುಕೊಳ್ಳಿ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+      "last_updated": "ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ: ಆಗಸ್ಟ್ 2025",
+      "version": "ಆವೃತ್ತಿ 1.0",
+      "best_viewed": "ಕ್ರೋಮ್, ಫೈರ್‌ಫಾಕ್ಸ್, ಸಫಾರಿಯಲ್ಲಿ ಉತ್ತಮವಾಗಿ ವೀಕ್ಷಿಸಲಾಗಿದೆ",
+      "powered_by": "AI ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ",
+      "secure_private": "ಸುರಕ್ಷಿತ ಮತ್ತು ಖಾಸಗಿ"
     },
     "contact_us": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
     "privacy_policy": "ಗೌಪ್ಯತಾ ನೀತಿ",
@@ -262,20 +262,20 @@
   },
   "agreementProcess": {
     "header": {
-      "title": "Agreement / Contract Process",
-      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "title": "ಒಪ್ಪಂದ / ಒಪ್ಪಂದ ಪ್ರಕ್ರಿಯೆ",
+      "subtitle": "ಒಪ್ಪಂದಗಳ ಕರಡು ರಚನೆ, ಪರಿಶೀಲನೆ ಮತ್ತು ಕಾರ್ಯಗತಗೊಳಿಸಲು ಹಂತ-ಹಂತದ ಪ್ರಕ್ರಿಯೆ.",
       "powered_by": "ನಡೆಸಲ್ಪಡುತ್ತಿದೆ"
     },
     "search": {
-      "placeholder": "Search agreement type...",
-      "view_button": "View Process",
-      "query_required": "Query is required.",
-      "login_required": "You must be logged in to upload and summarize a document.",
-      "example_label": "Example:",
-      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+      "placeholder": "ಒಪ್ಪಂದದ ಪ್ರಕಾರವನ್ನು ಹುಡುಕಿ...",
+      "view_button": "ಪ್ರಕ್ರಿಯೆಯನ್ನು ವೀಕ್ಷಿಸಿ",
+      "query_required": "ಪ್ರಶ್ನೆ ಅಗತ್ಯವಿದೆ.",
+      "login_required": "ಡಾಕ್ಯುಮೆಂಟ್ ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಮತ್ತು ಸಾರಾಂಶಗೊಳಿಸಲು ನೀವು ಲಾಗಿನ್ ಆಗಿರಬೇಕು.",
+      "example_label": "ಉದಾಹರಣೆ:",
+      "examples": "ಗೃಹ ಸಾಲ ಒಪ್ಪಂದ, ಮದುವೆ ಒಪ್ಪಂದ, ಬಾಡಿಗೆ ಒಪ್ಪಂದ, ಉದ್ಯೋಗ ಒಪ್ಪಂದ"
     },
     "spinner": {
-      "loading": "Loading process details..."
+      "loading": "ಪ್ರಕ್ರಿಯೆಯ ವಿವರಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ..."
     }
   },
   "case": {
@@ -286,22 +286,22 @@
     "status": "ಸ್ಥಿತಿ",
     "agent": "ಏಜೆಂಟ್",
     "history": "ಪ್ರಕರಣದ ಇತಿಹಾಸ",
-    "explorer_title": "Case Explorer",
-    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
-    "powered_by_source": "IndianKanoon.org",
-    "search_placeholder": "Search by case title, citation, or keywords...",
+    "explorer_title": "ಕೇಸ್ ಎಕ್ಸ್‌ಪ್ಲೋರರ್",
+    "explorer_subtitle": "ಹೆಗ್ಗುರುತು ಭಾರತೀಯ ಕಾನೂನು ಪ್ರಕರಣಗಳನ್ನು ಸುಲಭವಾಗಿ ಹುಡುಕಿ ಮತ್ತು ಪರಿಶೀಲಿಸಿ",
+    "powered_by_source": "ಇಂಡಿಯನ್‌ಕಾನೂನ್.ಆರ್ಗ್",
+    "search_placeholder": "ಪ್ರಕರಣದ ಶೀರ್ಷಿಕೆ, ಉಲ್ಲೇಖ ಅಥವಾ ಕೀವರ್ಡ್‌ಗಳ ಮೂಲಕ ಹುಡುಕಿ...",
     "search_button": "ಹುಡುಕಿ Kannada",
     "spinner": {
-      "fetching_details": "Fetching Case Details...",
-      "fetching_summary": "Fetching Case Summary..."
+      "fetching_details": "ಪ್ರಕರಣದ ವಿವರಗಳನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ...",
+      "fetching_summary": "ಪ್ರಕರಣದ ಸಾರಾಂಶವನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ..."
     },
-    "results_title": "Case Results",
-    "no_results": "No results yet. Try searching above.",
-    "view_summary": "View Summary",
-    "invalid_case_id": "Invalid case ID.",
+    "results_title": "ಪ್ರಕರಣದ ಫಲಿತಾಂಶಗಳು",
+    "no_results": "ಇನ್ನೂ ಯಾವುದೇ ಫಲಿತಾಂಶಗಳಿಲ್ಲ. ಮೇಲೆ ಹುಡುಕಲು ಪ್ರಯತ್ನಿಸಿ.",
+    "view_summary": "ಸಾರಾಂಶವನ್ನು ವೀಕ್ಷಿಸಿ",
+    "invalid_case_id": "ಅಮಾನ್ಯವಾದ ಪ್ರಕರಣ ID.",
     "errors": {
-      "search_failed": "Error fetching search results.",
-      "summary_failed": "Error fetching case summary."
+      "search_failed": "ಹುಡುಕಾಟ ಫಲಿತಾಂಶಗಳನ್ನು ಪಡೆಯುವಲ್ಲಿ ದೋಷ.",
+      "summary_failed": "ಪ್ರಕರಣದ ಸಾರಾಂಶವನ್ನು ಪಡೆಯುವಲ್ಲಿ ದೋಷ."
     }
   },
   "chat": {
@@ -311,15 +311,15 @@
     "sidebar_title": "ಚಾಟ್ ಇತಿಹಾಸ",
     "prompt_toolbar": "ಬರೆಯುವ ಪ್ರಾಂಪ್ಟ್‌ಗಳು",
     "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
-    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "greeting": "ನಮಸ್ಕಾರ! ನಾನು ಭಾರತೀಯ ಕಾನೂನು ವಿಚಾರಣೆಗಳಲ್ಲಿ ಪರಿಣತಿ ಹೊಂದಿರುವ ಚಾಟ್‌ಬಾಟ್. ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
     "disclaimer": {
-      "title": "Disclaimer:",
-      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+      "title": "ಹಕ್ಕುತ್ಯಾಗ:",
+      "body": "ಒದಗಿಸಲಾದ ಮಾಹಿತಿಯು ಸಾಮಾನ್ಯ ಜ್ಞಾನಕ್ಕಾಗಿ ಮಾತ್ರ ಮತ್ತು ಇದನ್ನು ಕಾನೂನು ಸಲಹೆ ಎಂದು ಪರಿಗಣಿಸಬಾರದು."
     },
-    "ask_placeholder": "Ask a question about Indian law...",
-    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
-    "api_error": "An error occurred. Please try again.",
-    "sources_label": "Sources:"
+    "ask_placeholder": "ಭಾರತೀಯ ಕಾನೂನಿನ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಕೇಳಿ...",
+    "generation_error": "ಕ್ಷಮಿಸಿ, ನನಗೆ ಪ್ರತಿಕ್ರಿಯೆ ನೀಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "api_error": "ದೋಷ ಸಂಭವಿಸಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "sources_label": "ಮೂಲಗಳು:"
   },
   "notification": {
     "success": "ಯಶಸ್ಸು",
