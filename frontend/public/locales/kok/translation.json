@@ -90,46 +90,46 @@
       "citizens": "नागरिकांक"
     },
     "audience_desc": {
-      "students": "Learn legal basics and understand agreements easily.",
-      "business_owners": "Simplify contracts and reduce legal risks.",
-      "judges": "Quickly review and summarize case documents.",
-      "journalists": "Analyze legal docs for accurate reporting.",
-      "law_students": "Study real agreements and case summaries.",
-      "citizens": "Understand your rights in plain language."
+      "students": "कायदेशीर मुळावी गजाल शिकात आनी करार सहजपणान समजून घेयात.",
+      "business_owners": "कंत्राट सोंपे करप आनी कायदेशीर धोको उणो करप.",
+      "judges": "केस दस्तावेजांचो बेगीन नियाळ आनी सारांश दिवप.",
+      "journalists": "अचूक अहवाला खातीर कायदेशीर दस्तावेजांचें विश्लेशण करप.",
+      "law_students": "खऱ्या करारांचो आनी केस सारांशांचो अभ्यास करचो.",
+      "citizens": "सादे भाशेंत तुमचे हक्क समजून घेयात."
     }
   },
   "footer": {
     "brand": {
-      "title": "Know Your Terms",
-      "subtitle": "AI Legal Document Platform",
-      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+      "title": "तुमचीं अटी जाणून घेयात",
+      "subtitle": "एआय कायदेशीर दस्तावेज प्लॅटफॉर्म",
+      "description": "कायदेशीर दस्तावेज-कबलाती, करार आनी हेर-सगल्यांक स्पश्ट, कृती करपाक योग्य मार्गदर्शन करपाक सोंपे करप."
     },
-    "quick_links_title": "Quick Links",
+    "quick_links_title": "जलद दुवे",
     "quick_links": {
       "home": "घर",
       "about": "संबंदीं",
-      "help": "User Guide",
+      "help": "वापरपी मार्गदर्शक",
       "dashboard": "डॅशबोर्ड",
-      "contact": "Contact"
+      "contact": "संपर्क"
     },
-    "features_title": "Features",
+    "features_title": "खाशेलपणा",
     "features": [
-      "AI Summarization",
-      "Agreement Templates",
-      "Case Law Insights",
+      "एआय सारांशीकरण",
+      "कराराचे साचे",
+      "केस लॉ इनसाइट्स",
       "दस्तावेज पुनरावलोकन",
-      "Chatbot Support"
+      "चॅटबॉट समर्थन"
     ],
     "contact": {
-      "title": "Contact"
+      "title": "संपर्क"
     },
     "bottom": {
-      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
-      "last_updated": "Last Updated: August 2025",
-      "version": "Version 1.0",
-      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
-      "powered_by": "Powered by AI",
-      "secure_private": "Secure & Private"
+      "copyright": "© {{year}} तुमच्यो अटी जाणून घेयात. सगळे हक्क राखीव आसात.",
+      "last_updated": "निमाणें अद्ययावत: ऑगस्ट 2025",
+      "version": "आवृत्ती 1.0",
+      "best_viewed": "क्रोम, फायरफॉक्स, सफारींत सगळ्यांत बरें पळोवपाक मेळटा",
+      "powered_by": "एआय कडल्यान संचालित",
+      "secure_private": "सुरक्षीत आनी खाजगी"
     },
     "contact_us": "आमकां संपर्क करात",
     "privacy_policy": "गुप्तताय धोरण",
@@ -262,20 +262,20 @@
   },
   "agreementProcess": {
     "header": {
-      "title": "Agreement / Contract Process",
-      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "title": "करार / कंत्राट प्रक्रिया",
+      "subtitle": "करारांचो मसुदो तयार करपाची, नियाळ घेवपाची आनी चालीक लावपाची टप्प्या टप्प्यान प्रक्रिया",
       "powered_by": "द्वारे संचालित"
     },
     "search": {
-      "placeholder": "Search agreement type...",
-      "view_button": "View Process",
-      "query_required": "Query is required.",
-      "login_required": "You must be logged in to upload and summarize a document.",
-      "example_label": "Example:",
-      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+      "placeholder": "सोद कराराचो प्रकार...",
+      "view_button": "पळोवपाची प्रक्रिया",
+      "query_required": "क्वेरी करपाची गरज आसा.",
+      "login_required": "दस्तावेज अपलोड करपाक आनी सारांश करपाक तुमी लॉग इन जावंक जाय.",
+      "example_label": "उदारण:",
+      "examples": "घर रिणाचो करार, लग्न करार, भाड्याचो करार, रोजगार करार"
     },
     "spinner": {
-      "loading": "Loading process details..."
+      "loading": "प्रक्रिया तपशील लोड करप..."
     }
   },
   "case": {
@@ -286,22 +286,22 @@
     "status": "स्थिती",
     "agent": "दलाल",
     "history": "केस इतिहास",
-    "explorer_title": "Case Explorer",
-    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
-    "powered_by_source": "IndianKanoon.org",
-    "search_placeholder": "Search by case title, citation, or keywords...",
+    "explorer_title": "केस एक्सप्लोरर",
+    "explorer_subtitle": "लॅंडमार्क भारतीय कायदेशीर प्रकरणांचो सोद आनी नियाळ सहजतायेन",
+    "powered_by_source": "इंडियनकानून डॉट ऑर्ग",
+    "search_placeholder": "केस शीर्षक, उल्लेख, वा कीवर्ड प्रमाणें सोदचें...",
     "search_button": "सोद",
     "spinner": {
-      "fetching_details": "Fetching Case Details...",
-      "fetching_summary": "Fetching Case Summary..."
+      "fetching_details": "केस तपशील हाडप...",
+      "fetching_summary": "केस सारांश हाडप..."
     },
-    "results_title": "Case Results",
-    "no_results": "No results yet. Try searching above.",
-    "view_summary": "View Summary",
-    "invalid_case_id": "Invalid case ID.",
+    "results_title": "केस रिजल्ट",
+    "no_results": "अजून निकाल मेळूंक ना. वयर सोदपाचो यत्न करात.",
+    "view_summary": "सारांश पळयात",
+    "invalid_case_id": "अवैध केस आयडी.",
     "errors": {
-      "search_failed": "Error fetching search results.",
-      "summary_failed": "Error fetching case summary."
+      "search_failed": "सोद परिणाम हाडपाक त्रुटी.",
+      "summary_failed": "केस सारांश हाडपाक त्रुटी."
     }
   },
   "chat": {
@@ -311,15 +311,15 @@
     "sidebar_title": "गप्पा इतिहास",
     "prompt_toolbar": "बरोवपाची सुचोवणी",
     "loading": "लोड करप...",
-    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "greeting": "हॅलो! हांव भारतीय कायदेशीर चवकशींत खाशेलपण आशिल्लो चॅटबॉट. हांव तुका कशी मजत करूं?",
     "disclaimer": {
-      "title": "Disclaimer:",
-      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+      "title": "अस्वीकृती: १.",
+      "body": "दिल्ले म्हायती फकत सामान्य गिन्याना खातीर आसा आनी ती कायदेशीर सल्लो मानूंक फावना."
     },
-    "ask_placeholder": "Ask a question about Indian law...",
-    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
-    "api_error": "An error occurred. Please try again.",
-    "sources_label": "Sources:"
+    "ask_placeholder": "भारतीय कायद्या विशीं एक प्रस्न विचारात...",
+    "generation_error": "माफ करात, प्रतिसाद निर्माण करूंक शकलो ना. उपकार करून परतून यत्न करात.",
+    "api_error": "एक त्रुटी जाली. उपकार करून परतून यत्न करात.",
+    "sources_label": "स्रोत: १."
   },
   "notification": {
     "success": "येस",
