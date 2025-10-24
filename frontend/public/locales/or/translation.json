@@ -90,46 +90,46 @@
       "citizens": "ନାଗରିକମାନେ"
     },
     "audience_desc": {
-      "students": "Learn legal basics and understand agreements easily.",
-      "business_owners": "Simplify contracts and reduce legal risks.",
-      "judges": "Quickly review and summarize case documents.",
-      "journalists": "Analyze legal docs for accurate reporting.",
-      "law_students": "Study real agreements and case summaries.",
-      "citizens": "Understand your rights in plain language."
+      "students": "ଆଇନଗତ ମୌଳିକ ବିଷୟ ଶିଖନ୍ତୁ ଏବଂ ସହଜରେ ଚୁକ୍ତିନାମାଗୁଡ଼ିକୁ ବୁଝନ୍ତୁ।",
+      "business_owners": "ଚୁକ୍ତିନାମାଗୁଡ଼ିକୁ ସରଳ କରନ୍ତୁ ଏବଂ ଆଇନଗତ ବିପଦ ହ୍ରାସ କରନ୍ତୁ।",
+      "judges": "କେସ୍ ଡକ୍ୟୁମେଣ୍ଟଗୁଡ଼ିକୁ ଶୀଘ୍ର ସମୀକ୍ଷା ଏବଂ ସଂକ୍ଷେପ କରନ୍ତୁ।",
+      "journalists": "ସଠିକ୍ ରିପୋର୍ଟିଂ ପାଇଁ ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟଗୁଡ଼ିକର ବିଶ୍ଳେଷଣ କରନ୍ତୁ।",
+      "law_students": "ପ୍ରକୃତ ଚୁକ୍ତିନାମା ଏବଂ କେସ୍ ସାରାଂଶ ଅଧ୍ୟୟନ କରନ୍ତୁ।",
+      "citizens": "ସରଳ ଭାଷାରେ ଆପଣଙ୍କ ଅଧିକାର ବୁଝନ୍ତୁ।"
     }
   },
   "footer": {
     "brand": {
-      "title": "Know Your Terms",
-      "subtitle": "AI Legal Document Platform",
-      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+      "title": "ଆପଣଙ୍କର ସର୍ତ୍ତାବଳୀ ଜାଣନ୍ତୁ",
+      "subtitle": "AI ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ପ୍ଲାଟଫର୍ମ",
+      "description": "ସମସ୍ତଙ୍କ ପାଇଁ ସ୍ପଷ୍ଟ, କାର୍ଯ୍ୟକ୍ଷମ ମାର୍ଗଦର୍ଶନ ପାଇଁ ଆଇନଗତ ଦଲିଲଗୁଡ଼ିକୁ - ଚୁକ୍ତିନାମା, ଚୁକ୍ତିନାମା ଏବଂ ଅନ୍ୟାନ୍ୟକୁ ସରଳ କରିବା।"
     },
-    "quick_links_title": "Quick Links",
+    "quick_links_title": "ଦୃତ ଲିଙ୍କ୍ଗୁଡିକ",
     "quick_links": {
       "home": "ଘର",
       "about": "ବିଷୟରେ",
-      "help": "User Guide",
+      "help": "ଉପଯୋଗକର୍ତ୍ତା ନିର୍ଦ୍ଦେଶାବଳୀ",
       "dashboard": "ଡ୍ୟାସବୋର୍ଡ",
-      "contact": "Contact"
+      "contact": "ଯୋଗାଯୋଗ"
     },
-    "features_title": "Features",
+    "features_title": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ",
     "features": [
-      "AI Summarization",
-      "Agreement Templates",
-      "Case Law Insights",
+      "AI ସାରାଂଶକରଣ",
+      "ଚୁକ୍ତିନାମା ଟେମ୍ପଲେଟ୍",
+      "ମାମଲା ଆଇନ ଅନ୍ତର୍ଦୃଷ୍ଟି",
       "ଡକ୍ୟୁମେଣ୍ଟ ସମୀକ୍ଷା",
-      "Chatbot Support"
+      "ଚାଟବଟ୍ ସହାୟତା"
     ],
     "contact": {
-      "title": "Contact"
+      "title": "ଯୋଗାଯୋଗ"
     },
     "bottom": {
-      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
-      "last_updated": "Last Updated: August 2025",
-      "version": "Version 1.0",
-      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
-      "powered_by": "Powered by AI",
-      "secure_private": "Secure & Private"
+      "copyright": "© {{year}} ଆପଣଙ୍କର ସର୍ତ୍ତାବଳୀ ଜାଣନ୍ତୁ। ସର୍ବସତ୍ତ୍ଵ ସଂରକ୍ଷିତ।",
+      "last_updated": "ଶେଷ ଅପଡେଟ୍: ଅଗଷ୍ଟ ୨୦୨୫",
+      "version": "ସଂସ୍କରଣ 1.0",
+      "best_viewed": "Chrome, Firefox, Safari ରେ ସବୁଠାରୁ ଭଲ ଦେଖାଯାଏ",
+      "powered_by": "AI ଦ୍ୱାରା ପରିଚାଳିତ",
+      "secure_private": "ସୁରକ୍ଷିତ ଏବଂ ବ୍ୟକ୍ତିଗତ"
     },
     "contact_us": "ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ",
     "privacy_policy": "ଗୋପନୀୟତା ନୀତି",
@@ -262,20 +262,20 @@
   },
   "agreementProcess": {
     "header": {
-      "title": "Agreement / Contract Process",
-      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "title": "ଚୁକ୍ତିନାମା / ଚୁକ୍ତିନାମା ପ୍ରକ୍ରିୟା",
+      "subtitle": "ଚୁକ୍ତିନାମା ପ୍ରସ୍ତୁତ, ସମୀକ୍ଷା ଏବଂ କାର୍ଯ୍ୟକାରୀ କରିବା ପାଇଁ ପର୍ଯ୍ୟାୟକ୍ରମେ ପ୍ରକ୍ରିୟା",
       "powered_by": "ଦ୍ଵାରା ପରିଚାଳିତ"
     },
     "search": {
-      "placeholder": "Search agreement type...",
-      "view_button": "View Process",
-      "query_required": "Query is required.",
-      "login_required": "You must be logged in to upload and summarize a document.",
-      "example_label": "Example:",
-      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+      "placeholder": "ଚୁକ୍ତିନାମା ପ୍ରକାର ଖୋଜନ୍ତୁ...",
+      "view_button": "ପ୍ରକ୍ରିୟା ଦେଖନ୍ତୁ",
+      "query_required": "କ୍ୱେରୀ ଆବଶ୍ୟକ।",
+      "login_required": "ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ ଏବଂ ସଂକ୍ଷିପ୍ତ କରିବା ପାଇଁ ଆପଣଙ୍କୁ ଲଗ୍ ଇନ୍ କରିବାକୁ ପଡିବ।",
+      "example_label": "ଉଦାହରଣ:",
+      "examples": "ଗୃହ ଋଣ ଚୁକ୍ତିନାମା, ବିବାହ ଚୁକ୍ତିନାମା, ଭଡା ଚୁକ୍ତିନାମା, ନିଯୁକ୍ତି ଚୁକ୍ତିନାମା"
     },
     "spinner": {
-      "loading": "Loading process details..."
+      "loading": "ପ୍ରକ୍ରିୟା ବିବରଣୀ ଲୋଡ୍ ହେଉଛି..."
     }
   },
   "case": {
@@ -286,22 +286,22 @@
     "status": "ସ୍ଥିତି",
     "agent": "ଏଜେଣ୍ଟ",
     "history": "ମାମଲା ଇତିହାସ",
-    "explorer_title": "Case Explorer",
-    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
+    "explorer_title": "କେସ୍ ଏକ୍ସପ୍ଲୋରର୍",
+    "explorer_subtitle": "ସହଜରେ ଐତିହାସିକ ଭାରତୀୟ ଆଇନଗତ ମାମଲାଗୁଡ଼ିକୁ ଖୋଜନ୍ତୁ ଏବଂ ସମୀକ୍ଷା କରନ୍ତୁ",
     "powered_by_source": "IndianKanoon.org",
-    "search_placeholder": "Search by case title, citation, or keywords...",
+    "search_placeholder": "କେସ୍ ଟାଇଟଲ୍, ଉଦ୍ଧୃତି, କିମ୍ବା କୀୱାର୍ଡ ଅନୁସାରେ ଖୋଜନ୍ତୁ...",
     "search_button": "ଖୋଜନ୍ତୁ",
     "spinner": {
-      "fetching_details": "Fetching Case Details...",
-      "fetching_summary": "Fetching Case Summary..."
+      "fetching_details": "କେସ୍ ବିବରଣୀ ପ୍ରାପ୍ତ କରାଯାଉଛି...",
+      "fetching_summary": "କେସର ସାରାଂଶ ପ୍ରାପ୍ତ କରାଯାଉଛି..."
     },
-    "results_title": "Case Results",
-    "no_results": "No results yet. Try searching above.",
-    "view_summary": "View Summary",
-    "invalid_case_id": "Invalid case ID.",
+    "results_title": "କେସ୍ ଫଳାଫଳ",
+    "no_results": "ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଫଳାଫଳ ନାହିଁ। ଉପରେ ଖୋଜିବାକୁ ଚେଷ୍ଟା କରନ୍ତୁ।",
+    "view_summary": "ସାରାଂଶ ଦେଖନ୍ତୁ",
+    "invalid_case_id": "ଅବୈଧ କେସ୍ ID।",
     "errors": {
-      "search_failed": "Error fetching search results.",
-      "summary_failed": "Error fetching case summary."
+      "search_failed": "ସନ୍ଧାନ ଫଳାଫଳଗୁଡ଼ିକୁ ପ୍ରାପ୍ତ କରିବା ସମୟରେ ତ୍ରୁଟି।",
+      "summary_failed": "କେସ୍ ସାରାଂଶ ଆଣିବାରେ ତ୍ରୁଟି।"
     }
   },
   "chat": {
@@ -311,15 +311,15 @@
     "sidebar_title": "ଚାଟ୍ ଇତିହାସ",
     "prompt_toolbar": "ପ୍ରମ୍ପ୍ଟ ଲେଖିବା",
     "loading": "ଲୋଡ୍ ହେଉଛି...",
-    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "greeting": "ନମସ୍କାର! ମୁଁ ଭାରତୀୟ ଆଇନଗତ ପ୍ରଶ୍ନରେ ବିଶେଷଜ୍ଞ ଜଣେ ଚାଟବଟ୍। ମୁଁ ଆପଣଙ୍କୁ କିପରି ସାହାଯ୍ୟ କରିପାରିବି?",
     "disclaimer": {
-      "title": "Disclaimer:",
-      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+      "title": "ଅସ୍ୱୀକାର:",
+      "body": "ପ୍ରଦାନ କରାଯାଇଥିବା ସୂଚନା କେବଳ ସାଧାରଣ ଜ୍ଞାନ ପାଇଁ ଏବଂ ଏହାକୁ ଆଇନଗତ ପରାମର୍ଶ ଭାବରେ ବିବେଚନା କରାଯିବା ଉଚିତ ନୁହେଁ।"
     },
-    "ask_placeholder": "Ask a question about Indian law...",
-    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
-    "api_error": "An error occurred. Please try again.",
-    "sources_label": "Sources:"
+    "ask_placeholder": "ଭାରତୀୟ ଆଇନ ବିଷୟରେ ଏକ ପ୍ରଶ୍ନ ପଚାରନ୍ତୁ...",
+    "generation_error": "କ୍ଷମା କରିବେ, ମୁଁ ଏକ ପ୍ରତିକ୍ରିୟା ସୃଷ୍ଟି କରିପାରିଲି ନାହିଁ। ଦୟାକରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।",
+    "api_error": "ଗୋଟିଏ ତ୍ରୁଟି ଦେଖାଦେଲା। ଦୟାକରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।",
+    "sources_label": "ଉତ୍ସଗୁଡ଼ିକ:"
   },
   "notification": {
     "success": "ସଫଳତା",
