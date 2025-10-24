@@ -90,46 +90,46 @@
       "citizens": "குடிமக்கள்"
     },
     "audience_desc": {
-      "students": "Learn legal basics and understand agreements easily.",
-      "business_owners": "Simplify contracts and reduce legal risks.",
-      "judges": "Quickly review and summarize case documents.",
-      "journalists": "Analyze legal docs for accurate reporting.",
-      "law_students": "Study real agreements and case summaries.",
-      "citizens": "Understand your rights in plain language."
+      "students": "சட்ட அடிப்படைகளைக் கற்றுக்கொண்டு ஒப்பந்தங்களை எளிதாகப் புரிந்து கொள்ளுங்கள்.",
+      "business_owners": "ஒப்பந்தங்களை எளிமைப்படுத்தி சட்ட அபாயங்களைக் குறைத்தல்.",
+      "judges": "வழக்கு ஆவணங்களை விரைவாக மதிப்பாய்வு செய்து சுருக்கவும்.",
+      "journalists": "துல்லியமான அறிக்கையிடலுக்கான சட்ட ஆவணங்களை பகுப்பாய்வு செய்யுங்கள்.",
+      "law_students": "உண்மையான ஒப்பந்தங்கள் மற்றும் வழக்கு சுருக்கங்களைப் படிக்கவும்.",
+      "citizens": "உங்கள் உரிமைகளை எளிய மொழியில் புரிந்து கொள்ளுங்கள்."
     }
   },
   "footer": {
     "brand": {
-      "title": "Know Your Terms",
-      "subtitle": "AI Legal Document Platform",
-      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+      "title": "உங்கள் விதிமுறைகளை அறிந்து கொள்ளுங்கள்",
+      "subtitle": "AI சட்ட ஆவண தளம்",
+      "description": "ஒப்பந்தங்கள், ஒப்பந்தங்கள் மற்றும் பல போன்ற சட்ட ஆவணங்களை அனைவருக்கும் தெளிவான, செயல்படுத்தக்கூடிய வழிகாட்டுதலாக எளிதாக்குதல்."
     },
-    "quick_links_title": "Quick Links",
+    "quick_links_title": "விரைவு இணைப்புகள்",
     "quick_links": {
       "home": "முகப்புப் பக்கம்",
       "about": "பற்றி",
-      "help": "User Guide",
+      "help": "பயனர் வழிகாட்டி",
       "dashboard": "டாஷ்போர்டு",
-      "contact": "Contact"
+      "contact": "தொடர்பு"
     },
-    "features_title": "Features",
+    "features_title": "அம்சங்கள்",
     "features": [
-      "AI Summarization",
-      "Agreement Templates",
-      "Case Law Insights",
+      "AI சுருக்கம்",
+      "ஒப்பந்த வார்ப்புருக்கள்",
+      "வழக்குச் சட்ட நுண்ணறிவுகள்",
       "ஆவண மதிப்பாய்வு",
-      "Chatbot Support"
+      "சாட்பாட் ஆதரவு"
     ],
     "contact": {
-      "title": "Contact"
+      "title": "தொடர்பு"
     },
     "bottom": {
-      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
-      "last_updated": "Last Updated: August 2025",
-      "version": "Version 1.0",
-      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
-      "powered_by": "Powered by AI",
-      "secure_private": "Secure & Private"
+      "copyright": "© {{year}} உங்கள் விதிமுறைகளை அறிந்து கொள்ளுங்கள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+      "last_updated": "கடைசியாகப் புதுப்பிக்கப்பட்டது: ஆகஸ்ட் 2025",
+      "version": "பதிப்பு 1.0",
+      "best_viewed": "குரோம், பயர்பாக்ஸ், சஃபாரி ஆகியவற்றில் சிறப்பாகப் பார்க்கப்பட்டது",
+      "powered_by": "AI ஆல் இயக்கப்படுகிறது",
+      "secure_private": "பாதுகாப்பானது & தனிப்பட்டது"
     },
     "contact_us": "எங்களை தொடர்பு கொள்ள",
     "privacy_policy": "தனியுரிமைக் கொள்கை",
@@ -262,20 +262,20 @@
   },
   "agreementProcess": {
     "header": {
-      "title": "Agreement / Contract Process",
-      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "title": "ஒப்பந்தம் / ஒப்பந்த செயல்முறை",
+      "subtitle": "ஒப்பந்தங்களை வரைதல், மதிப்பாய்வு செய்தல் மற்றும் செயல்படுத்துவதற்கான படிப்படியான செயல்முறை.",
       "powered_by": "மூலம் இயக்கப்படுகிறது"
     },
     "search": {
-      "placeholder": "Search agreement type...",
-      "view_button": "View Process",
-      "query_required": "Query is required.",
-      "login_required": "You must be logged in to upload and summarize a document.",
-      "example_label": "Example:",
-      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+      "placeholder": "தேடல் ஒப்பந்த வகை...",
+      "view_button": "செயல்முறையைக் காண்க",
+      "query_required": "வினவல் அவசியம்.",
+      "login_required": "ஒரு ஆவணத்தைப் பதிவேற்றி சுருக்கமாகக் கூற நீங்கள் உள்நுழைந்திருக்க வேண்டும்.",
+      "example_label": "உதாரணமாக:",
+      "examples": "வீட்டுக் கடன் ஒப்பந்தம், திருமண ஒப்பந்தம், வாடகை ஒப்பந்தம், வேலைவாய்ப்பு ஒப்பந்தம்"
     },
     "spinner": {
-      "loading": "Loading process details..."
+      "loading": "செயல்முறை விவரங்களை ஏற்றுகிறது..."
     }
   },
   "case": {
@@ -286,22 +286,22 @@
     "status": "நிலைமை",
     "agent": "முகவர்",
     "history": "வழக்கு வரலாறு",
-    "explorer_title": "Case Explorer",
-    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
-    "powered_by_source": "IndianKanoon.org",
-    "search_placeholder": "Search by case title, citation, or keywords...",
+    "explorer_title": "கேஸ் எக்ஸ்ப்ளோரர்",
+    "explorer_subtitle": "மைல்கல் இந்திய சட்ட வழக்குகளை எளிதாகத் தேடி மதிப்பாய்வு செய்யவும்.",
+    "powered_by_source": "இந்தியன் கானூன்.ஆர்.ஜி",
+    "search_placeholder": "வழக்கு தலைப்பு, மேற்கோள் அல்லது முக்கிய வார்த்தைகளின் அடிப்படையில் தேடுங்கள்...",
     "search_button": "தேடல்",
     "spinner": {
-      "fetching_details": "Fetching Case Details...",
-      "fetching_summary": "Fetching Case Summary..."
+      "fetching_details": "வழக்கு விவரங்களைப் பெறுகிறது...",
+      "fetching_summary": "வழக்கு சுருக்கத்தைப் பெறுகிறது..."
     },
-    "results_title": "Case Results",
-    "no_results": "No results yet. Try searching above.",
-    "view_summary": "View Summary",
-    "invalid_case_id": "Invalid case ID.",
+    "results_title": "வழக்கு முடிவுகள்",
+    "no_results": "இன்னும் முடிவுகள் இல்லை. மேலே தேட முயற்சிக்கவும்.",
+    "view_summary": "சுருக்கத்தைக் காண்க",
+    "invalid_case_id": "தவறான வழக்கு ஐடி.",
     "errors": {
-      "search_failed": "Error fetching search results.",
-      "summary_failed": "Error fetching case summary."
+      "search_failed": "தேடல் முடிவுகளைப் பெறுவதில் பிழை.",
+      "summary_failed": "வழக்கு சுருக்கத்தைப் பெறுவதில் பிழை."
     }
   },
   "chat": {
@@ -311,15 +311,15 @@
     "sidebar_title": "அரட்டை வரலாறு",
     "prompt_toolbar": "எழுதுதல் குறிப்புகள்",
     "loading": "ஏற்றுகிறது...",
-    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "greeting": "வணக்கம்! நான் இந்திய சட்ட விசாரணைகளில் நிபுணத்துவம் பெற்ற ஒரு சாட்பாட். நான் உங்களுக்கு எப்படி உதவ முடியும்?",
     "disclaimer": {
-      "title": "Disclaimer:",
-      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+      "title": "மறுப்பு:",
+      "body": "வழங்கப்பட்ட தகவல்கள் பொது அறிவுக்காக மட்டுமே, சட்ட ஆலோசனையாகக் கருதப்படக்கூடாது."
     },
-    "ask_placeholder": "Ask a question about Indian law...",
-    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
-    "api_error": "An error occurred. Please try again.",
-    "sources_label": "Sources:"
+    "ask_placeholder": "இந்திய சட்டம் பற்றி ஒரு கேள்வி கேளுங்கள்...",
+    "generation_error": "மன்னிக்கவும், என்னால் பதிலை உருவாக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+    "api_error": "ஒரு பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்.",
+    "sources_label": "ஆதாரங்கள்:"
   },
   "notification": {
     "success": "வெற்றி",
