@@ -51,12 +51,12 @@ export default function LandingPage() {
       <section className="w-full max-w-6xl mx-auto py-20 rounded-3xl mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">{t("landing.who_is_it_for_title")}</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-          <AudienceCard icon="🎓" title={t("landing.audience.students")} desc="Learn legal basics and understand agreements easily." />
-          <AudienceCard icon="🧑‍💼" title={t("landing.audience.business_owners")} desc="Simplify contracts and reduce legal risks." />
-          <AudienceCard icon="👩‍⚖️" title={t("landing.audience.judges")} desc="Quickly review and summarize case documents." />
-          <AudienceCard icon="📰" title={t("landing.audience.journalists")} desc="Analyze legal docs for accurate reporting." />
-          <AudienceCard icon="🧑‍🎓" title={t("landing.audience.law_students")} desc="Study real agreements and case summaries." />
-          <AudienceCard icon="🧑‍🤝‍🧑" title={t("landing.audience.citizens")} desc="Understand your rights in plain language." />
+          <AudienceCard icon="🎓" title={t("landing.audience.students")} desc={t("landing.audience_desc.students")} />
+          <AudienceCard icon="🧑‍💼" title={t("landing.audience.business_owners")} desc={t("landing.audience_desc.business_owners")} />
+          <AudienceCard icon="👩‍⚖️" title={t("landing.audience.judges")} desc={t("landing.audience_desc.judges")} />
+          <AudienceCard icon="📰" title={t("landing.audience.journalists")} desc={t("landing.audience_desc.journalists")} />
+          <AudienceCard icon="🧑‍🎓" title={t("landing.audience.law_students")} desc={t("landing.audience_desc.law_students")} />
+          <AudienceCard icon="🧑‍🤝‍🧑" title={t("landing.audience.citizens")} desc={t("landing.audience_desc.citizens")} />
         </div>
       </section>
 

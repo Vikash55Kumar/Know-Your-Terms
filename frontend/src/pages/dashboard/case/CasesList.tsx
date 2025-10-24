@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 // Minimal circular spinner component
 function Spinner({ loading, detailLoading }: { loading: boolean; detailLoading: boolean }) {
     return (
@@ -27,6 +28,7 @@ const CasesList: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [selectedCase, setSelectedCase] = useState<any | null>(null);
     const [detailLoading, setDetailLoading] = useState(false);
+    const { t } = useTranslation();
 
     const handleSearch = async () => {
         setLoading(true);
@@ -84,13 +86,13 @@ const CasesList: React.FC = () => {
             {/* Header */}
             <header className="mb-8 text-center">
                 <h1 className="text-4xl font-bold text-black flex items-center justify-center gap-2 tracking-tight">
-                    ⚖️ Case Explorer
+                    ⚖️ {t('case.explorer_title')}
                 </h1>
                 <p className="text-gray-800 text-lg mt-2">
-                    Search and review landmark Indian legal cases with ease
+                    {t('case.explorer_subtitle')}
                 </p>
                 <p className="text-sm text-gray-500 mt-1">
-                    Powered by <span className="font-semibold text-[#F6A507]">IndianKanoon.org</span>
+                    Powered by <span className="font-semibold text-[#F6A507]">{t('case.powered_by_source')}</span>
                 </p>
                 <div className="mt-4 w-16 border-b-2 border-[#CDA047] mx-auto"></div>
             </header>
@@ -101,14 +103,14 @@ const CasesList: React.FC = () => {
                 <input
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Search by case title, citation, or keywords..."
+                    placeholder={t('case.search_placeholder')}
                     className="flex-1 border border-[#CDA047] rounded-lg px-4 py-3 shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-[#F6A507] bg-white"
                 />
                 <Button type="submit" size="lg"
                     onClick={handleSearch}
                     loading={loading}
                 >
-                    Search
+                    {t('case.search_button')}
                 </Button>
             </div>
 
