@@ -88,9 +88,49 @@
       "journalists": "பத்திரிகையாளர்கள்",
       "law_students": "சட்ட மாணவர்கள்",
       "citizens": "குடிமக்கள்"
+    },
+    "audience_desc": {
+      "students": "Learn legal basics and understand agreements easily.",
+      "business_owners": "Simplify contracts and reduce legal risks.",
+      "judges": "Quickly review and summarize case documents.",
+      "journalists": "Analyze legal docs for accurate reporting.",
+      "law_students": "Study real agreements and case summaries.",
+      "citizens": "Understand your rights in plain language."
     }
   },
   "footer": {
+    "brand": {
+      "title": "Know Your Terms",
+      "subtitle": "AI Legal Document Platform",
+      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+    },
+    "quick_links_title": "Quick Links",
+    "quick_links": {
+      "home": "முகப்புப் பக்கம்",
+      "about": "பற்றி",
+      "help": "User Guide",
+      "dashboard": "டாஷ்போர்டு",
+      "contact": "Contact"
+    },
+    "features_title": "Features",
+    "features": [
+      "AI Summarization",
+      "Agreement Templates",
+      "Case Law Insights",
+      "ஆவண மதிப்பாய்வு",
+      "Chatbot Support"
+    ],
+    "contact": {
+      "title": "Contact"
+    },
+    "bottom": {
+      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
+      "last_updated": "Last Updated: August 2025",
+      "version": "Version 1.0",
+      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
+      "powered_by": "Powered by AI",
+      "secure_private": "Secure & Private"
+    },
     "contact_us": "எங்களை தொடர்பு கொள்ள",
     "privacy_policy": "தனியுரிமைக் கொள்கை",
     "terms_of_service": "சேவை விதிமுறைகள்",
@@ -220,6 +260,24 @@
     "upload_doc": "ஆவணத்தைப் பதிவேற்று",
     "download_pdf": "PDF ஐ பதிவிறக்கவும்"
   },
+  "agreementProcess": {
+    "header": {
+      "title": "Agreement / Contract Process",
+      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "powered_by": "மூலம் இயக்கப்படுகிறது"
+    },
+    "search": {
+      "placeholder": "Search agreement type...",
+      "view_button": "View Process",
+      "query_required": "Query is required.",
+      "login_required": "You must be logged in to upload and summarize a document.",
+      "example_label": "Example:",
+      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+    },
+    "spinner": {
+      "loading": "Loading process details..."
+    }
+  },
   "case": {
     "title": "வழக்கு",
     "detail": "வழக்கு விவரம்",
@@ -227,7 +285,24 @@
     "new_case": "புதிய வழக்கு",
     "status": "நிலைமை",
     "agent": "முகவர்",
-    "history": "வழக்கு வரலாறு"
+    "history": "வழக்கு வரலாறு",
+    "explorer_title": "Case Explorer",
+    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
+    "powered_by_source": "IndianKanoon.org",
+    "search_placeholder": "Search by case title, citation, or keywords...",
+    "search_button": "தேடல்",
+    "spinner": {
+      "fetching_details": "Fetching Case Details...",
+      "fetching_summary": "Fetching Case Summary..."
+    },
+    "results_title": "Case Results",
+    "no_results": "No results yet. Try searching above.",
+    "view_summary": "View Summary",
+    "invalid_case_id": "Invalid case ID.",
+    "errors": {
+      "search_failed": "Error fetching search results.",
+      "summary_failed": "Error fetching case summary."
+    }
   },
   "chat": {
     "chatbot": "சாட்போட்",
@@ -235,7 +310,16 @@
     "type_message": "உங்கள் செய்தியை உள்ளிடவும்...",
     "sidebar_title": "அரட்டை வரலாறு",
     "prompt_toolbar": "எழுதுதல் குறிப்புகள்",
-    "loading": "ஏற்றுகிறது..."
+    "loading": "ஏற்றுகிறது...",
+    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "disclaimer": {
+      "title": "Disclaimer:",
+      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+    },
+    "ask_placeholder": "Ask a question about Indian law...",
+    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
+    "api_error": "An error occurred. Please try again.",
+    "sources_label": "Sources:"
   },
   "notification": {
     "success": "வெற்றி",
