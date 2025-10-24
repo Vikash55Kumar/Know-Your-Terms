@@ -88,9 +88,49 @@
       "journalists": "પત્રકારો",
       "law_students": "કાયદાના વિદ્યાર્થીઓ",
       "citizens": "નાગરિકો"
+    },
+    "audience_desc": {
+      "students": "Learn legal basics and understand agreements easily.",
+      "business_owners": "Simplify contracts and reduce legal risks.",
+      "judges": "Quickly review and summarize case documents.",
+      "journalists": "Analyze legal docs for accurate reporting.",
+      "law_students": "Study real agreements and case summaries.",
+      "citizens": "Understand your rights in plain language."
     }
   },
   "footer": {
+    "brand": {
+      "title": "Know Your Terms",
+      "subtitle": "AI Legal Document Platform",
+      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+    },
+    "quick_links_title": "Quick Links",
+    "quick_links": {
+      "home": "ઘર",
+      "about": "વિશે",
+      "help": "User Guide",
+      "dashboard": "ડેશબોર્ડ",
+      "contact": "Contact"
+    },
+    "features_title": "Features",
+    "features": [
+      "AI Summarization",
+      "Agreement Templates",
+      "Case Law Insights",
+      "દસ્તાવેજ સમીક્ષા",
+      "Chatbot Support"
+    ],
+    "contact": {
+      "title": "Contact"
+    },
+    "bottom": {
+      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
+      "last_updated": "Last Updated: August 2025",
+      "version": "Version 1.0",
+      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
+      "powered_by": "Powered by AI",
+      "secure_private": "Secure & Private"
+    },
     "contact_us": "અમારો સંપર્ક કરો",
     "privacy_policy": "ગોપનીયતા નીતિ",
     "terms_of_service": "સેવાની શરતો",
@@ -220,6 +260,24 @@
     "upload_doc": "દસ્તાવેજ અપલોડ કરો",
     "download_pdf": "PDF ડાઉનલોડ કરો"
   },
+  "agreementProcess": {
+    "header": {
+      "title": "Agreement / Contract Process",
+      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "powered_by": "દ્વારા સંચાલિત"
+    },
+    "search": {
+      "placeholder": "Search agreement type...",
+      "view_button": "View Process",
+      "query_required": "Query is required.",
+      "login_required": "You must be logged in to upload and summarize a document.",
+      "example_label": "Example:",
+      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+    },
+    "spinner": {
+      "loading": "Loading process details..."
+    }
+  },
   "case": {
     "title": "કેસ",
     "detail": "કેસની વિગતો",
@@ -227,7 +285,24 @@
     "new_case": "નવો કેસ",
     "status": "સ્થિતિ",
     "agent": "એજન્ટ",
-    "history": "કેસ હિસ્ટ્રી"
+    "history": "કેસ હિસ્ટ્રી",
+    "explorer_title": "Case Explorer",
+    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
+    "powered_by_source": "IndianKanoon.org",
+    "search_placeholder": "Search by case title, citation, or keywords...",
+    "search_button": "શોધો",
+    "spinner": {
+      "fetching_details": "Fetching Case Details...",
+      "fetching_summary": "Fetching Case Summary..."
+    },
+    "results_title": "Case Results",
+    "no_results": "No results yet. Try searching above.",
+    "view_summary": "View Summary",
+    "invalid_case_id": "Invalid case ID.",
+    "errors": {
+      "search_failed": "Error fetching search results.",
+      "summary_failed": "Error fetching case summary."
+    }
   },
   "chat": {
     "chatbot": "ચેટબોટ",
@@ -235,7 +310,16 @@
     "type_message": "તમારો સંદેશ લખો...",
     "sidebar_title": "ચેટ ઇતિહાસ",
     "prompt_toolbar": "લેખન સંકેતો",
-    "loading": "લોડ કરી રહ્યું છે..."
+    "loading": "લોડ કરી રહ્યું છે...",
+    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "disclaimer": {
+      "title": "Disclaimer:",
+      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+    },
+    "ask_placeholder": "Ask a question about Indian law...",
+    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
+    "api_error": "An error occurred. Please try again.",
+    "sources_label": "Sources:"
   },
   "notification": {
     "success": "સફળતા",
