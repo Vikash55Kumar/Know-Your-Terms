@@ -90,46 +90,46 @@
       "citizens": "नागरिकाः"
     },
     "audience_desc": {
-      "students": "Learn legal basics and understand agreements easily.",
-      "business_owners": "Simplify contracts and reduce legal risks.",
-      "judges": "Quickly review and summarize case documents.",
-      "journalists": "Analyze legal docs for accurate reporting.",
-      "law_students": "Study real agreements and case summaries.",
-      "citizens": "Understand your rights in plain language."
+      "students": "कानूनी मूलभूतविषयान् ज्ञात्वा सम्झौतान् सहजतया अवगच्छन्तु।",
+      "business_owners": "अनुबन्धान् सरलीकरोतु, कानूनीजोखिमान् न्यूनीकरोतु च।",
+      "judges": "प्रकरणदस्तावेजानां शीघ्रं समीक्षां सारांशं च कुर्वन्तु।",
+      "journalists": "समीचीनप्रतिवेदनार्थं कानूनीदस्तावेजानां विश्लेषणं कुर्वन्तु।",
+      "law_students": "वास्तविकसमझौतानां प्रकरणसारांशानां च अध्ययनं कुर्वन्तु।",
+      "citizens": "साधारणभाषायां स्वस्य अधिकारं अवगच्छन्तु।"
     }
   },
   "footer": {
     "brand": {
-      "title": "Know Your Terms",
-      "subtitle": "AI Legal Document Platform",
-      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+      "title": "भवतः नियमाः ज्ञातव्याः",
+      "subtitle": "ए आई कानूनी दस्तावेज मञ्च",
+      "description": "कानूनीदस्तावेजान्-समझौताः, अनुबन्धाः, इत्यादीनि च-सर्वस्य कृते स्पष्टं, कार्यानुष्ठानयोग्यं मार्गदर्शनं कृत्वा सरलीकरणं।"
     },
-    "quick_links_title": "Quick Links",
+    "quick_links_title": "त्वरितलिङ्कानि",
     "quick_links": {
       "home": "गृहम्‌",
       "about": "विषये",
-      "help": "User Guide",
+      "help": "उपयोक्तृपुस्तिका",
       "dashboard": "डैशबोर्ड",
-      "contact": "Contact"
+      "contact": "संपर्कः"
     },
-    "features_title": "Features",
+    "features_title": "गुणाः",
     "features": [
-      "AI Summarization",
-      "Agreement Templates",
-      "Case Law Insights",
+      "ऐ सारांश",
+      "सम्झौता टेम्पलेट्स",
+      "केस लॉ इन्साइट्स",
       "दस्तावेज समीक्षा",
-      "Chatbot Support"
+      "चैटबोट समर्थन"
     ],
     "contact": {
-      "title": "Contact"
+      "title": "संपर्कः"
     },
     "bottom": {
-      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
-      "last_updated": "Last Updated: August 2025",
-      "version": "Version 1.0",
-      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
-      "powered_by": "Powered by AI",
-      "secure_private": "Secure & Private"
+      "copyright": "© {{year}} भवतः नियमाः ज्ञातव्याः। सर्वाधिकार सुरक्षित।",
+      "last_updated": "अन्तिम अद्यतनः अगस्त २०२५",
+      "version": "संस्करणम् १.०",
+      "best_viewed": "Chrome, Firefox, Safari इत्यत्र सर्वोत्तमरूपेण दृश्यते",
+      "powered_by": "एआइ द्वारा संचालित",
+      "secure_private": "सुरक्षित एवं निजी"
     },
     "contact_us": "हमसे संपर्क करें",
     "privacy_policy": "गोपनीयता नीति",
@@ -262,20 +262,20 @@
   },
   "agreementProcess": {
     "header": {
-      "title": "Agreement / Contract Process",
-      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "title": "सम्झौता / अनुबन्ध प्रक्रिया",
+      "subtitle": "सम्झौतानां प्रारूपणं, समीक्षां, निष्पादनं च कर्तुं पदे पदे प्रक्रिया",
       "powered_by": "द्वारा संचालित"
     },
     "search": {
-      "placeholder": "Search agreement type...",
-      "view_button": "View Process",
-      "query_required": "Query is required.",
-      "login_required": "You must be logged in to upload and summarize a document.",
-      "example_label": "Example:",
-      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+      "placeholder": "सम्झौताप्रकारं अन्वेष्टुम्...",
+      "view_button": "View Process इति",
+      "query_required": "प्रश्नः आवश्यकः अस्ति।",
+      "login_required": "दस्तावेजं अपलोड् कर्तुं सारांशं च कर्तुं भवता प्रवेशः करणीयः ।",
+      "example_label": "उदाहरण:",
+      "examples": "गृह ऋण सम्झौता, विवाह अनुबन्ध, किराया सम्झौता, रोजगार अनुबन्ध"
     },
     "spinner": {
-      "loading": "Loading process details..."
+      "loading": "प्रक्रियाविवरणं लोड् भवति..."
     }
   },
   "case": {
@@ -286,22 +286,22 @@
     "status": "स्थितिः",
     "agent": "दूत",
     "history": "प्रकरण इतिहास",
-    "explorer_title": "Case Explorer",
-    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
+    "explorer_title": "केस एक्सप्लोरर",
+    "explorer_subtitle": "स्थलचिह्नभारतीयकानूनीप्रकरणानाम् अन्वेषणं समीक्षां च सहजतया",
     "powered_by_source": "IndianKanoon.org",
-    "search_placeholder": "Search by case title, citation, or keywords...",
+    "search_placeholder": "प्रकरणशीर्षकं, उद्धरणं, अथवा कीवर्डं कृत्वा अन्वेषणं कुर्वन्तु...",
     "search_button": "अन्वेषण",
     "spinner": {
-      "fetching_details": "Fetching Case Details...",
-      "fetching_summary": "Fetching Case Summary..."
+      "fetching_details": "प्रकरणविवरणं आनयन्...",
+      "fetching_summary": "प्रकरणस्य सारांशं आनयन्..."
     },
-    "results_title": "Case Results",
-    "no_results": "No results yet. Try searching above.",
-    "view_summary": "View Summary",
-    "invalid_case_id": "Invalid case ID.",
+    "results_title": "प्रकरणपरिणाम",
+    "no_results": "अद्यापि परिणामः नास्ति। उपरि अन्वेषणं कर्तुं प्रयतस्व।",
+    "view_summary": "सारांशं पश्यन्तु",
+    "invalid_case_id": "अमान्य प्रकरण आईडी।",
     "errors": {
-      "search_failed": "Error fetching search results.",
-      "summary_failed": "Error fetching case summary."
+      "search_failed": "अन्वेषणपरिणामान् आनयितुं त्रुटिः।",
+      "summary_failed": "प्रकरणसारांशं आनयन् त्रुटिः।"
     }
   },
   "chat": {
@@ -311,15 +311,15 @@
     "sidebar_title": "गपशप इतिहास",
     "prompt_toolbar": "लेखनप्रोम्प्ट्",
     "loading": "लोडिंग...",
-    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "greeting": "नमस्ते! अहं भारतीयकानूनीजिज्ञासाविशेषज्ञः चैट्बोट् अस्मि। अहं भवतः कथं साहाय्यं कर्तुं शक्नोमि?",
     "disclaimer": {
-      "title": "Disclaimer:",
-      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+      "title": "अस्वीकरणम् : १.",
+      "body": "प्रदत्ता सूचना केवलं सामान्यज्ञानार्थं भवति, सा कानूनीपरामर्शः न गणनीया ।"
     },
-    "ask_placeholder": "Ask a question about Indian law...",
-    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
-    "api_error": "An error occurred. Please try again.",
-    "sources_label": "Sources:"
+    "ask_placeholder": "भारतीयकानूनविषये प्रश्नं पृच्छतु...",
+    "generation_error": "क्षम्यतां, अहं प्रतिक्रियां जनयितुं न शक्तवान्। कृपया पुनः प्रयासं कुर्वन्तु।",
+    "api_error": "एकः दोषः अभवत् । कृपया पुनः प्रयासं कुर्वन्तु।",
+    "sources_label": "स्रोतः : १."
   },
   "notification": {
     "success": "सफलता",
