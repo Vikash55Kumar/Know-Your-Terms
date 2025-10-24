@@ -90,46 +90,46 @@
       "citizens": "ਨਾਗਰਿਕ"
     },
     "audience_desc": {
-      "students": "Learn legal basics and understand agreements easily.",
-      "business_owners": "Simplify contracts and reduce legal risks.",
-      "judges": "Quickly review and summarize case documents.",
-      "journalists": "Analyze legal docs for accurate reporting.",
-      "law_students": "Study real agreements and case summaries.",
-      "citizens": "Understand your rights in plain language."
+      "students": "ਕਾਨੂੰਨੀ ਮੂਲ ਗੱਲਾਂ ਸਿੱਖੋ ਅਤੇ ਸਮਝੌਤਿਆਂ ਨੂੰ ਆਸਾਨੀ ਨਾਲ ਸਮਝੋ।",
+      "business_owners": "ਇਕਰਾਰਨਾਮਿਆਂ ਨੂੰ ਸਰਲ ਬਣਾਓ ਅਤੇ ਕਾਨੂੰਨੀ ਜੋਖਮ ਘਟਾਓ।",
+      "judges": "ਕੇਸ ਦਸਤਾਵੇਜ਼ਾਂ ਦੀ ਜਲਦੀ ਸਮੀਖਿਆ ਕਰੋ ਅਤੇ ਉਹਨਾਂ ਦਾ ਸਾਰ ਦਿਓ।",
+      "journalists": "ਸਹੀ ਰਿਪੋਰਟਿੰਗ ਲਈ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ਾਂ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ।",
+      "law_students": "ਅਸਲ ਸਮਝੌਤਿਆਂ ਅਤੇ ਕੇਸ ਸਾਰਾਂਸ਼ਾਂ ਦਾ ਅਧਿਐਨ ਕਰੋ।",
+      "citizens": "ਆਪਣੇ ਹੱਕਾਂ ਨੂੰ ਸਾਫ਼-ਸਾਫ਼ ਭਾਸ਼ਾ ਵਿੱਚ ਸਮਝੋ।"
     }
   },
   "footer": {
     "brand": {
-      "title": "Know Your Terms",
-      "subtitle": "AI Legal Document Platform",
-      "description": "Simplifying legal documents—agreements, contracts, and more—into clear, actionable guidance for everyone."
+      "title": "ਆਪਣੀਆਂ ਸ਼ਰਤਾਂ ਜਾਣੋ",
+      "subtitle": "ਏਆਈ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਪਲੇਟਫਾਰਮ",
+      "description": "ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ਾਂ - ਸਮਝੌਤੇ, ਇਕਰਾਰਨਾਮੇ, ਅਤੇ ਹੋਰ - ਨੂੰ ਸਰਲ ਬਣਾਉਣਾ - ਸਾਰਿਆਂ ਲਈ ਸਪੱਸ਼ਟ, ਕਾਰਵਾਈਯੋਗ ਮਾਰਗਦਰਸ਼ਨ ਲਈ।"
     },
-    "quick_links_title": "Quick Links",
+    "quick_links_title": "ਤੇਜ਼ ਲਿੰਕ",
     "quick_links": {
       "home": "ਮੁੱਖ ਪੇਜ",
       "about": "ਬਾਰੇ",
-      "help": "User Guide",
+      "help": "ਯੂਜ਼ਰ ਗਾਈਡ",
       "dashboard": "ਡੈਸ਼ਬੋਰਡ",
-      "contact": "Contact"
+      "contact": "ਸੰਪਰਕ"
     },
-    "features_title": "Features",
+    "features_title": "ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
     "features": [
-      "AI Summarization",
-      "Agreement Templates",
-      "Case Law Insights",
+      "ਏਆਈ ਸੰਖੇਪ",
+      "ਸਮਝੌਤੇ ਦੇ ਟੈਂਪਲੇਟ",
+      "ਕੇਸ ਲਾਅ ਇਨਸਾਈਟਸ",
       "ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ",
-      "Chatbot Support"
+      "ਚੈਟਬੋਟ ਸਹਾਇਤਾ"
     ],
     "contact": {
-      "title": "Contact"
+      "title": "ਸੰਪਰਕ"
     },
     "bottom": {
-      "copyright": "© {{year}} Know Your Terms. All Rights Reserved.",
-      "last_updated": "Last Updated: August 2025",
-      "version": "Version 1.0",
-      "best_viewed": "Best viewed in Chrome, Firefox, Safari",
-      "powered_by": "Powered by AI",
-      "secure_private": "Secure & Private"
+      "copyright": "© {{year}} ਆਪਣੀਆਂ ਸ਼ਰਤਾਂ ਜਾਣੋ। ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ।",
+      "last_updated": "ਆਖਰੀ ਅੱਪਡੇਟ: ਅਗਸਤ 2025",
+      "version": "ਵਰਜਨ 1.0",
+      "best_viewed": "ਕਰੋਮ, ਫਾਇਰਫਾਕਸ, ਸਫਾਰੀ ਵਿੱਚ ਸਭ ਤੋਂ ਵਧੀਆ ਦੇਖਿਆ ਜਾ ਸਕਦਾ ਹੈ",
+      "powered_by": "AI ਦੁਆਰਾ ਸੰਚਾਲਿਤ",
+      "secure_private": "ਸੁਰੱਖਿਅਤ ਅਤੇ ਨਿੱਜੀ"
     },
     "contact_us": "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
     "privacy_policy": "ਪਰਾਈਵੇਟ ਨੀਤੀ",
@@ -262,20 +262,20 @@
   },
   "agreementProcess": {
     "header": {
-      "title": "Agreement / Contract Process",
-      "subtitle": "Step-by-step process for drafting, reviewing, and executing agreements",
+      "title": "ਸਮਝੌਤਾ / ਇਕਰਾਰਨਾਮਾ ਪ੍ਰਕਿਰਿਆ",
+      "subtitle": "ਸਮਝੌਤਿਆਂ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨ, ਸਮੀਖਿਆ ਕਰਨ ਅਤੇ ਲਾਗੂ ਕਰਨ ਲਈ ਕਦਮ-ਦਰ-ਕਦਮ ਪ੍ਰਕਿਰਿਆ",
       "powered_by": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ"
     },
     "search": {
-      "placeholder": "Search agreement type...",
-      "view_button": "View Process",
-      "query_required": "Query is required.",
-      "login_required": "You must be logged in to upload and summarize a document.",
-      "example_label": "Example:",
-      "examples": "Home Loan Agreement, Marriage Contract, Rental Agreement, Employment Contract"
+      "placeholder": "ਖੋਜ ਸਮਝੌਤੇ ਦੀ ਕਿਸਮ...",
+      "view_button": "ਪ੍ਰਕਿਰਿਆ ਵੇਖੋ",
+      "query_required": "ਪੁੱਛਗਿੱਛ ਦੀ ਲੋੜ ਹੈ।",
+      "login_required": "ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਪਲੋਡ ਕਰਨ ਅਤੇ ਸੰਖੇਪ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਲੌਗਇਨ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।",
+      "example_label": "ਉਦਾਹਰਨ:",
+      "examples": "ਘਰ ਕਰਜ਼ਾ ਸਮਝੌਤਾ, ਵਿਆਹ ਇਕਰਾਰਨਾਮਾ, ਕਿਰਾਏ ਦਾ ਸਮਝੌਤਾ, ਰੁਜ਼ਗਾਰ ਇਕਰਾਰਨਾਮਾ"
     },
     "spinner": {
-      "loading": "Loading process details..."
+      "loading": "ਪ੍ਰਕਿਰਿਆ ਵੇਰਵੇ ਲੋਡ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ..."
     }
   },
   "case": {
@@ -286,22 +286,22 @@
     "status": "ਸਥਿਤੀ",
     "agent": "ਏਜੰਟ",
     "history": "ਕੇਸ ਹਿਸਟਰੀ",
-    "explorer_title": "Case Explorer",
-    "explorer_subtitle": "Search and review landmark Indian legal cases with ease",
-    "powered_by_source": "IndianKanoon.org",
-    "search_placeholder": "Search by case title, citation, or keywords...",
+    "explorer_title": "ਕੇਸ ਐਕਸਪਲੋਰਰ",
+    "explorer_subtitle": "ਆਸਾਨੀ ਨਾਲ ਇਤਿਹਾਸਕ ਭਾਰਤੀ ਕਾਨੂੰਨੀ ਮਾਮਲਿਆਂ ਦੀ ਖੋਜ ਅਤੇ ਸਮੀਖਿਆ ਕਰੋ",
+    "powered_by_source": "ਇੰਡੀਅਨਕਾਨੂਨ.ਆਰ.ਜੀ",
+    "search_placeholder": "ਕੇਸ ਦੇ ਸਿਰਲੇਖ, ਹਵਾਲੇ, ਜਾਂ ਕੀਵਰਡਸ ਦੁਆਰਾ ਖੋਜ ਕਰੋ...",
     "search_button": "ਖੋਜ",
     "spinner": {
-      "fetching_details": "Fetching Case Details...",
-      "fetching_summary": "Fetching Case Summary..."
+      "fetching_details": "ਕੇਸ ਵੇਰਵੇ ਪ੍ਰਾਪਤ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ...",
+      "fetching_summary": "ਕੇਸ ਸਾਰਾਂਸ਼ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
     },
-    "results_title": "Case Results",
-    "no_results": "No results yet. Try searching above.",
-    "view_summary": "View Summary",
-    "invalid_case_id": "Invalid case ID.",
+    "results_title": "ਕੇਸ ਨਤੀਜੇ",
+    "no_results": "ਹਾਲੇ ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ ਹੈ। ਉੱਪਰ ਖੋਜ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "view_summary": "ਸੰਖੇਪ ਵੇਖੋ",
+    "invalid_case_id": "ਅਵੈਧ ਕੇਸ ਆਈਡੀ।",
     "errors": {
-      "search_failed": "Error fetching search results.",
-      "summary_failed": "Error fetching case summary."
+      "search_failed": "ਖੋਜ ਨਤੀਜੇ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਗਲਤੀ।",
+      "summary_failed": "ਕੇਸ ਸਾਰਾਂਸ਼ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਗੜਬੜ ਹੋਈ।"
     }
   },
   "chat": {
@@ -311,15 +311,15 @@
     "sidebar_title": "ਚੈਟ ਇਤਿਹਾਸ",
     "prompt_toolbar": "ਲਿਖਣ ਦੇ ਸੰਕੇਤ",
     "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
-    "greeting": "Hello! I am a chatbot specialized in Indian legal inquiries. How can I help you?",
+    "greeting": "ਹੈਲੋ! ਮੈਂ ਇੱਕ ਚੈਟਬੋਟ ਹਾਂ ਜੋ ਭਾਰਤੀ ਕਾਨੂੰਨੀ ਪੁੱਛਗਿੱਛਾਂ ਵਿੱਚ ਮਾਹਰ ਹੈ। ਮੈਂ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹਾਂ?",
     "disclaimer": {
-      "title": "Disclaimer:",
-      "body": "The information provided is for general knowledge only and should not be considered legal advice."
+      "title": "ਅਸਵੀਕਾਰਨ:",
+      "body": "ਦਿੱਤੀ ਗਈ ਜਾਣਕਾਰੀ ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ ਲਈ ਹੈ ਅਤੇ ਇਸਨੂੰ ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ।"
     },
-    "ask_placeholder": "Ask a question about Indian law...",
-    "generation_error": "Sorry, I couldn't generate a response. Please try again.",
-    "api_error": "An error occurred. Please try again.",
-    "sources_label": "Sources:"
+    "ask_placeholder": "ਭਾਰਤੀ ਕਾਨੂੰਨ ਬਾਰੇ ਕੋਈ ਸਵਾਲ ਪੁੱਛੋ...",
+    "generation_error": "ਮਾਫ਼ ਕਰਨਾ, ਮੈਂ ਜਵਾਬ ਨਹੀਂ ਦੇ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "api_error": "ਇੱਕ ਗਲਤੀ ਹੋਈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "sources_label": "ਸਰੋਤ:"
   },
   "notification": {
     "success": "ਸਫਲਤਾ",
