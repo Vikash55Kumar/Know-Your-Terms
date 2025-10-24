@@ -1,30 +1,32 @@
 // Icon emojis used for dashboard features
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function Dashboard() {
     const navigate = useNavigate();
+    const { t } = useTranslation();
   const features = [
     {
-      name: "Agreement Summary",
-      description: "Quickly understand key points of contracts and agreements.",
+      name: t('dashboard.features.agreement_summary.title'),
+      description: t('dashboard.features.agreement_summary.desc'),
       icon: "📄",
       path: "/dashboard/role-selection",
     },
     {
-      name: "Agreement Process",
-      description: "Step-by-step guidance for drafting and executing agreements.",
+      name: t('dashboard.features.process_agreement.title'),
+      description: t('dashboard.features.process_agreement.desc'),
       icon: "📝",
       path: "/dashboard/process/summary",
     },
     {
-      name: "Case Summary",
-      description: "Search, review, and analyze landmark legal cases.",
+      name: t('dashboard.features.case_summary.title'),
+      description: t('dashboard.features.case_summary.desc'),
       icon: "⚖️",
       path: "/dashboard/case/case-details",
     },
     {
-      name: "Chatbot Assistant",
-      description: "Ask questions and get instant legal insights.",
+      name: t('dashboard.features.chatbot_assistant.title'),
+      description: t('dashboard.features.chatbot_assistant.desc'),
       icon: "🤖",
       path: "/chatbot",
     },
@@ -35,10 +37,10 @@ export default function Dashboard() {
       {/* Header */}
       <header className="mb-12 text-center">
         <h1 className="text-4xl font-bold text-black tracking-tight">
-          ⚖️ Legal Dashboard
+          {t('dashboard.title')}
         </h1>
         <p className="text-gray-700 text-lg mt-2">
-          Access all your legal tools and services in one place
+          {t('dashboard.subtitle')}
         </p>
         <div className="mt-4 w-20 border-b-2 border-[#CDA047] mx-auto"></div>
       </header>

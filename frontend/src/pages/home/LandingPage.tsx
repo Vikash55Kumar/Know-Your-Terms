@@ -2,73 +2,73 @@ import { Link } from "react-router-dom";
 import gemini from "../../assets/gemini.png";
 import indiankanoon from "../../assets/indiankanoon.png";
 import vertexAi from "../../assets/vertex.webp";
+import { useTranslation } from "react-i18next";
 
 export default function LandingPage() {
+  const { t } = useTranslation();
   return (
     <main className="flex flex-col items-center justify-center w-full bg-white">
       {/* Features Section */}
       <section className="w-full max-w-6xl mx-auto py-20 bg-white rounded-3xl mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">Key Features</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">{t("landing.features_title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <FeatureCard icon="📝" title="Agreement Summary" desc="AI extracts and simplifies long agreements into clear bullet points." />
-          <FeatureCard icon="🤖" title="Legal Chatbot" desc="Ask document-related questions and get instant, reliable answers." />
-          <FeatureCard icon="⚖️" title="Case Summary" desc="Integrated with IndianKanoon API for quick case law insights." />
-          <FeatureCard icon="🌐" title="Language Translation" desc="Translate agreements into regional languages instantly." />
-          <FeatureCard icon="📚" title="Agreement Process Guides" desc="Step-by-step instructions for creating or understanding agreements." />
-          <FeatureCard icon="📝" title="Template Creation" desc="Ready-to-use templates for rent, job, loan, and business contracts." />
-          <FeatureCard icon="🎬" title="Visual/Video Summary" desc="Explain agreements using AI-generated videos for better clarity." />
-          <FeatureCard icon="🔍" title="Document Review" desc="Spot hidden clauses, risky terms, and missing essentials." />
+          <FeatureCard icon="📝" title={t("landing.features.agreement_summary.title")} desc={t("landing.features.agreement_summary.desc")} />
+          <FeatureCard icon="🤖" title={t("landing.features.legal_chatbot.title")} desc={t("landing.features.legal_chatbot.desc")} />
+          <FeatureCard icon="⚖️" title={t("landing.features.case_summary.title")} desc={t("landing.features.case_summary.desc")} />
+          <FeatureCard icon="🌐" title={t("landing.features.language_translation.title")} desc={t("landing.features.language_translation.desc")} />
+          <FeatureCard icon="📚" title={t("landing.features.agreement_process_guides.title")} desc={t("landing.features.agreement_process_guides.desc")} />
+          <FeatureCard icon="📝" title={t("landing.features.template_creation.title")} desc={t("landing.features.template_creation.desc")} />
+          <FeatureCard icon="🎬" title={t("landing.features.visual_video_summary.title")} desc={t("landing.features.visual_video_summary.desc")} />
+          <FeatureCard icon="🔍" title={t("landing.features.document_review.title")} desc={t("landing.features.document_review.desc")} />
         </div>
       </section>
 
       {/* How It Works Section */}
       <section className="w-full max-w-6xl mx-auto px-6 py-20 bg-[#e8eaf6] rounded-3xl shadow mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">How It Works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">{t("landing.how_it_works_title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <Step icon="📤" number="1" title="Upload" desc="Upload your PDF, DOCX, or scanned agreement." />
-          <Step icon="🤖" number="2" title="AI Processing" desc="Our AI + Gemini extracts text, applies NLP, and summarizes in plain language." />
-          <Step icon="✨" number="3" title="Get Insights" desc="Receive summary, risks, translations, or even a fresh document template." />
+          <Step icon="📤" number="1" title={t("landing.how_it_works.step1.title")} desc={t("landing.how_it_works.step1.desc")} />
+          <Step icon="🤖" number="2" title={t("landing.how_it_works.step2.title")} desc={t("landing.how_it_works.step2.desc")} />
+          <Step icon="✨" number="3" title={t("landing.how_it_works.step3.title")} desc={t("landing.how_it_works.step3.desc")} />
         </div>
       </section>
 
       {/* Tech Stack Section */}
       <section className="w-full max-w-6xl mx-auto px-6 py-20 text-center bg-white rounded-3xl shadow mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-black">Powered By</h2>
-        <p className="text-lg text-gray-700 mb-8">
-          Built on modern AI and cloud technologies for speed, security, and scale.
-        </p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-black">{t("landing.powered_by_title")}</h2>
+        <p className="text-lg text-gray-700 mb-8">{t("landing.tech_stack.description")}</p>
         <div className="flex flex-wrap justify-center gap-6">
-          <TechBadge imgSrc={gemini} name="Google Gemini API" />
-          <TechBadge imgSrc="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" name="Firebase Authentication" />
-          <TechBadge imgSrc="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" name="Firebase Database" />
-          <TechBadge imgSrc="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png" name="Google Translate API" />
-          <TechBadge imgSrc={vertexAi} name="Vertex AI" />
-          <TechBadge imgSrc={indiankanoon} name="IndianKanoon API" />
+          <TechBadge imgSrc={gemini} name={t("landing.tech_stack.google_gemini")} />
+          <TechBadge imgSrc="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" name={t("landing.tech_stack.firebase_auth")} />
+          <TechBadge imgSrc="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" name={t("landing.tech_stack.firebase_db")} />
+          <TechBadge imgSrc="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png" name={t("landing.tech_stack.google_translate")} />
+          <TechBadge imgSrc={vertexAi} name={t("landing.tech_stack.vertex_ai")} />
+          <TechBadge imgSrc={indiankanoon} name={t("landing.tech_stack.indiankanoon")} />
         </div>
       </section>
 
       {/* Audience Section */}
       <section className="w-full max-w-6xl mx-auto py-20 rounded-3xl mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">Who Is It For?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">{t("landing.who_is_it_for_title")}</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-          <AudienceCard icon="🎓" title="Students" desc="Learn legal basics and understand agreements easily." />
-          <AudienceCard icon="🧑‍💼" title="Business Owners" desc="Simplify contracts and reduce legal risks." />
-          <AudienceCard icon="👩‍⚖️" title="Judges" desc="Quickly review and summarize case documents." />
-          <AudienceCard icon="📰" title="Journalists" desc="Analyze legal docs for accurate reporting." />
-          <AudienceCard icon="🧑‍🎓" title="Law Students" desc="Study real agreements and case summaries." />
-          <AudienceCard icon="🧑‍🤝‍🧑" title="Citizens" desc="Understand your rights in plain language." />
+          <AudienceCard icon="🎓" title={t("landing.audience.students")} desc={t("landing.audience_desc.students")} />
+          <AudienceCard icon="🧑‍💼" title={t("landing.audience.business_owners")} desc={t("landing.audience_desc.business_owners")} />
+          <AudienceCard icon="👩‍⚖️" title={t("landing.audience.judges")} desc={t("landing.audience_desc.judges")} />
+          <AudienceCard icon="📰" title={t("landing.audience.journalists")} desc={t("landing.audience_desc.journalists")} />
+          <AudienceCard icon="🧑‍🎓" title={t("landing.audience.law_students")} desc={t("landing.audience_desc.law_students")} />
+          <AudienceCard icon="🧑‍🤝‍🧑" title={t("landing.audience.citizens")} desc={t("landing.audience_desc.citizens")} />
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="w-full max-w-6xl mx-auto px-6 py-20 text-center bg-white rounded-3xl shadow mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Get Started Today</h2>
-        <p className="text-lg text-gray-700 mb-8">Upload your first document and see the power of AI simplify the law for you.</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">{t("landing.cta_title")}</h2>
+        <p className="text-lg text-gray-700 mb-8">{t("landing.cta_subtitle")}</p>
         <Link
           to="/dashboard"
           className="bg-gradient-to-br from-[#e5e7eb] via-[#f3f4f6] to-[#f9fafb] text-gray-800 hover:bg-[#e0e7ef] focus:ring-[#b1b4b6] border border-[#b1b4b6] hover:from-[#e0e7ef] hover:via-[#f3f4f6] hover:to-[#f9fafb] font-bold px-8 py-3 rounded-full shadow-lg transition text-lg tracking-wide"
         >
-          Try Demo →
+          {t("landing.try_demo")}
         </Link>
       </section>
     </main>

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import i18n from "../utils/i18n";
 import { useTranslation } from "react-i18next";
-import {LanguageDropdown, solutionsDropdown} from "./Dropdown";
+import {LanguageDropdown, SolutionsDropdown} from "./Dropdown";
 import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import { LogOut } from "lucide-react";
 import { getCurrentUserAsync } from "../store/authSlice";
@@ -96,7 +96,7 @@ const Navbar = () => {
             aria-haspopup="true"
             aria-expanded={showLanguage}
           >
-            {t("Language")}
+            {t("header.language")}
             <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M19 9l-7 7-7-7" />
             </svg>
@@ -117,7 +117,7 @@ const Navbar = () => {
           />
         </div>
 
-        <a href="/about" className="text-base font-semibold hover:text-[#CDA047] transition">{t("About")}</a>
+        <a href="/about" className="text-base font-semibold hover:text-[#CDA047] transition">{t("header.about")}</a>
         {/* Solutions with Flicker-Free Dropdown & Animation */}
         <div
           className="relative"
@@ -130,7 +130,7 @@ const Navbar = () => {
             aria-haspopup="true"
             aria-expanded={showSolutions}
           >
-            {t("Solutions")}
+            {t("header.solutions")}
             <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M19 9l-7 7-7-7" />
             </svg>
@@ -147,7 +147,7 @@ const Navbar = () => {
               >
                 {/* Solutions List */}
                 <div className="flex-1 grid grid-cols-2 gap-6">
-                  {solutionsDropdown.map((item, idx) => (
+                  {SolutionsDropdown.map((item, idx) => (
                     <a
                       key={idx}
                       href={item.href}
@@ -155,8 +155,8 @@ const Navbar = () => {
                     >
                       <span className="text-xl group-hover:scale-110 transition">{item.icon}</span>
                       <div className="group-hover:text-[#CDA047]">
-                        <div className="font-semibold text-gray-900 ">{item.title}</div>
-                        <div className="text-gray-500 text-sm ">{item.desc}</div>
+                        <div className="font-semibold text-gray-900 ">{t(item.titleKey)}</div>
+                        <div className="text-gray-500 text-sm ">{t(item.descKey)}</div>
                       </div>
                     </a>
                   ))}
@@ -165,7 +165,7 @@ const Navbar = () => {
             )}
           </AnimatePresence>
         </div>
-        {isAuthenticated && <a href="/dashboard" className="text-base font-semibold hover:text-[#CDA047] transition">{t("Dashboard")}</a>}
+        {isAuthenticated && <a href="/dashboard" className="text-base font-semibold hover:text-[#CDA047] transition">{t("header.dashboard")}</a>}
       </nav>
 
       <div className="hidden sm:block">
