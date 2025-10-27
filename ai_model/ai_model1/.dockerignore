@@ -4,3 +4,5 @@ __pycache__/
 venv/
 *.ipynb
 *.log
+cloud_vision.json
+vertex_ai.json
