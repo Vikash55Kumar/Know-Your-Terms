@@ -44,8 +44,6 @@ export default function SummaryPage({ targetGroup }: Props) {
         business_owner: t('summaryPage.targetGroupLabels.business_owner'),
     };
 
-    console.log("Rendering SummaryPage with targetGroup:", summary);
-
     const language = "en";
 
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
