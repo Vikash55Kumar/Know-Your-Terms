@@ -48,7 +48,6 @@ const CircularScore: React.FC<{ score: number }> = ({ score }) => {
 
 const BusinessSummary: React.FC<{ aiRawOutput: ImportedBusinessOutput }> = ({ aiRawOutput }) => {
   // Defensive: get title if present and is a string
-  console.log("Business Summary Component Rendered with data:", aiRawOutput);
   const summaryTitle = typeof (aiRawOutput as any).title === 'string' && (aiRawOutput as any).title
     ? (aiRawOutput as any).title
     : 'Business Contract Summary';
