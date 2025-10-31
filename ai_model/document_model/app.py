@@ -194,7 +194,6 @@ def classify_and_extract(file_storage, user_category):
                       {text}
                       """
     
-
     try:
         llm_response_obj = llm.invoke(smart_prompt)
         llm_response_text = llm_response_obj.content

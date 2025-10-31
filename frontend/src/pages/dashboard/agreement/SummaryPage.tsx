@@ -6,26 +6,8 @@ import CitizenSummary from "../../../components/agreement/CitizenSummary";
 import BusinessSummary from "../../../components/agreement/BusinessSummary";
 import StudentSummary from "../../../components/agreement/StudentSummary";
 
-type Props = {
-  targetGroup: "citizen" | "student" | "business_owner";
-};
-
-// Types for each summary output
-interface Clause {
-  title: string;
-  explanation: string;
-  example: string;
-  questionsToAsk: string[];
-}
-interface StudentOutput {
-  title: string;
-  about: string;
-  clauses: Clause[];
-  keyLegalNotes: string[];
-  finalTips: string[];
-}
 // Use shared types
-import type { BusinessOutput } from "../../../types";
+import type { BusinessOutput, CitizenOutput, StudentOutput } from "../../../types";
 import { generateCitizenPDF } from "../../../components/pdf/citizenPdf";
 import { generateBusinessPDF } from "../../../components/pdf/bussinessPdf";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
@@ -34,22 +16,12 @@ import { toast } from "react-toastify";
 import Button from "../../../components/common/Button";
 import { generateStudentPDF } from "../../../components/pdf/studentPdf";
 import { useTranslation } from 'react-i18next';
-interface CitizenOutput {
-  title: string;
-  about: string;
-  benefits: string[];
-  risks: string[];
-  clarity: { score: number; comment: string };
-  fairness: { score: number; comment: string };
-  repaymentDetails: {
-    emiAmount: string;
-    totalRepayment: string;
-    interestExtra: string;
-    note: string;
-  };
-  suggestions: string[];
-  analogy: string;
-}
+
+type Props = {
+  targetGroup: "citizen" | "student" | "business_owner";
+};
+
+// Types for each summary output
 
 type SummaryUnion =
   | ({ type: "citizen" } & CitizenOutput)
@@ -71,6 +43,8 @@ export default function SummaryPage({ targetGroup }: Props) {
         student: t('summaryPage.targetGroupLabels.student'),
         business_owner: t('summaryPage.targetGroupLabels.business_owner'),
     };
+
+    console.log("Rendering SummaryPage with targetGroup:", summary);
 
     const language = "en";
 
@@ -105,7 +79,7 @@ export default function SummaryPage({ targetGroup }: Props) {
             if (response?.statusCode === 200 || response?.success === true) {
                 setSummary({
                     type: targetGroup,
-                    ...response.data
+                    ...response.data.DocumentSummary,
                 });
                 setLoading(false);
                 toast.success(response.message || "Document summarized successfully!");
@@ -129,14 +103,117 @@ export default function SummaryPage({ targetGroup }: Props) {
         try {
             // Create a formatted summary text for the agent
             let summaryText = "";
-            
             if (summary.type === "citizen") {
-                summaryText = `Document Analysis Summary:\nAbout: ${summary.about}\nBenefits: ${summary.benefits.join(", ")}\nRisks: ${summary.risks.join(", ")}\nSuggestions: ${summary.suggestions.join(", ")}`;
+                                                                                                                                                                                                               summaryText = `Document Analysis Summary:
+Category: Citizen
+Header:
+  Document Name: ${summary.Header.Document_Name}
+  Document Type: ${summary.Header.Document_Type}
+  Purpose: ${summary.Header.Purpose}
+  Date: ${summary.Header.Date}
+  Jurisdiction: ${summary.Header.Jurisdiction}
+Parties Involved:
+  Party 1: ${summary.Parties_Involved.Party_1}
+  Party 2: ${summary.Parties_Involved.Party_2}
+  Relationship: ${summary.Parties_Involved.Relationship}
+  Key Obligations: ${summary.Parties_Involved.Key_Obligations}
+Overview: ${summary.Overview}
+Key Terms:
+  Duration/Tenure: ${summary.Key_Terms.Duration_or_Tenure}
+  Payment/Consideration: ${summary.Key_Terms.Payment_or_Consideration}
+  Transfer of Rights: ${summary.Key_Terms.Transfer_of_Rights}
+  Termination/Cancellation: ${summary.Key_Terms.Termination_or_Cancellation}
+  Witness/Attestation: ${summary.Key_Terms.Witness_or_Attestation}
+Rights and Obligations:
+  Rights of Party 1: ${summary.Rights_and_Obligations.Rights_of_Party_1}
+  Rights of Party 2: ${summary.Rights_and_Obligations.Rights_of_Party_2}
+  Mutual Obligations: ${summary.Rights_and_Obligations.Mutual_Obligations}
+Applicable Laws and Acts:
+  Explicit Acts: ${(summary.Applicable_Laws_and_Acts.Explicit_Acts && summary.Applicable_Laws_and_Acts.Explicit_Acts.length > 0) ? summary.Applicable_Laws_and_Acts.Explicit_Acts.map(act => `${act.Act} (${act.Section}): ${act.Relevance}`).join("; ") : "None"}
+  Implicit Acts: ${(summary.Applicable_Laws_and_Acts.Implicit_Acts && summary.Applicable_Laws_and_Acts.Implicit_Acts.length > 0) ? summary.Applicable_Laws_and_Acts.Implicit_Acts.map(act => `${act.Act}: ${act.Reason}`).join("; ") : "None"}
+Validation Status:
+  Legally Compliant: ${summary.Validation_Status.Is_Legally_Compliant}
+  Missing Clauses: ${(summary.Validation_Status.Missing_Clauses && summary.Validation_Status.Missing_Clauses.length > 0) ? summary.Validation_Status.Missing_Clauses.join(", ") : "None"}
+  Requires Registration: ${summary.Validation_Status.Requires_Registration}
+Risk and Compliance:
+${(summary.Risk_and_Compliance && summary.Risk_and_Compliance.length > 0) ? summary.Risk_and_Compliance.map(risk => `  Issue: ${risk.Issue}\n  Recommendation: ${risk.Recommendation}`).join("\n") : "  None"}
+Confidence and Risk Score:
+  Confidence: ${summary.Confidence_and_Risk_Score.Confidence}
+  Risk Level: ${summary.Confidence_and_Risk_Score.Risk_Level}
+  Document Clarity: ${summary.Confidence_and_Risk_Score.Document_Clarity}
+Recommendations:
+${(summary.Recommendations && summary.Recommendations.length > 0) ? summary.Recommendations.map(r => `  - ${r}`).join("\n") : "  None"}
+Simple Summary: ${summary.Simple_Summary}`;
             } else if (summary.type === "student") {
-                summaryText = `Document Analysis Summary:\nAbout: ${summary.about}\nKey Legal Notes: ${summary.keyLegalNotes.join(", ")}\nFinal Tips: ${summary.finalTips.join(", ")}`;
+                summaryText = `Document Analysis Summary:
+Category: Student
+Header:
+  Document Name: ${summary.Header.Document_Name}
+  Document Type: ${summary.Header.Document_Type}
+  Purpose: ${summary.Header.Purpose}
+  Date: ${summary.Header.Date}
+  Jurisdiction: ${summary.Header.Jurisdiction}
+Parties Involved:
+  Party 1: ${summary.Parties_Involved.Party_1}
+  Party 2: ${summary.Parties_Involved.Party_2}
+  Relationship: ${summary.Parties_Involved.Relationship}
+  Key Obligations: ${summary.Parties_Involved.Key_Obligations}
+Overview: ${summary.Overview}
+Key Terms:
+  Duration/Tenure: ${summary.Key_Terms.Duration_or_Tenure}
+  Stipend/Payment: ${summary.Key_Terms.Stipend_or_Payment}
+  Roles and Responsibilities: ${summary.Key_Terms.Roles_and_Responsibilities}
+  Termination/Exit Clause: ${summary.Key_Terms.Termination_or_Exit_Clause}
+  Ownership/IP: ${summary.Key_Terms.Ownership_or_IP}
+  Confidentiality/NDA: ${summary.Key_Terms.Confidentiality_or_NDA}
+Rights and Fairness:
+  Rights of Party 1: ${summary.Rights_and_Fairness.Rights_of_Party_1}
+  Rights of Party 2: ${summary.Rights_and_Fairness.Rights_of_Party_2}
+  Fairness Check: ${summary.Rights_and_Fairness.Fairness_Check}
+Applicable Laws and Acts:
+  Explicit Acts: ${(summary.Applicable_Laws_and_Acts.Explicit_Acts && summary.Applicable_Laws_and_Acts.Explicit_Acts.length > 0) ? summary.Applicable_Laws_and_Acts.Explicit_Acts.map(act => `${act.Act}: ${act.Relevance}`).join("; ") : "None"}
+  Implicit Acts: ${(summary.Applicable_Laws_and_Acts.Implicit_Acts && summary.Applicable_Laws_and_Acts.Implicit_Acts.length > 0) ? summary.Applicable_Laws_and_Acts.Implicit_Acts.map(act => `${act.Act}: ${act.Reason}`).join("; ") : "None"}
+Risk and Compliance:
+${(summary.Risk_and_Compliance && summary.Risk_and_Compliance.length > 0) ? summary.Risk_and_Compliance.map(risk => `  Issue: ${risk.Issue}\n  Recommendation: ${risk.Recommendation}`).join("\n") : "  None"}
+Confidence and Risk Score:
+  Confidence: ${summary.Confidence_and_Risk_Score.Confidence}
+  Risk Level: ${summary.Confidence_and_Risk_Score.Risk_Level}
+  Document Clarity: ${summary.Confidence_and_Risk_Score.Document_Clarity}
+Recommendations:
+${(summary.Recommendations && summary.Recommendations.length > 0) ? summary.Recommendations.map(r => `  - ${r}`).join("\n") : "  None"}
+Simple Summary: ${summary.Simple_Summary}`;
             } else if (summary.type === "business_owner") {
-                const clausesSummary = summary.clauses.map(clause => `${clause.title}: ${clause.explanation}`).join("; ");
-                summaryText = `Document Analysis Summary:\nAbout: ${summary.about}\nKey Clauses: ${clausesSummary}\nCompliance Notes: ${summary.keyComplianceNotes.join(", ")}\nRisk Assessment: ${summary.finalAssessment.overallRisk}`;
+                summaryText = `Document Analysis Summary:
+Category: Business Owner
+Header:
+  Document Name: ${summary.Header.Document_Name}
+  Type: ${summary.Header.Type}
+  Purpose: ${summary.Header.Purpose}
+  Date: ${summary.Header.Date}
+  Jurisdiction: ${summary.Header.Jurisdiction}
+Parties Involved:
+  Party 1: ${summary.Parties_Involved.Party_1}
+  Party 2: ${summary.Parties_Involved.Party_2}
+  Relationship: ${summary.Parties_Involved.Relationship}
+  Key Obligations: ${summary.Parties_Involved.Key_Obligations}
+Overview: ${summary.Overview}
+Clause Insights:
+${(summary.Clause_Insights && summary.Clause_Insights.length > 0) ? summary.Clause_Insights.map(clause => `  - ${clause.Topic}: ${clause.Explanation}`).join("\n") : "  None"}
+Key Terms:
+  Duration: ${summary.Key_Terms.Duration}
+  Payment/Consideration: ${summary.Key_Terms.Payment_or_Consideration}
+  Transfer of Rights: ${summary.Key_Terms.Transfer_of_Rights}
+  Termination: ${summary.Key_Terms.Termination}
+Applicable Laws:
+${(summary.Applicable_Laws && summary.Applicable_Laws.length > 0) ? summary.Applicable_Laws.map(law => `  - ${law.Act}: ${law.Relevance}`).join("\n") : "  None"}
+Risk and Compliance:
+  Clause Coverage: ${summary.Risk_and_Compliance.Clause_Coverage_Percentage}
+${(summary.Risk_and_Compliance.Potential_Issues && summary.Risk_and_Compliance.Potential_Issues.length > 0) ? summary.Risk_and_Compliance.Potential_Issues.map(issue => `  Issue: ${issue.Issue}\n  Recommendation: ${issue.Recommendation}`).join("\n") : "  None"}
+Confidence Score: ${summary.Confidence_Score}
+Risk Level: ${summary.Risk_Level}
+Recommendations:
+${(summary.Recommendations && summary.Recommendations.length > 0) ? summary.Recommendations.map(r => `  - ${r}`).join("\n") : "  None"}
+Simple Summary: ${summary.Simple_Summary}`;
             }
             
             // Navigate to agent chat with summary data
