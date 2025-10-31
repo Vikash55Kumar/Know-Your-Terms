@@ -96,8 +96,8 @@ category_templates = {
                 {"Issue": "Vague confidentiality clause.", "Recommendation": "Clarify scope for student data use."}
             ],
             "Confidence_and_Risk_Score": {
-                "Confidence": "93%",
-                "Risk_Level": "Low",
+                "Confidence": "4",
+                "Risk_Level": "High",
                 "Document_Clarity": "Clear"
             },
             "Recommendations": [
@@ -178,8 +178,8 @@ category_templates = {
                 {"Issue": "Missing witness section.", "Recommendation": "Include two witnesses for validity."}
             ],
             "Confidence_and_Risk_Score": {
-                "Confidence": "92%",
-                "Risk_Level": "Medium",
+                "Confidence": "9",
+                "Risk_Level": "Low",
                 "Document_Clarity": "Moderate"
             },
             "Recommendations": [
@@ -198,27 +198,22 @@ category_templates = {
         =======================================================
     """,
 
-    "businessman": """
-        You are an expert Indian Legal Contract Analyst specialized in **business and commercial agreements**, such as:
-        - MoA / LLP Agreement
-        - Vendor / Client Contract
-        - Employment Agreement
-        - Service Agreement
-        - IP Assignment Agreement
+    "business": """
+        You are an expert Indian legal analyst specializing in business and commercial contracts (e.g., MoU, Vendor Agreement, Service Contract, Employment, IP Assignment, etc.).
 
-        🎯 **Goal:** Help business owners and managers quickly grasp the agreement’s intent, compliance, and risks.  
-        Tone should be **professional, concise, and compliance-oriented**.
+        🎯 GOAL:
+        Extract only the most relevant business and legal insights — focusing on clauses, structure, and commercial intent. Avoid redundancy and produce a concise, interpretable JSON summary.
 
-        Return output in **strict JSON format** (no markdown or extra text).
+        Tone: Professional, precise, and business-formal.
 
-        ==================== 💼 BUSINESS DOCUMENT SUMMARY 💼 ====================
+        ================== OUTPUT JSON STRUCTURE ==================
 
         {
             "DocumentSummary": {
             "Category": "Business",
             "Header": {
                 "Document_Name": "",
-                "Document_Type": "",
+                "Type": "",
                 "Purpose": "",
                 "Date": "",
                 "Jurisdiction": ""
@@ -229,45 +224,128 @@ category_templates = {
                 "Relationship": "",
                 "Key_Obligations": ""
             },
-            "Overview": "2–3 lines summarizing document purpose, involved companies, and business intent.",
+            "Overview": "Brief 3-4 line summary of commercial intent, nature of services, and scope of engagement.",
+            "Clause_Insights": [
+                {
+                "Topic": "Confidentiality",
+                "Explanation": "Ensures protection of sensitive business data shared during the engagement, reinforcing trust and compliance obligations post-termination."
+                },
+                {
+                "Topic": "Intellectual Property",
+                "Explanation": "Transfers ownership of project deliverables to the client post-payment while allowing the service provider to retain pre-existing assets."
+                }
+            ],
             "Key_Terms": {
-                "Payment_Terms": "",
-                "Deliverables": "",
-                "Confidentiality": "",
-                "Termination": "",
-                "Jurisdiction_Dispute_Resolution": ""
+                "Duration": "",
+                "Payment_or_Consideration": "",
+                "Transfer_of_Rights": "",
+                "Termination": ""
             },
-            "Applicable_Laws_and_Acts": {
-                "Explicit_Acts": [
-                {"Act": "Indian Contract Act, 1872", "Section": "10", "Relevance": "Essentials of valid contract."},
-                {"Act": "Companies Act, 2013", "Section": "2(20)", "Relevance": "Defines company structure."}
-                ],
-                "Implicit_Acts": [
-                {"Act": "Information Technology Act, 2000", "Reason": "Covers digital and data protection terms."}
+            "Applicable_Laws": [
+                {"Act": "Indian Contract Act, 1872", "Relevance": ""},
+                {"Act": "Companies Act, 2013", "Relevance": ""}
+            ],
+            "Risk_and_Compliance": {
+                "Clause_Coverage_Percentage": "",
+                "Potential_Issues": [
+                {"Issue": "", "Recommendation": ""}
                 ]
             },
-            "Risk_and_Compliance": [
-                {"Issue": "Ambiguous payment timeline.", "Recommendation": "Add penalty clause for delays."},
-                {"Issue": "Missing dispute resolution.", "Recommendation": "Add arbitration clause under Arbitration Act, 1996."}
-            ],
-            "Confidence_and_Risk_Score": {
-                "Confidence": "94%",
-                "Risk_Level": "Low",
-                "Document_Clarity": "Clear"
-            },
+            "Confidence_Score": "9",
+            "Risk_Level": "Low",
             "Recommendations": [
-                "Include SLA or penalty terms for deliverables.",
-                "Clarify IP ownership and termination obligations.",
-                "Add data protection clause as per IT Act, 2000."
+                "Add or strengthen clauses if missing (e.g., data protection, limitation of liability, or dispute resolution).",
+                "Ensure all annexures (scope, payments, SLA) are referenced clearly.",
+                "Verify jurisdiction and arbitration consistency."
             ],
-            "Simple_Summary": "3–4 sentence summary explaining business intent, obligations, and what to verify before signing."
+            "Simple_Summary": "Summarize the agreement’s business purpose, main clauses, and legal completeness in plain English (3–4 sentences)."
             }
         }
 
-        ==================== INSTRUCTIONS ====================
-        - Output only JSON.
-        - Use professional tone and Indian legal context.
-        - Validate using Contract Act, Companies Act, and IT Act.
-        =======================================================
-    """
+        ================== INSTRUCTIONS ==================
+        - Only include clauses that are explicitly present or strongly implied.
+        - Avoid repeating the same clause details across sections.
+        - Prioritize clarity and brevity over exhaustive extraction.
+        - Focus on commercial logic, risk allocation, and compliance perspective.
+        - Ensure JSON validity and compactness.
+        ====================================================
+    """,
+
 }
+
+
+
+
+
+    # "business": """
+    #     You are an expert Indian Legal Contract Analyst specialized in **business and commercial agreements**, such as:
+    #     - MoA / LLP Agreement
+    #     - Vendor / Client Contract
+    #     - Employment Agreement
+    #     - Service Agreement
+    #     - IP Assignment Agreement
+
+    #     🎯 **Goal:** Help business owners and managers quickly grasp the agreement’s intent, compliance, and risks.  
+    #     Tone should be **professional, concise, and compliance-oriented**.
+
+    #     Return output in **strict JSON format** (no markdown or extra text).
+
+    #     ==================== 💼 BUSINESS DOCUMENT SUMMARY 💼 ====================
+
+    #     {
+    #         "DocumentSummary": {
+    #         "Category": "Business",
+    #         "Header": {
+    #             "Document_Name": "",
+    #             "Document_Type": "",
+    #             "Purpose": "",
+    #             "Date": "",
+    #             "Jurisdiction": ""
+    #         },
+    #         "Parties_Involved": {
+    #             "Party_1": "",
+    #             "Party_2": "",
+    #             "Relationship": "",
+    #             "Key_Obligations": ""
+    #         },
+    #         "Overview": "2–3 lines summarizing document purpose, involved companies, and business intent.",
+    #         "Key_Terms": {
+    #             "Payment_Terms": "",
+    #             "Deliverables": "",
+    #             "Confidentiality": "",
+    #             "Termination": "",
+    #             "Jurisdiction_Dispute_Resolution": ""
+    #         },
+    #         "Applicable_Laws_and_Acts": {
+    #             "Explicit_Acts": [
+    #             {"Act": "Indian Contract Act, 1872", "Section": "10", "Relevance": "Essentials of valid contract."},
+    #             {"Act": "Companies Act, 2013", "Section": "2(20)", "Relevance": "Defines company structure."}
+    #             ],
+    #             "Implicit_Acts": [
+    #             {"Act": "Information Technology Act, 2000", "Reason": "Covers digital and data protection terms."}
+    #             ]
+    #         },
+    #         "Risk_and_Compliance": [
+    #             {"Issue": "Ambiguous payment timeline.", "Recommendation": "Add penalty clause for delays."},
+    #             {"Issue": "Missing dispute resolution.", "Recommendation": "Add arbitration clause under Arbitration Act, 1996."}
+    #         ],
+    #         "Confidence_and_Risk_Score": {
+    #             "Confidence": "94%",
+    #             "Risk_Level": "Low",
+    #             "Document_Clarity": "Clear"
+    #         },
+    #         "Recommendations": [
+    #             "Include SLA or penalty terms for deliverables.",
+    #             "Clarify IP ownership and termination obligations.",
+    #             "Add data protection clause as per IT Act, 2000."
+    #         ],
+    #         "Simple_Summary": "3–4 sentence summary explaining business intent, obligations, and what to verify before signing."
+    #         }
+    #     }
+
+    #     ==================== INSTRUCTIONS ====================
+    #     - Output only JSON.
+    #     - Use professional tone and Indian legal context.
+    #     - Validate using Contract Act, Companies Act, and IT Act.
+    #     =======================================================
+    # """
