@@ -275,8 +275,8 @@ export default function CitizenSummary({ aiRawOutput }: { aiRawOutput: CitizenOu
             </div>
           {/* Video Modal Popup */}
           {showVideoModal && (
-            <div className="fixed inset-0 z-90 flex items-center justify-center bg-black bg-opacity-80">
-              <div className="bg-white rounded-xl shadow-lg p-6 max-w-lg w-full relative">
+            <div className="fixed inset-0 z-[999] flex w-full items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white rounded-xl md:w-[90vw] lg:w-[70vw] aspect-video shadow-lg p-8 max-w-5xl w-full relative">
                 <button
                   className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl"
                   onClick={handleCloseModal}
