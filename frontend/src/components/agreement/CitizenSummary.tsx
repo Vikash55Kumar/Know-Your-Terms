@@ -90,15 +90,19 @@ export default function CitizenSummary({ aiRawOutput }: { aiRawOutput: CitizenOu
     <div className="relative flex flex-col md:flex-row max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-col gap-0 w-full">
         {/* Fixed Title */}
-        {/* Fixed Title */}
-        <div className="sticky top-0 z-5 bg-white border-b border-gray-200 py-6 rounded-lg px-8 w-full">
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            🎓 {aiRawOutput.Header.Document_Name}
-          </h1>
-          <div className="text-sm text-gray-500 mt-1">
-            📄 {aiRawOutput.Header.Document_Type} &mdash; 🗓️ {aiRawOutput.Header.Date} &mdash; 🌏 {aiRawOutput.Header.Jurisdiction}
+        <header className={`border-b px-2 py-6 bg-white sticky top-0 flex flex-col gap-1${showVideoModal ? ' z-0' : ' z-10'}`}>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                🎓 {aiRawOutput.Header.Document_Name}
+              </h1>
+              <div className="text-sm text-gray-500 mt-1">
+                📄 {aiRawOutput.Header.Document_Type} &mdash; 🗓️ {aiRawOutput.Header.Date} &mdash; 🌏 {aiRawOutput.Header.Jurisdiction}
+              </div>
+            </div>
           </div>
-        </div>
+        </header>
+
         {/* Left: Scrollable Content */}
         <div className="w-full">
           <div className="bg-white rounded-2xl p-8 space-y-10 max-h-[600px] overflow-y-auto">
