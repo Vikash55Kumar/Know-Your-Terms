@@ -1,7 +1,6 @@
 import os, re
 import logging
 import requests
-from PIL import Image
 from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 from google.cloud import language_v1
@@ -11,9 +10,11 @@ from langchain_core.prompts import PromptTemplate
 import vertexai
 from langchain_google_vertexai import ChatVertexAI, HarmBlockThreshold, HarmCategory
 from requests.exceptions import RequestException
-from utils.script import generate_script_and_image_prompts
+from utils.script import create_script_and_image_prompts, generate_script_and_image_prompts
 from utils.image_generation import generate_images_for_prompts
 from utils.audio_generation import generate_tts_audio_with_timing
+from utils.video_generation import build_video_from_pipeline_output
+
 # from utils.image_generation import generate_images_for_prompts
 load_dotenv()
 
@@ -22,13 +23,14 @@ tts_client = texttospeech.TextToSpeechClient()
 vertex_key_path = os.getenv("VERTEX_AI_KEY")
 indiankanoon_key = os.getenv("KANOON_API_KEY")
 pixel_key = os.getenv("PEXELS_API_KEY")
+PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT")
+LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION")
 
 VERTEX_AI_CREDENTIALS = os.getenv("VERTEX_AI_CREDENTIALS")
 if VERTEX_AI_CREDENTIALS:
     os.environ["VERTEX_AI_CREDENTIALS"] = VERTEX_AI_CREDENTIALS
 
-PROJECT_ID = "still-cipher-475415-t3"
-vertexai.init(project=PROJECT_ID, location="us-central1")
+vertexai.init(project=PROJECT_ID, location=LOCATION)
 
 safety_settings = {
     HarmCategory.HARM_CATEGORY_UNSPECIFIED: HarmBlockThreshold.BLOCK_NONE,
@@ -49,53 +51,42 @@ llm = ChatVertexAI(
 app = Flask(__name__)
 
 
-
-# --- 3. Audio Generation ---
-def generate_tts_audio(script_text: str, language_code: str = "en-US", output_path: str = "audio.mp3"):
-    """Generate audio from script using Google Cloud Text-to-Speech API."""
-    pass
-
-# --- 4. Video Assembly ---
-def assemble_video(image_paths: list, audio_path: str, script_parts: list, language: str = "en", output_path: str = "video.mp4"):
-    """Combine images, audio, and text overlays into a video using MoviePy."""
-    pass
-
-def generate_video_thumbnail(video_path: str, output_path: str):
-    """Create a thumbnail image for the video."""
-    pass
-
-# --- 5. Postprocessing ---
-def cleanup_temp_files(paths: list):
-    """Remove temporary files after video creation."""
-    pass
-
-def upload_video_to_storage(video_path: str):
-    """Upload the final video to cloud storage or return a download link."""
-    pass
-
 # Video Generation Pipeline
-def generate_video_pipeline(summary_text, image_queries, use_ai_flags, language="en", category="business"):
-    script, script_parts, image_prompts = generate_script_and_image_prompts(summary_text, language, category)
-    # image_paths = generate_images(use_ai_flags, image_queries, language=language)
-    # audio_path = generate_tts_audio(script, language_code=language, output_path="audio.mp3")
-    # video_path = assemble_video(image_paths, audio_path, script_parts, language=language, output_path="video.mp4")
-    # thumbnail_path = generate_video_thumbnail(video_path, output_path="thumbnail.png")
-    # cleanup_temp_files(image_paths + [audio_path])
-    # video_url = upload_video_to_storage(video_path)
-    # return {
-    #     "video_url": video_url,
-    #     "thumbnail_path": thumbnail_path
-    # }
+def generate_video_pipeline(summary_text, language="en", category="business"):
+    script_parts, image_prompts, ssml_text = generate_script_and_image_prompts(summary_text, language, category)
+
+    audio_filepath, mark_timings = None, None
+    if ssml_text:
+
+        audio_filepath, mark_timings = generate_tts_audio_with_timing(
+            script_text=ssml_text,
+            language_code=language
+        )
+    else:
+        logging.error("Script generation failed, cannot generate audio.")
+
+    use_ai_flags = [True] * len(image_prompts)  # For simplicity, use AI for all prompts
+    graphic_filepaths = generate_images_for_prompts(
+        image_prompts=image_prompts,
+        use_ai_flags=use_ai_flags,
+        language=language
+    )
+    
+    pipeline_input = {
+        "audio_filepath": audio_filepath,
+        "graphic_filepaths": graphic_filepaths,
+        "script_parts_text": script_parts,
+        "mark_timings": mark_timings
+    }
+    video_path = build_video_from_pipeline_output(pipeline_input)
 
     return {
-        "script": script,
-        "script_parts": script_parts,
-        "image_prompts": image_prompts,
+        'video_path': video_path
     }
 
 # --- Flask API Router ---
 
-@app.route('/generate_script', methods=['POST'])
+@app.route('/generate_video', methods=['POST'])
 def uploads():
     category = request.form.get("category")
     summary_text = request.form.get("summary_text")
@@ -112,6 +103,22 @@ def uploads():
     # Return JSON directly
     return jsonify(result)
 
+@app.route('/generate_script', methods=['POST'])
+def generate_script_api():
+    category = request.form.get("category")
+    summary_text = request.form.get("summary_text")
+    language = request.form.get("language", "en")
+
+    if not summary_text or not category or not language:
+        return jsonify({
+            "error": "Missing summary_text, category, or language"
+        }), 400
+    
+    # Call your existing function
+    result = generate_script_and_image_prompts(summary_text, category, language)
+
+    # Return JSON directly
+    return jsonify(result)
 
 @app.route('/generate_images', methods=['POST'])
 def generate_images_api():
@@ -160,7 +167,39 @@ def generate_audio_api():
     # Return the full list including None/fallbacks
     return jsonify(result_paths)
 
+@app.route('/generate_1video', methods=['POST'])
+def generate_video_api():
+    data = request.get_json()
+    # Accept direct input for video assembly
+    audio_filepath = data.get("audio_filepath")
+    graphic_filepaths = data.get("graphic_filepaths")
+    script_parts_text = data.get("script_parts_text")
+    part_timings = data.get("mark_timings")
+    font_path = data.get("font_path", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
+    base_output_path = data.get("output_path", "output_video.mp4")
+
+    # Validate required fields
+    if not audio_filepath or not graphic_filepaths or not script_parts_text:
+        return jsonify({"error": "Missing required fields: audio_filepath, graphic_filepaths, script_parts_text"}), 400
+
+    pipeline_input = {
+        "audio_filepath": audio_filepath,
+        "graphic_filepaths": graphic_filepaths,
+        "script_parts_text": script_parts_text,
+        "mark_timings": part_timings
+    }
+    video_path = build_video_from_pipeline_output(
+        pipeline_input,
+        font_path=font_path,
+        base_output_path=base_output_path
+    )
+
+    if video_path:
+        return jsonify({"video_path": video_path})
+    else:
+        return jsonify({"error": "Video generation failed"}), 500
+
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", "8000"))
+    port = int(os.environ.get("PORT", "8080"))
     app.run(host="0.0.0.0", port=port, threaded=True)
