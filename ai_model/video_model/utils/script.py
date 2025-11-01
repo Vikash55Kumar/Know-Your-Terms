@@ -56,32 +56,35 @@ def create_script_and_image_prompts( summary_json_str: str, language: str = "en"
         (script_parts, image_prompts) or (None, None) on failure.
     """
     
+        # --- Map language code to human-readable name for LLM prompt ---
+    lang_for_prompt = "English" if language.lower() in ["en", "en-in"] else ("Hindi" if language.lower() in ["hi", "hi-in"] else language)
+
     # --- Define Prompt Templates ---
     # These templates instruct the LLM to perform both tasks at once.
-    
+
     COMMON_INSTRUCTIONS = f"""
-    You are "Kanoon Mitra," an expert scriptwriter and creative director for an AI video generator.
+    You are \"Kanoon Mitra,\" an expert scriptwriter and creative director for an AI video generator.
     Your task is to convert the provided JSON document analysis into a compelling video script.
     The script must be 300-600 words long, broken into 8-10 small, logical parts for fast video pacing.
 
-    **CRITICAL:** You must return a SINGLE valid JSON object (no other text) that follows this schema:
-    {{
-      "script_parts": [
+        **CRITICAL:** You must return a SINGLE valid JSON object (no other text) that follows this schema:
         {{
-          "part_text": "string (The simple, conversational script text for this part, in {language})",
-          "image_prompt": "string (A descriptive, 1-sentence prompt in English for an AI image model (like Imagen) to generate a simple graphic, diagram, or illustration for this specific part. Focus on Indian context, simple graphics, and text labels if needed. e.g., 'Simple diagram of payment milestones: 40% start, 30% demo, labeled in {language}.')"
+            "script_parts": [
+                {{
+                    "part_text": "string (The simple, conversational script text for this part, in {lang_for_prompt})",
+                    "image_prompt": "string (A descriptive, 1-sentence prompt in English for an AI image model (like Imagen) to generate a simple graphic, diagram, or illustration for this specific part. Focus on Indian context, simple graphics, and text labels if needed. e.g., 'Simple diagram of payment milestones: 40% start, 30% demo, labeled in {lang_for_prompt}.')"
+                }}
+            ]
         }}
-      ]
-    }}
 
-    **Guidelines:**
-    1.  **Analyze JSON:** Base the script *only* on the provided "JSON Analysis Data".
-    2.  **Walkthrough:** The `script_parts` must form a logical narrative, walking the user through the JSON.
-    3.  **Tone & Language:** Use simple, informal, conversational {language}.
-    4.  **Granularity:** Create **8-10 `script_parts`**, each being just a few sentences long.
-    5.  **Image Prompts:** Each `image_prompt` must be a *visual instruction* for an AI to generate a graphic/diagram that matches its corresponding `part_text`.
-    6.  **Validation:** Subtly mention validation data (from `validation_snippet` if present in the input JSON).
-    """
+        **Guidelines:**
+        1.  **Analyze JSON:** Base the script *only* on the provided "JSON Analysis Data".
+        2.  **Walkthrough:** The `script_parts` must form a logical narrative, walking the user through the JSON.
+        3.  **Tone & Language:** Use simple, informal, conversational {lang_for_prompt}.
+        4.  **Granularity:** Create **8-10 `script_parts`**, each being just a few sentences long.
+        5.  **Image Prompts:** Each `image_prompt` must be a *visual instruction* for an AI to generate a graphic/diagram that matches its corresponding `part_text`.
+        6.  **Validation:** Subtly mention validation data (from `validation_snippet` if present in the input JSON).
+        """
 
     prompt_templates = {
         "business": f"""

@@ -53,8 +53,9 @@ app = Flask(__name__)
 
 # Video Generation Pipeline
 def generate_video_pipeline(summary_text, language="en", category="business"):
+    print("Script Parts: ", language, category)
     script_parts, image_prompts, ssml_text = generate_script_and_image_prompts(summary_text, language, category)
-
+    print("Script Parts: ", ssml_text)
     audio_filepath, mark_timings = None, None
     if ssml_text:
 
@@ -71,7 +72,7 @@ def generate_video_pipeline(summary_text, language="en", category="business"):
         use_ai_flags=use_ai_flags,
         language=language
     )
-    
+
     pipeline_input = {
         "audio_filepath": audio_filepath,
         "graphic_filepaths": graphic_filepaths,
@@ -98,7 +99,7 @@ def uploads():
         }), 400
     
     # Call your existing function
-    result = generate_video_pipeline(summary_text, category, language)
+    result = generate_video_pipeline(summary_text, language, category)
 
     # Return JSON directly
     return jsonify(result)
