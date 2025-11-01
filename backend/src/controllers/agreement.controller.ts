@@ -211,6 +211,40 @@ const processAgreement = asyncHandler(async (req: Request, res: Response) => {
     }
 });
 
+const VideoGeneration = asyncHandler(async (req: Request, res: Response) => {
+    const { category, language, summary_text } = req.body;
+
+    if (!summary_text || !category || !language) {
+        throw new ApiError(400, 'summary_text, category and language are required');
+    }
+
+    let voiceLanguage = "en-IN";
+    if (["hi", "hi-IN", "hindi"].includes(language?.toLowerCase())) {
+        voiceLanguage = "hi-IN";
+    }
+
+    // file.path is the path to the file saved by multer
+    const formData = new FormData();
+    formData.append('category', category);
+    formData.append('language', voiceLanguage);
+    formData.append('summary_text', summary_text);
+
+    try {
+        const response = await axios.post(`${process.env.AI_VIDEO_MODEL_URL}/generate_video`, formData, {
+            headers: {
+                ...formData.getHeaders(),
+            },
+        });
+
+        if (response.status !== 200) {
+            throw new ApiError(500, 'Failed to generate video');
+        }
+        return res.status(200).json(new ApiResponse(200, response.data, 'Video generated successfully'));
+    } catch (error) {
+        throw new ApiError(500, 'Video generation failed');
+    }
+});
+
 // Translate any text to a target language using Google Translate API
 const translateTextController = asyncHandler(async (req: Request, res: Response) => {
     const { text, targetLanguage } = req.body;
@@ -251,7 +285,7 @@ const uploadFile = asyncHandler(async (req: Request, res: Response) => {
     }
 });
 
-export { agreementSummary, processAgreement, translateTextController, uploadFile };
+export { agreementSummary, processAgreement, VideoGeneration, translateTextController, uploadFile };
 
         // let prompt = '';
         // switch (targetGroup) {

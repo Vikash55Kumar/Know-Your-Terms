@@ -3,7 +3,7 @@ import os, re
 import logging
 import requests
 from PIL import Image
-from flask import Flask, request, jsonify
+from flask import Flask, json, request, jsonify
 from dotenv import load_dotenv
 from google.cloud import language_v1
 from google.cloud import texttospeech
@@ -20,13 +20,14 @@ tts_client = texttospeech.TextToSpeechClient()
 vertex_key_path = os.getenv("VERTEX_AI_KEY")
 indiankanoon_key = os.getenv("KANOON_API_KEY")
 pixel_key = os.getenv("PEXELS_API_KEY")
+PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT")
+LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION")
 
 VERTEX_AI_CREDENTIALS = os.getenv("VERTEX_AI_CREDENTIALS")
 if VERTEX_AI_CREDENTIALS:
     os.environ["VERTEX_AI_CREDENTIALS"] = VERTEX_AI_CREDENTIALS
 
-PROJECT_ID = "still-cipher-475415-t3"
-vertexai.init(project=PROJECT_ID, location="us-central1")
+vertexai.init(project=PROJECT_ID, location=LOCATION)
 
 safety_settings = {
     HarmCategory.HARM_CATEGORY_UNSPECIFIED: HarmBlockThreshold.BLOCK_NONE,
@@ -39,223 +40,201 @@ safety_settings = {
 llm = ChatVertexAI(
     model="gemini-2.5-flash",
     temperature=0.3,
-    max_output_tokens=2048,
+    max_output_tokens=8192,  # Optimized for 400-700 words
     project=PROJECT_ID,
     safety_settings=safety_settings
 )
 
 app = Flask(__name__)
 
-
-def create_script(summary_text: str, language: str = "en", category: str = "business") -> str | None:
-
-    # Construct the optimized prompt
-    prompt = f"""
-    You are an expert explainer for Indian citizens and small business owners.
-
-    **Target Audience:** Indian citizens and small business owners.
-    **Language:** Generate the script in the exact same language as the Input Summary ({language}). Use simple, clear, conversational language. Avoid complex jargon. If technical terms are necessary, explain them briefly and simply.
-
-    **Content Focus:**
-    - Identify and clearly explain the most important clauses or points from the summary.
-    - Highlight any aspects related to Indian law mentioned or implied in the summary, explaining their practical relevance to the audience.
-    - Focus on practical implications for citizens or small businesses in India.
-
-     **Structure & Format:**
-     - Break the script down into 3 to 5 logical parts (e.g., Intro, Point 1, Point 2, Implications, Conclusion).
-     - Use `---` (three hyphens on a new line) as a separator between each part.
-     - Keep sentences and paragraphs short.
-
-     **Tone:** Informal, helpful, and direct.
-
-     **Output:** Provide only the refined script text in the specified part-by-part format, with `---` separators. Do not include any extra explanations or introductory text from yourself (the AI).
-
-     Input Summary:
-     {summary_text}
-     """
-     
-    try:
-
-        response = llm.invoke(prompt)
-
-        # Extract script text from response
-        script_text = getattr(response, "content", None) or getattr(response, "text", None)
-        if not script_text or not script_text.strip():
-            logging.warning("LLM returned empty script text.")
-            return None
-
-        # Remove markdown bold/italics etc. for cleaner TTS input
-        refined_script = re.sub(r"[\*_]", "", script_text.strip())
-
-        if not refined_script:
-            logging.warning("Extracted script text is empty after cleaning.")
-            return None
-
-        logging.info("Script generated successfully.")
-        return refined_script
-
-    except Exception as e:
-        logging.error(f"Exception during video script generation with Vertex AI: {e}", exc_info=True)
-        return None # Indicate failure clearly
-
-# --- 2. Refined Script Splitting ---
-def split_script_parts(script: str) -> list[str]:
+def create_script_and_image_prompts( summary_json_str: str, language: str = "en", category: str = "business" ) -> tuple[list[str] | None, list[str] | None]:
     """
-    Splits the script into logical parts/scenes.
-    Prefers '---' separator, falls back to grouping sentences.
+    Generates a full video script (as parts) AND a list of corresponding image prompts
+    in a single LLM call, based on the input summary JSON.
+    
+    Returns:
+        (script_parts, image_prompts) or (None, None) on failure.
     """
-    if not script:
-        return []
+    
+    # --- Define Prompt Templates ---
+    # These templates instruct the LLM to perform both tasks at once.
+    
+    COMMON_INSTRUCTIONS = f"""
+    You are "Kanoon Mitra," an expert scriptwriter and creative director for an AI video generator.
+    Your task is to convert the provided JSON document analysis into a compelling video script.
+    The script must be 300-600 words long, broken into 8-10 small, logical parts for fast video pacing.
+
+    **CRITICAL:** You must return a SINGLE valid JSON object (no other text) that follows this schema:
+    {{
+      "script_parts": [
+        {{
+          "part_text": "string (The simple, conversational script text for this part, in {language})",
+          "image_prompt": "string (A descriptive, 1-sentence prompt in English for an AI image model (like Imagen) to generate a simple graphic, diagram, or illustration for this specific part. Focus on Indian context, simple graphics, and text labels if needed. e.g., 'Simple diagram of payment milestones: 40% start, 30% demo, labeled in {language}.')"
+        }}
+      ]
+    }}
+
+    **Guidelines:**
+    1.  **Analyze JSON:** Base the script *only* on the provided "JSON Analysis Data".
+    2.  **Walkthrough:** The `script_parts` must form a logical narrative, walking the user through the JSON.
+    3.  **Tone & Language:** Use simple, informal, conversational {language}.
+    4.  **Granularity:** Create **8-10 `script_parts`**, each being just a few sentences long.
+    5.  **Image Prompts:** Each `image_prompt` must be a *visual instruction* for an AI to generate a graphic/diagram that matches its corresponding `part_text`.
+    6.  **Validation:** Subtly mention validation data (from `validation_snippet` if present in the input JSON).
+    """
+
+    prompt_templates = {
+        "business": f"""
+        {COMMON_INSTRUCTIONS}
+        **Audience:** Indian small business owners.
+        **Tone:** Helpful, clear, and professional.
+
+        **Instructions:**
+        - Start with the "Overview".
+        - Explain the most important "Clause_Insights" and "Key_Terms".
+        - Clearly highlight the "Risk_and_Compliance" issues and "Recommendations".
+        - Conclude with the "Simple_Summary".
+
+        **JSON Analysis Data (Input):**
+        ```json
+        {summary_json_str}
+        ```
+
+        **Your JSON Output (Script & Prompts):**
+        """,
+
+        "citizen": f"""
+        {COMMON_INSTRUCTIONS}
+        **Audience:** Everyday Indian citizens (non-lawyers).
+        **Tone:** Helpful, empathetic, and clear (e.g., "Namaste! Let's look at your document...").
+
+        **Instructions:**
+        - Start with the "Overview" and "KeyParties".
+        - Explain the "KeyTerms" one by one.
+        - Clearly highlight the "Risk_and_Compliance" or "Risk_Level" issues and "Recommendations".
+        - Conclude with the "Simple_Summary".
+
+        **JSON Analysis Data (Input):**
+        ```json
+        {summary_json_str}
+        ```
+
+        **Your JSON Output (Script & Prompts):**
+        """,
+
+        "student": f"""
+        {COMMON_INSTRUCTIONS}
+        **Audience:** Indian students and young professionals.
+        **Tone:** Supportive, educational, and encouraging.
+
+        **Instructions:**
+        - Start with the "Overview" and "yourRole".
+        - Explain the "Key_Terms" (especially Stipend, Duration, IP, and Termination).
+        - Clearly explain the "Rights_and_Fairness" section.
+        - Conclude by summarizing the "FinalTips" or "Recommendations".
+
+        **JSON Analysis Data (Input):**
+        ```json
+        {summary_json_str}
+        ```
+
+        **Your JSON Output (Script & Prompts):**
+        """
+    }
+
+    # --- 2. Select and Format the Prompt ---
+    prompt_to_use = prompt_templates.get(category, prompt_templates["citizen"]) # Default to citizen
+
+    # --- 3. Call the LLM and Process the Response ---
     try:
-        # 1. Try splitting by explicit separator '---'
-        if '\n---\n' in script:
-            parts = [part.strip() for part in script.split('\n---\n') if part.strip()]
-            if len(parts) > 1: # Check if separator actually split something
-                 logging.info(f"Script split into {len(parts)} parts using '---' separator.")
-                 return parts
+        # Use the globally defined 'llm' client
+        response = llm.invoke(prompt_to_use)
+
+        script_data_text = getattr(response, "content", None) or getattr(response, "text", None)
+        logging.info(f"Raw LLM response: {script_data_text}")
+        if not script_data_text or not script_data_text.strip():
+            logging.warning("LLM returned empty response for script/prompts.")
+            return None, None
+
+        # Pre-process: Remove code fences and markdown
+        cleaned_text = script_data_text.strip()
+        cleaned_text = re.sub(r"^```[a-zA-Z]*\\s*", "", cleaned_text)
+        cleaned_text = re.sub(r"```\\s*$", "", cleaned_text)
+        cleaned_text = cleaned_text.strip()
+
+        # Extract JSON object
+        json_match = re.search(r"\{.*\}", cleaned_text, re.DOTALL)
+        if not json_match:
+            logging.warning(f"Failed to find valid JSON in LLM response: {cleaned_text}")
+            return None, None
+
+        try:
+            script_data = json.loads(json_match.group(0))
+        except Exception as json_err:
+            logging.warning(f"JSON decode error: {json_err}\nRaw JSON: {json_match.group(0)}")
+            return None, None
+
+        # Now, extract the data into two parallel lists
+        script_parts = []
+        image_prompts = []
+
+        for part in script_data.get("script_parts", []):
+            script_text = part.get("part_text")
+            image_prompt = part.get("image_prompt")
+
+            # Ensure both parts exist before adding
+            if script_text and image_prompt:
+                # Clean script text for TTS (remove markdown)
+                clean_script_part = re.sub(r"[\*_]", "", script_text.strip())
+                script_parts.append(clean_script_part)
+                image_prompts.append(image_prompt.strip())
             else:
-                 logging.warning("Separator '---' found but did not result in multiple parts. Falling back.")
+                logging.warning(f"Skipping incomplete part from LLM: {part}")
 
-        # 2. Fallback: Split by sentences and group them
-        # Note: Simple regex split might incorrectly split on abbreviations (Mr., Dr., etc.).
-        # For a hackathon, this is often acceptable. For production, consider NLTK's sentence tokenizer.
-        logging.info("Falling back to sentence splitting for script parts.")
-        sentences = re.split(r'(?<=[.!?])\s+', script.strip()) # Split after sentence-ending punctuation + space
-        sentences = [s.strip() for s in sentences if s.strip()] # Clean up
+        if not script_parts or not image_prompts:
+            logging.warning("LLM returned valid JSON, but 'script_parts' was empty or malformed.")
+            return None, None
 
-        if not sentences:
-            return [script.strip()] # Return the whole script if sentence split fails
-
-        group_size = 3 # Aim for roughly 3 sentences per part (adjust as needed)
-        num_sentences = len(sentences)
-        # Adjust group size slightly to avoid tiny last parts if possible
-        if num_sentences > 4 and num_sentences % group_size == 1:
-            group_size += 1
-
-        parts = [' '.join(sentences[i:min(i + group_size, num_sentences)]).strip()
-                 for i in range(0, num_sentences, group_size)]
-
-        # Filter out any potentially empty parts again after joining
-        parts = [p for p in parts if p]
-
-        logging.info(f"Script split into {len(parts)} parts using sentence grouping (size ~{group_size}).")
-        return parts
+        logging.info(f"Successfully generated {len(script_parts)} script parts and {len(image_prompts)} image prompts.")
+        return script_parts, image_prompts
 
     except Exception as e:
-        logging.error(f"Error splitting script into parts: {e}", exc_info=True)
-        # Fallback to returning the whole script as one part
-        return [script.strip()] if script else []
+        logging.error(f"Exception during consolidated script generation: {e}", exc_info=True)
+        return None, None
 
-# --- 3. NEW: Generate Descriptive Image Prompts ---
-def _generate_prompt_for_part(part_index: int, script_part: str, language: str, category: str, prompts_per_part: int, model=None) -> list[str]:
-    """Helper function to generate prompts for a single script part."""
-    style_hint = ""
-    if category.lower() == "business":
-        style_hint = "a professional, clean business setting, photorealistic style or clear illustration."
-    elif category.lower() == "legal":
-        style_hint = "a clear, modern legal illustration or symbolic graphic."
-    elif category.lower() == "citizen":
-        style_hint = "a relatable, everyday scene for an Indian citizen, clear illustration or photo."
-
-    llm_prompt = f"""
-    Analyze the following paragraph from a video script for Indian citizens/small businesses (category: {category}, language: {language}).
-    Generate {prompts_per_part} distinct, highly descriptive, single-sentence image prompts (in English) that perfectly capture the essence and visual narrative of this segment. These prompts are for an AI image generation model (like Imagen).
-    Focus on concrete objects, actions, simple diagrams, or symbolic graphics relevant to an Indian context.
-    The graphic can include minimal, relevant text (like labels, in {language}) if it clarifies the concept, specify this in the prompt (e.g., 'diagram showing X labeled in {language}').
-    Avoid abstract prompts. Ensure prompts are safe for generation.
-
-    Target Audience: Indian small businesses/citizens.
-    Style Preference: {style_hint}
-
-    Video Segment {part_index+1}:
-    ```
-    {script_part}
-    ```
-
-    Image Generation Prompts (one per line, without numbers or bullet points):
+def create_ssml_from_parts(script_parts: list[str]) -> str:
     """
-    try:
-        if model is None:
-            logging.error("No model provided for image prompt generation.")
-            return []
-
-        # Use the same llm.invoke(...) pattern used elsewhere (model is expected to be llm)
-        response = model.invoke(llm_prompt)
-
-        # Extract text safely from the AIMessage-like response
-        generated_text = getattr(response, "content", None) or getattr(response, "text", None) or str(response)
-        generated_prompts_raw = [line.strip() for line in generated_text.splitlines() if line.strip()]
-
-        # Filter out short/invalid lines and keep descriptive prompts
-        part_prompts = [p for p in generated_prompts_raw if len(p) > 10]
-
-        if not part_prompts:
-            logging.warning(f"LLM returned empty or too-short prompts for Part {part_index+1}. Raw: {generated_text!r}")
-            return []
-
-        logging.info(f"Generated prompts for Part {part_index+1}: {part_prompts[:prompts_per_part]}")
-        return part_prompts[:prompts_per_part]
-
-    except Exception as e:
-        logging.error(f"Error generating descriptive prompts for Part {part_index+1}: {e}", exc_info=True)
-        return []
-
-def generate_image_prompts(
-    script_parts: list[str],
-    language: str = "en",
-    category: str = "business",
-    prompts_per_part: int = 1, # How many visual ideas per script part
-    max_workers: int = 3 # Use fewer workers for LLM calls to avoid rate limits
-) -> list[str]:
+    Wraps each script part in SSML <p> tags and adds a <mark>
+    tag after each part for timing.
     """
-    Uses an LLM (Gemini via llm.invoke) to generate descriptive image prompts for each script part in parallel.
-    """
-    all_image_prompts = [[] for _ in script_parts] # Initialize list of lists to maintain order
+    ssml_script_parts = []
+    for i, part in enumerate(script_parts):
+        # 1. Clean the text for SSML
+        #    Escape special characters: & < > " '
+        safe_part = (
+            part.replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace("\"", "&quot;")
+                .replace("'", "&apos;")
+        )
+        # 2. Wrap in paragraph tags and add the crucial <mark> tag *after* the text.
+        ssml_script_parts.append(f'<p>{safe_part}</p><mark name="part_{i}_end"/>')
 
-    # Use the existing llm instance (ChatVertexAI) instead of undefined 'client'
-    model = llm
-    logging.info(f"Starting image prompt generation for {len(script_parts)} script parts using up to {max_workers} workers.")
-
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        future_to_index = {
-            executor.submit(_generate_prompt_for_part, i, part, language, category, prompts_per_part, model): i
-            for i, part in enumerate(script_parts)
-        }
-
-        for future in as_completed(future_to_index):
-            idx = future_to_index[future]
-            try:
-                result_prompts = future.result()
-                if result_prompts:
-                    all_image_prompts[idx] = result_prompts
-                else:
-                    logging.warning(f"No prompts generated for part {idx+1}, adding fallback.")
-                    all_image_prompts[idx] = [f"Abstract graphic representing {category} concept in India"]
-
-            except Exception as e:
-                logging.error(f"Exception processing image prompt future for Part {idx+1}: {e}", exc_info=True)
-                all_image_prompts[idx] = [f"Abstract graphic representing {category} concept in India"]
-
-    # Flatten the list of lists and deduplicate simply
-    final_prompts = [prompt for part_prompts in all_image_prompts for prompt in part_prompts] # Flatten
-    final_prompts = list(dict.fromkeys(final_prompts)) # Simple deduplication
-
-    logging.info(f"Final descriptive image prompts ({len(final_prompts)}): {final_prompts}")
-    return final_prompts
-
+    # 3. Join all parts and wrap in the main <speak> tag
+    ssml_script_text = f"<speak>{''.join(ssml_script_parts)}</speak>"
+    
+    return ssml_script_text
 
 def generate_script_and_image_prompts(summary_text, language="en", category="business"):
-    script = create_script(summary_text, language, category)
-    if not script:
+    script_parts, image_prompts = create_script_and_image_prompts(summary_text, language, category)
+    if not script_parts or not image_prompts:
         logging.error("Pipeline failed: Script generation returned None.")
         return None, [], [] # Indicate failure
-
-    script_parts = split_script_parts(script)
-    if not script_parts:
-         logging.error("Pipeline failed: Script splitting resulted in no parts.")
-         return script, [], [] # Return script but indicate no parts/prompts
-
-    # Generate descriptive image prompts based *on the final script parts*
-    image_prompts = generate_image_prompts(script_parts, language, category, prompts_per_part=1) # Get 1 visual idea per part
-
-    return script, script_parts, image_prompts
+    
+    ssml_text = create_ssml_from_parts(script_parts) if isinstance(script_parts, list) else script_parts
+    
+    if not ssml_text:
+        logging.error("Pipeline failed: SSML creation returned None.")
+        return None, [], None
+    return script_parts, image_prompts, ssml_text

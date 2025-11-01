@@ -2,10 +2,6 @@ import { useState } from "react";
 import { Upload, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import CitizenSummary from "../../../components/agreement/CitizenSummary";
-import BusinessSummary from "../../../components/agreement/BusinessSummary";
-import StudentSummary from "../../../components/agreement/StudentSummary";
-
 // Use shared types
 import type { BusinessOutput, CitizenOutput, StudentOutput } from "../../../types";
 import { generateCitizenPDF } from "../../../components/pdf/citizenPdf";
@@ -16,6 +12,9 @@ import { toast } from "react-toastify";
 import Button from "../../../components/common/Button";
 import { generateStudentPDF } from "../../../components/pdf/studentPdf";
 import { useTranslation } from 'react-i18next';
+import CitizenSummary from "../../../components/agreement/CitizenSummary";
+import StudentSummary from "../../../components/agreement/StudentSummary";
+import BusinessSummary from "../../../components/agreement/BusinessSummary";
 
 type Props = {
   targetGroup: "citizen" | "student" | "business_owner";
@@ -43,7 +42,7 @@ export default function SummaryPage({ targetGroup }: Props) {
         student: t('summaryPage.targetGroupLabels.student'),
         business_owner: t('summaryPage.targetGroupLabels.business_owner'),
     };
-
+    
     const language = "en";
 
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {

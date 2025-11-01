@@ -26,3 +26,8 @@ fi
 
 # Execute the main command (passed as CMD in the Dockerfile)
 exec "$@"
+
+
+# set -x VERTEX_AI_CREDENTIALS (pwd)/vertex_ai.json;
+# set -x GOOGLE_APPLICATION_CREDENTIALS (pwd)/cloud_vision.json;
+# set -x SERVICE_ACCOUNT_CREDENTIALS (pwd)/service_account.json

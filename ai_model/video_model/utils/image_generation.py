@@ -1,45 +1,27 @@
 # --- image_generation.py ---
-import os, re
+import os
+import re
 import logging
-from click import prompt
 import requests
 from PIL import Image
-from flask import Flask, request, jsonify
 from dotenv import load_dotenv
-from google.cloud import language_v1
-from google.cloud import texttospeech
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from langchain_core.prompts import PromptTemplate
 import vertexai
 from langchain_google_vertexai import ChatVertexAI, HarmBlockThreshold, HarmCategory
 from requests.exceptions import RequestException
-from utils.script import generate_script_and_image_prompts
 from google import genai
 from google.genai.types import GenerateImagesConfig
- # ...existing code...
-import threading
-import logging
 import tempfile
-from google.cloud import storage
-import uuid # For unique filenames
-from concurrent.futures import ThreadPoolExecutor, as_completed
-import requests # For download_image (if using stock photos as fallback)
-import shutil # For download_image
+import uuid
+import shutil
 
 load_dotenv()
 
-language_client = language_v1.LanguageServiceClient()
-tts_client = texttospeech.TextToSpeechClient()
-vertex_key_path = os.getenv("VERTEX_AI_KEY")
-indiankanoon_key = os.getenv("KANOON_API_KEY")
-pixel_key = os.getenv("PEXELS_API_KEY")
+# --- Global Configuration (Ensure consistency with app.py) ---
+PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT")
+LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION")
 
-VERTEX_AI_CREDENTIALS = os.getenv("VERTEX_AI_CREDENTIALS")
-if VERTEX_AI_CREDENTIALS:
-    os.environ["VERTEX_AI_CREDENTIALS"] = VERTEX_AI_CREDENTIALS
-
-PROJECT_ID = "still-cipher-475415-t3"
-vertexai.init(project=PROJECT_ID, location="us-central1")
+vertexai.init(project=PROJECT_ID, location=LOCATION)
 
 safety_settings = {
     HarmCategory.HARM_CATEGORY_UNSPECIFIED: HarmBlockThreshold.BLOCK_NONE,
@@ -49,66 +31,65 @@ safety_settings = {
     HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
 }
 
+# This LLM config is NOT used by image generation directly, but included for context.
 llm = ChatVertexAI(
-    model="gemini-2.5-flash",
+    model="gemini-1.5-flash-001",
     temperature=0.3,
-    max_output_tokens=2048,
+    max_output_tokens=8192,
     project=PROJECT_ID,
     safety_settings=safety_settings
 )
 
-client = genai.Client(
+genai_client = genai.Client(
     vertexai=True,
     project=PROJECT_ID,
-    location="us-central1"
+    location=LOCATION
 )
 
-output_file = "output-image.png"
-# image = client.models.generate_images(
-#     model="imagen-4.0-generate-001",
-#     prompt="Regarding rental agreement Simple diagram showing payment milestones: 40% start, 30% demo, 20% approval, 10% launch, labeled in English.",
-#     config=GenerateImagesConfig(
-#         image_size="2K",
-#     ),
-# )
-
-# image.generated_images[0].image.save(output_file)
-# print(f"Created output image using {len(image.generated_images[0].image.image_bytes)} bytes")
+PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
+if not PEXELS_API_KEY:
+    logging.warning("PEXELS_API_KEY environment variable not set. Stock image search will be disabled.")
 
 
+# --- Temporary Image Directory ---
+IMAGE_TEMP_DIR = os.path.join(tempfile.gettempdir(), f"know_your_terms_images_{uuid.uuid4().hex[:6]}")
+try:
+    os.makedirs(IMAGE_TEMP_DIR, exist_ok=True)
+    logging.info(f"Using temp directory for images: {IMAGE_TEMP_DIR}")
+except OSError as e:
+    logging.critical(f"FATAL: Could not create image temp directory {IMAGE_TEMP_DIR}: {e}")
+    IMAGE_TEMP_DIR = "." # Fallback to current directory
+
+# --- Ensure default placeholder image exists ---
+def ensure_default_placeholder():
+    test_images_dir = os.path.join(os.path.dirname(__file__), "..", "test_images")
+    os.makedirs(test_images_dir, exist_ok=True)
+    placeholder_path = os.path.join(test_images_dir, "default_placeholder.png")
+    # If missing or empty, create a simple PNG
+    if not os.path.exists(placeholder_path) or os.path.getsize(placeholder_path) < 100:
+        try:
+            from PIL import Image, ImageDraw
+            img = Image.new("RGBA", (512, 320), (220, 220, 220, 255))
+            draw = ImageDraw.Draw(img)
+            draw.rectangle([(0,0),(511,319)], outline=(180,180,180,255), width=4)
+            draw.text((120,140), "No Image", fill=(80,80,80,255))
+            img.save(placeholder_path, "PNG")
+            logging.info(f"Created default placeholder image at: {placeholder_path}")
+        except Exception as e:
+            logging.error(f"Failed to create default placeholder image: {e}")
+    else:
+        logging.info(f"Default placeholder image exists: {placeholder_path}")
+    return placeholder_path
+
+ensure_default_placeholder()
 
 
-# GCS bucket config
-GCS_BUCKET_NAME = "law-data-genai"
-GCS_IMAGE_URL_FORMAT = "https://storage.googleapis.com/{bucket}/{filename}"
-
-IMAGE_TEMP_DIR = os.path.join(tempfile.gettempdir(), "know_your_terms_images")
-os.makedirs(IMAGE_TEMP_DIR, exist_ok=True)
-logging.info(f"Using temp directory for images: {IMAGE_TEMP_DIR}")
-
-app = Flask(__name__)
-
-
-def upload_to_gcs(local_path: str, gcs_filename: str) -> str | None:
-    """Uploads a file to GCS and returns its public URL."""
-    try:
-        storage_client = storage.Client()
-        bucket = storage_client.bucket(GCS_BUCKET_NAME)
-        blob = bucket.blob(gcs_filename)
-        blob.upload_from_filename(local_path)
-        # If bucket is public, no need to set per-object ACLs
-        url = GCS_IMAGE_URL_FORMAT.format(bucket=GCS_BUCKET_NAME, filename=gcs_filename)
-        logging.info(f"Uploaded image to GCS: {url}")
-        return url
-    except Exception as e:
-        logging.error(f"Failed to upload {local_path} to GCS: {e}", exc_info=True)
-        return None
-
+# --- Image Generation Functions (Unchanged from last optimization) ---
 def generate_ai_image(prompt: str, output_filepath: str) -> str | None:
-    """Generates an image using Google GenAI Imagen 4 and uploads to GCS."""
-    logging.info(f"Generating AI image for prompt: '{prompt[:50]}...' -> {os.path.basename(output_filepath)}")
+    """Generates an image using Google GenAI Imagen 4 and saves it to a local temporary path."""
+    logging.info(f"Generating AI image for prompt: '{prompt[:70]}...' -> {os.path.basename(output_filepath)}")
     try:
-        image_response = client.models.generate_images(
+        image_response = genai_client.models.generate_images(
             model="imagen-4.0-generate-001",
             prompt=prompt,
             config=GenerateImagesConfig(
@@ -117,28 +98,19 @@ def generate_ai_image(prompt: str, output_filepath: str) -> str | None:
         )
         if image_response.generated_images:
             image_response.generated_images[0].image.save(output_filepath)
+            
             if os.path.exists(output_filepath) and os.path.getsize(output_filepath) > 100:
                 logging.info(f"Successfully generated AI image: {os.path.basename(output_filepath)}")
-                # Copy to user-accessible directory for testing
-                accessible_dir = os.path.join(os.path.dirname(__file__), "..", "test_images")
-                try:
-                    os.makedirs(accessible_dir, exist_ok=True)
-                    accessible_path = os.path.join(accessible_dir, os.path.basename(output_filepath))
-                    import shutil
-                    shutil.copy2(output_filepath, accessible_path)
-                    logging.info(f'Image file also copied to: {accessible_path}')
-                except Exception as copy_err:
-                    logging.warning(f"Could not copy image file to accessible directory: {copy_err}")
-                return accessible_path
+                return output_filepath
             else:
                 logging.error(f"AI image saved incorrectly or empty: {os.path.basename(output_filepath)}")
                 if os.path.exists(output_filepath): os.remove(output_filepath)
                 return None
         else:
-            logging.error(f"AI image generation failed (API returned no images) for prompt: '{prompt[:50]}...'")
+            logging.error(f"AI image generation failed (API returned no images) for prompt: '{prompt[:70]}...'")
             return None
     except Exception as e:
-        logging.error(f"Exception during GenAI image generation for '{prompt[:50]}...': {e}", exc_info=True)
+        logging.error(f"Exception during GenAI image generation for '{prompt[:70]}...': {e}", exc_info=True)
         if os.path.exists(output_filepath):
             try: os.remove(output_filepath)
             except OSError: pass
@@ -148,21 +120,20 @@ def search_stock_images(query: str, num_images: int = 1, language: str = "en") -
     """Searches Pexels API for images."""
     logging.info(f"Searching Pexels for query: '{query}', lang: {language}")
     image_urls = []
-    if not pixel_key:
+    if not PEXELS_API_KEY:
         logging.error("PEXELS_API_KEY not set. Cannot search stock images.")
         return image_urls
     try:
-        headers = {"Authorization": pixel_key}
-        # Pexels uses 'locale' not 'language'
-        params = {"query": query, "per_page": num_images, "locale": language if language != "en" else "en-US"} # Pexels locale format
+        headers = {"Authorization": PEXELS_API_KEY}
+        params = {"query": query, "per_page": num_images, "locale": language}
         response = requests.get("https://api.pexels.com/v1/search", headers=headers, params=params, timeout=10)
         response.raise_for_status()
         data = response.json()
         photos = data.get("photos", [])
         if photos:
-            image_urls = [p.get("src", {}).get("original") or p.get("src", {}).get("large")
+            image_urls = [p.get("src", {}).get("large") or p.get("src", {}).get("original")
                           for p in photos if p.get("src")]
-            image_urls = [url for url in image_urls if url] # Filter out None URLs
+            image_urls = [url for url in image_urls if url]
         else:
             logging.warning(f"No Pexels images found for query: '{query}'")
     except RequestException as e:
@@ -173,75 +144,80 @@ def search_stock_images(query: str, num_images: int = 1, language: str = "en") -
     return image_urls
 
 def download_image(image_url: str, output_filepath: str) -> bool:
-    """Downloads a single image from URL."""
-    logging.info(f"Downloading image: {image_url} -> {os.path.basename(output_filepath)}")
+    """Downloads a single image from URL to a local temporary path."""
+    logging.info(f"Downloading image from URL: {image_url} -> {os.path.basename(output_filepath)}")
     try:
         response = requests.get(image_url, stream=True, timeout=30)
         response.raise_for_status()
         content_type = response.headers.get('content-type', '').lower()
         if not content_type.startswith('image/'):
-            logging.warning(f"URL not an image (Content-Type: {content_type}): {image_url}")
+            logging.warning(f"URL content is not an image (Content-Type: {content_type}): {image_url}")
             return False
+        
         with open(output_filepath, 'wb') as f:
             response.raw.decode_content = True
             shutil.copyfileobj(response.raw, f)
+            
         if os.path.exists(output_filepath) and os.path.getsize(output_filepath) > 100:
-             logging.info(f"Successfully downloaded image: {os.path.basename(output_filepath)}")
-             return True
+            logging.info(f"Successfully downloaded image: {os.path.basename(output_filepath)}")
+            return True
         else:
-             logging.error(f"Download empty/failed: {os.path.basename(output_filepath)}")
-             if os.path.exists(output_filepath): os.remove(output_filepath)
-             return False
+            logging.error(f"Downloaded image empty/corrupt for: {os.path.basename(output_filepath)}")
+            if os.path.exists(output_filepath): os.remove(output_filepath)
+            return False
     except RequestException as e:
         logging.error(f"Network error downloading {image_url}: {e}")
         return False
     except Exception as e:
         logging.error(f"Exception downloading {image_url}: {e}", exc_info=True)
         if os.path.exists(output_filepath):
-             try: os.remove(output_filepath)
-             except OSError: pass
+            try: os.remove(output_filepath)
+            except OSError: pass
         return False
 
-# --- Worker Function ---
-def fetch_or_generate_image(query: str, use_ai: bool, language: str, output_dir: str) -> str | None:
-    """Worker: gets AI or stock image, returns GCS URL or None."""
-    unique_id = uuid.uuid4()
+# --- Worker Function for ThreadPoolExecutor ---
+def fetch_image_worker(query: str, use_ai: bool, language: str, output_dir: str) -> str | None:
+    """
+    Worker function to either generate an AI image or fetch a stock image.
+    Returns the path to the *temporary* local file, or None on failure.
+    """
+    unique_id = uuid.uuid4().hex[:8]
     file_extension = ".png" if use_ai else ".jpg"
-    safe_query_part = "".join(filter(str.isalnum, query.split()[:5]))[:30]
+    safe_query_part = "".join(filter(str.isalnum, query.split()[:5]))[:40].lower()
     filename = f"{safe_query_part}_{unique_id}{file_extension}"
     output_filepath = os.path.join(output_dir, filename)
 
+    # Directory for persistent images
+    test_images_dir = os.path.join(os.path.dirname(__file__), "..", "test_images")
+    os.makedirs(test_images_dir, exist_ok=True)
+    test_images_path = os.path.join(test_images_dir, filename)
+
+    result_path = None
     if use_ai:
-        accessible_path = generate_ai_image(prompt=query, output_filepath=output_filepath)
-        return accessible_path
+        result_path = generate_ai_image(prompt=query, output_filepath=output_filepath)
     else:
         image_urls = search_stock_images(query, num_images=1, language=language)
         if image_urls:
-            success = download_image(image_urls[0], output_filepath=output_filepath)
-            if success:
-                # Copy to user-accessible directory for testing
-                accessible_dir = os.path.join(os.path.dirname(__file__), "..", "test_images")
-                try:
-                    os.makedirs(accessible_dir, exist_ok=True)
-                    accessible_path = os.path.join(accessible_dir, os.path.basename(output_filepath))
-                    import shutil
-                    shutil.copy2(output_filepath, accessible_path)
-                    logging.info(f'Image file also copied to: {accessible_path}')
-                except Exception as copy_err:
-                    logging.warning(f"Could not copy image file to accessible directory: {copy_err}")
-                return accessible_path
+            if download_image(image_urls[0], output_filepath=output_filepath):
+                result_path = output_filepath
             else:
-                logging.warning(f"Download failed for stock image: {image_urls[0]}")
+                logging.warning(f"Failed to download stock image for query: '{query}'")
         else:
-            logging.warning(f"No stock URL for query '{query}', cannot download.")
-    # Error logged within generate/download functions
-    logging.error(f"Failed to obtain final image for query: '{query[:50]}...' (use_ai={use_ai})")
-    if os.path.exists(output_filepath): # Cleanup just in case
-        try: os.remove(output_filepath)
-        except OSError: pass
+            logging.warning(f"No stock images found for query: '{query}'")
+
+    # If image was successfully created/downloaded, copy to test_images and return that path
+    if result_path and os.path.exists(result_path) and os.path.getsize(result_path) > 100:
+        try:
+            import shutil
+            shutil.copy2(result_path, test_images_path)
+            logging.info(f"Copied image to test_images: {test_images_path}")
+            return test_images_path
+        except Exception as copy_err:
+            logging.warning(f"Could not copy image to test_images: {copy_err}")
+            return result_path  # fallback to temp path if copy fails
     return None
 
-# --- Main Orchestrator Function ---
+# --- Main Orchestrator Function (Optimized Parallel Handling) ---
 def generate_images_for_prompts(
     image_prompts: list[str],
     use_ai_flags: list[bool],
@@ -249,62 +225,71 @@ def generate_images_for_prompts(
     max_workers: int = 5,
     fallback_image_path: str | None = None
 ) -> list[str | None]:
-    """Generates/fetches images in parallel for a list of prompts."""
-    # (Code remains the same as previous correct version)
+    """
+    Generates/fetches images in parallel for a list of prompts.
+    Returns a list of paths to the *temporary* local image files, or None for failures.
+    """
     if len(image_prompts) != len(use_ai_flags):
         logging.error("Mismatched lengths for image_prompts and use_ai_flags.")
         raise ValueError("Length of image_prompts and use_ai_flags must match.")
+
+    # Determine and validate the fallback image path ONCE
+    valid_fallback_path = None
+    if fallback_image_path:
+        if os.path.exists(fallback_image_path) and os.path.getsize(fallback_image_path) > 100:
+            valid_fallback_path = fallback_image_path
+        else:
+            logging.warning(f"Provided fallback_image_path '{fallback_image_path}' is invalid or missing. Will try default.")
+
+    if not valid_fallback_path:
+        default_fallback_path = os.path.join(os.path.dirname(__file__), "..", "test_images", "default_placeholder.png")
+        if os.path.exists(default_fallback_path) and os.path.getsize(default_fallback_path) > 100:
+            valid_fallback_path = default_fallback_path
+            logging.info(f"Using default fallback image: {valid_fallback_path}")
+        else:
+            logging.critical(f"Default fallback image not found or empty at: {default_fallback_path}. No valid fallback available.")
+            valid_fallback_path = None # Explicitly set to None if no valid fallback
 
     image_filepaths_ordered: list[str | None] = [None] * len(image_prompts)
     logging.info(f"Starting image processing for {len(image_prompts)} prompts (max_workers={max_workers}).")
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_index = {
-            executor.submit(fetch_or_generate_image, prompt, use_ai, language, IMAGE_TEMP_DIR): idx
+            executor.submit(fetch_image_worker, prompt, use_ai, language, IMAGE_TEMP_DIR): idx
             for idx, (prompt, use_ai) in enumerate(zip(image_prompts, use_ai_flags))
         }
 
         processed_count = 0
         for future in as_completed(future_to_index):
             idx = future_to_index[future]
-            prompt = image_prompts[idx]
+            prompt_for_log = image_prompts[idx]
             try:
-                result_path = future.result()
-                image_filepaths_ordered[idx] = result_path if result_path else fallback_image_path
-                if result_path:
-                    logging.debug(f"Success for prompt index {idx} ('{prompt[:30]}...') -> {os.path.basename(result_path)}")
+                result_path = future.result() # This is the local temp path or None
+                
+                if result_path and os.path.exists(result_path) and os.path.getsize(result_path) > 100:
+                    image_filepaths_ordered[idx] = result_path
+                    logging.debug(f"Success for prompt index {idx} ('{prompt_for_log[:30]}...') -> {os.path.basename(result_path)}")
+                elif valid_fallback_path:
+                    image_filepaths_ordered[idx] = valid_fallback_path
+                    logging.warning(f"Failed to get image for prompt index {idx} ('{prompt_for_log[:30]}...'), using fallback.")
                 else:
-                    logging.warning(f"Using fallback for prompt index {idx} ('{prompt[:30]}...')")
+                    image_filepaths_ordered[idx] = None
+                    logging.error(f"Failed to get image for prompt index {idx} ('{prompt_for_log[:30]}...') and no valid fallback available.")
             except Exception as e:
-                logging.error(f"Exception from future for prompt index {idx} ('{prompt[:30]}...'): {e}", exc_info=True)
-                image_filepaths_ordered[idx] = fallback_image_path # Apply fallback on exception
+                logging.error(f"Exception from future for prompt index {idx} ('{prompt_for_log[:30]}...'): {e}", exc_info=True)
+                if valid_fallback_path:
+                    image_filepaths_ordered[idx] = valid_fallback_path
+                    logging.warning(f"Exception for prompt index {idx}, using fallback.")
+                else:
+                    image_filepaths_ordered[idx] = None
+                    logging.error(f"Exception for prompt index {idx} and no valid fallback available.")
             processed_count += 1
             logging.info(f"Processed {processed_count}/{len(image_prompts)} image tasks.")
 
+    # Final tally for logging
+    valid_count = sum(1 for p in image_filepaths_ordered if p and p != valid_fallback_path)
+    fallback_applied_count = sum(1 for p in image_filepaths_ordered if p == valid_fallback_path)
+    failed_count = sum(1 for p in image_filepaths_ordered if p is None)
 
-    # Final validation pass (accept local accessible images as valid)
-    final_paths = []
-    valid_count = 0
-    fallback_count = 0
-    failed_count = 0
-    # Set default fallback image path to test_images/default_placeholder.png if not provided
-    if not fallback_image_path:
-        fallback_image_path = os.path.join(os.path.dirname(__file__), "..", "test_images", "default_placeholder.png")
-    for i, path in enumerate(image_filepaths_ordered):
-        current_path = path
-        # Accept valid local image
-        if current_path and isinstance(current_path, str) and os.path.exists(current_path) and os.path.getsize(current_path) > 100:
-            final_paths.append(current_path)
-            valid_count += 1
-        # Accept valid local fallback image
-        elif fallback_image_path and isinstance(fallback_image_path, str) and os.path.exists(fallback_image_path) and os.path.getsize(fallback_image_path) > 100:
-            final_paths.append(fallback_image_path)
-            fallback_count += 1
-            logging.warning(f"Using fallback for image index {i} (Prompt: '{image_prompts[i][:30]}...')")
-        else:
-            final_paths.append(None)
-            failed_count += 1
-            logging.error(f"Fallback image path '{fallback_image_path}' is invalid or missing for index {i}.")
-
-    logging.info(f"Image processing complete. Valid: {valid_count}. Used Fallback: {fallback_count}. Failed (None): {failed_count}.")
-    return final_paths
+    logging.info(f"Image processing complete. Generated/Fetched: {valid_count}. Fallback used: {fallback_applied_count}. Failed (None): {failed_count}.")
+    return image_filepaths_ordered

@@ -21,6 +21,11 @@ export const agreementService = {
         });
 
         return response.data;
-    }
+    },
+
+    async videoGeneration(data: { uid: string; language: string; category: string; summary_text: any }): Promise<any> {
+        const response = await api.post('/agreements/video-generation', data);
+        return response.data;
+    },
 }
 
