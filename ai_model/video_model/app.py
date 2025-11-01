@@ -87,6 +87,10 @@ def generate_video_pipeline(summary_text, language="en", category="business"):
 
 # --- Flask API Router ---
 
+@app.route("/health", methods=["GET"])
+def health():
+    return "active"
+
 @app.route('/generate_video', methods=['POST'])
 def uploads():
     category = request.form.get("category")
@@ -200,6 +204,9 @@ def generate_video_api():
     else:
         return jsonify({"error": "Video generation failed"}), 500
 
+@app.route("/active", methods=["GET"])
+def active():
+    return jsonify({"status": "active"})
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "8080"))
