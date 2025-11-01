@@ -66,7 +66,6 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
 
     if (videoStatus === 'idle' && user?.uid) {
       setVideoStatus('loading');
-      console.log("Video ", videoStatus, user?.uid);
 
       try {
         const response = await dispatch(videoGenerationAsync({
