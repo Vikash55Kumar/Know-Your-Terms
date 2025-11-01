@@ -45,6 +45,22 @@ export const agreementProcessAsync = createAsyncThunk(
   }
 );
 
+export const videoGenerationAsync = createAsyncThunk(
+  'agreement/videoGeneration',
+  async (data: { summary_text: any; uid: string; language: string; category: string }, { rejectWithValue }) => {
+    try {
+      // Call the video generation service
+      const response = await agreementService.videoGeneration(data);
+      // You can add additional checks here if needed (e.g., response.status)
+      return response;
+    } catch (error: any) {
+        const message = error.response?.data?.message || 'Process failed';
+        toast.error(message);
+        return rejectWithValue(message);
+    }
+  }
+);
+
 const agreementSlice = createSlice({
   name: 'agreement',
   initialState,
@@ -80,6 +96,20 @@ const agreementSlice = createSlice({
         state.agreementProcess = null;
         state.error = action.payload as string;
       });
+
+      // Video Generation
+      builder
+      .addCase(videoGenerationAsync.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(videoGenerationAsync.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(videoGenerationAsync.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      }); 
   },
 });
 

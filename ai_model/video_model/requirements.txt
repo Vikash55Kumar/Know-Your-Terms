@@ -1,27 +1,25 @@
 Flask>=2.0
-google-cloud-discoveryengine>=0.10.0
-google-auth>=2.0.0
-# HTTP requests
+gunicorn==20.1.0
 requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Google Cloud SDKs
+google-auth>=2.0.0
+google-cloud-aiplatform>=1.38.0
+google-cloud-language>=2.10.0
+google-cloud-texttospeech>=2.14.0
+google-cloud-storage>=2.10.0
+google-cloud-discoveryengine>=0.10.0
+
 # LangChain + Vertex AI integration
 langchain>=0.1.159
 langchain-google-vertexai>=2.0.0
-# Environment management
-python-dotenv>=1.0.0
-# For LLM (Gemini/Vertex AI)
-google-cloud-aiplatform>=1.38.0
-# For Google Cloud Natural Language API
-google-cloud-language>=2.10.0
-# For Google Cloud Text-to-Speech
-google-cloud-texttospeech>=2.14.0
 
-# For video assembly
+# Video and image processing
 moviepy>=1.0.3
-# For image download/processing
 Pillow>=10.0.0
-gunicorn==20.1.0
 
-google-cloud-aiplatform[langchain,reasoningengine]
+# Misc
 cloudpickle==3.0.0
 pydantic==2.9.0
 

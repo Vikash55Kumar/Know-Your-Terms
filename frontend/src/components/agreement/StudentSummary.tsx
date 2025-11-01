@@ -1,6 +1,9 @@
 import { FileText } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import type { StudentOutput } from "../../types";
+import { videoGenerationAsync } from "../../store/agreementSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { toast } from "react-toastify";
 
 const CircularScore: React.FC<{ score: number }> = ({ score }) => {
   // Score is out of 10, convert to percent
@@ -45,25 +48,69 @@ const CircularScore: React.FC<{ score: number }> = ({ score }) => {
       </text>
     </svg>
   );
-};
+}
 
 const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput }) => {
-  // console.log("Summary Component Rendered with data:", aiRawOutput);
-
   // Score: use Confidence_and_Risk_Score.Confidence (out of 10)
+  const dispatch = useAppDispatch();
   const score = parseInt(aiRawOutput.Confidence_and_Risk_Score.Confidence, 10) || 0;
 
+  // Video loading and modal state
+  const [videoStatus, setVideoStatus] = React.useState<'idle' | 'loading' | 'success'>('idle');
+  const [showVideoModal, setShowVideoModal] = React.useState(false);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const { user } = useAppSelector((state) => state.auth);
+  const language = 'en';
+  
+  const handleVideoClick = async () => {
+
+    if (videoStatus === 'idle' && user?.uid) {
+      setVideoStatus('loading');
+      console.log("Video ", videoStatus, user?.uid);
+
+      try {
+        const response = await dispatch(videoGenerationAsync({
+          summary_text: JSON.stringify(aiRawOutput),
+          category: 'student',
+          uid: user.uid,
+          language: language,
+        })).unwrap();
+
+        if (response?.statusCode === 200 || response?.success === true) {
+          setVideoUrl(response.data.video_path);
+          setVideoStatus('success');
+          toast.success(response.message || "Video Generated successfully!");
+        } else {
+          toast.error(response?.message || "Failed to generate video");
+          setVideoStatus('idle');
+        }
+      } catch (error) {
+        console.error("Error generating video:", error);
+        toast.error("Failed to generate video");
+        setVideoStatus('idle');
+      }
+
+
+    }
+  };
+  const handlePlayClick = () => setShowVideoModal(true);
+  const handleCloseModal = () => setShowVideoModal(false);
+
   return (
-    <div className="max-w-7xl mx-auto bg-white border border-gray-100 rounded-2xl shadow-sm p-0 flex flex-col md:flex-row h-[77.2vh]">
+  <div className="max-w-7xl mx-auto bg-white border border-gray-100 rounded-2xl shadow-sm p-0 flex flex-col md:flex-row h-[77.2vh]">
       {/* Left: Scrollable Content */}
       <div className="flex-1 overflow-y-auto px-8 gap-0">
         {/* Fixed Header */}
-        <header className="border-b px-2 py-6 bg-white z-10 sticky top-0 flex flex-col gap-1">
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            🎓 {aiRawOutput.Header.Document_Name}
-          </h1>
-          <div className="text-sm text-gray-500 mt-1">
-            📄 {aiRawOutput.Header.Document_Type} &mdash; 🗓️ {aiRawOutput.Header.Date} &mdash; 🌏 {aiRawOutput.Header.Jurisdiction}
+        <header className={`border-b px-2 py-6 bg-white sticky top-0 flex flex-col gap-1${showVideoModal ? ' z-0' : ' z-10'}`}>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                🎓 {aiRawOutput.Header.Document_Name}
+              </h1>
+              <div className="text-sm text-gray-500 mt-1">
+                📄 {aiRawOutput.Header.Document_Type} &mdash; 🗓️ {aiRawOutput.Header.Date} &mdash; 🌏 {aiRawOutput.Header.Jurisdiction}
+              </div>
+            </div>
           </div>
         </header>
 
@@ -173,10 +220,82 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
           </div>
 
           <div className="flex gap-4 mt-6 w-full justify-center">
-            <button className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-200 transition">Video</button>
-          </div>
-          <div className="mt-6 text-center text-xs text-neutral-400">
-            <button className="bg-green-100 text-green-700 px-4 py-2 rounded-lg font-semibold shadow hover:bg-green-200 transition">Mind Map</button>
+            <div className="flex flex-col gap-6 w-full justify-center items-stretch">
+              {/* Video Section - Minimal button/icon only */}
+              <div className="flex-1 flex flex-col items-center justify-center min-w-[80px] max-h-[80px]">
+                {videoStatus === 'idle' && (
+                  <button
+                    className="bg-blue-100 text-blue-700 w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-200 transition flex items-center justify-center gap-2"
+                    onClick={handleVideoClick}
+                    title="Generate Video"
+                  >
+                    <span role="img" aria-label="video" className="text-2xl">🎬</span>
+                    Generate Video
+                  </button>
+                )}
+                {videoStatus === 'loading' && (
+                  <button
+                    className="bg-blue-100 text-blue-700 w-full px-2 py-2 rounded-lg font-semibold shadow flex items-center justify-center gap-2"
+                    disabled
+                    title="Generating..."
+                  >
+                    <span role="img" aria-label="video" className="text-2xl">🎬</span>
+                    Generating
+                    <span className="ml-2">
+                      <span className="inline-block align-middle"> 
+                        <svg className="animate-spin h-6 w-6 text-blue-700" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
+                )}
+                {videoStatus === 'success' && (
+                  <button
+                    className="bg-blue-600 text-white w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-700 transition flex items-center justify-center gap-2"
+                    onClick={handlePlayClick}
+                    title="Play Video"
+                  >
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2563eb"/><polygon points="10,8 16,12 10,16" fill="#fff"/></svg>
+                    Play Video
+                  </button>
+                )}
+              </div>
+              {/* Mind Map Section - Minimal button/icon only */}
+              <div className="flex-1 flex flex-col items-center justify-center min-w-[80px] max-h-[80px]">
+                <button
+                  className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-neutral-200 transition flex items-center justify-center gap-2 bg-neutral-100 text-neutral-800 border border-neutral-300"
+                  title="View Mind Map"
+                >
+                  <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
+                  View Mind Map
+                </button>
+              </div>
+            </div>
+          {/* Video Modal Popup */}
+          {showVideoModal && (
+            <div className="fixed inset-0 z-[999] flex w-full items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white rounded-xl md:w-[90vw] lg:w-[70vw] aspect-video shadow-lg p-8 max-w-5xl w-full relative">
+                <button
+                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl"
+                  onClick={handleCloseModal}
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+                <h2 className="text-lg font-semibold mb-4 text-blue-700 flex items-center gap-2">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2563eb"/><polygon points="10,8 16,12 10,16" fill="#fff"/></svg>
+                  {aiRawOutput.Header.Document_Name} Video
+                </h2>
+
+                <video src={videoUrl} controls autoPlay className="w-full h-[25vh] md:h-[60vh] rounded-lg shadow" />
+                <p className="text-sm text-gray-500 mt-1">
+                    Powered by <span className="font-semibold text-[#F6A507]">Know Your Terms</span>
+                </p>
+              </div>
+            </div>
+          )}
           </div>
         </div>
       </div>
