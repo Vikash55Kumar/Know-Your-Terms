@@ -97,8 +97,6 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
     }
   };
 
-  console.log("mind", mindmapData);
-  
   const handleMindMapClick = async () => {
 
     if (mindmapStatus === 'idle' && user?.uid) {
