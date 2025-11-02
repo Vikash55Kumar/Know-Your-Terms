@@ -61,7 +61,7 @@ const BusinessSummary: React.FC<{ aiRawOutput: ImportedBusinessOutput }> = ({ ai
   const [mindmapData, setMindmapData] = React.useState<any>(null);
   const [showMindMapModal, setShowMindMapModal] = React.useState(false);
   const language = 'en';
-
+  
   const handleVideoClick = async () => {
     if (videoStatus === 'idle' && user?.uid) {
       setVideoStatus('loading');
