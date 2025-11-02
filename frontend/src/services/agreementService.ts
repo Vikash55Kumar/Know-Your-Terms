@@ -27,5 +27,10 @@ export const agreementService = {
         const response = await api.post('/agreements/video-generation', data);
         return response.data;
     },
+
+    async mindmapGeneration(data: { uid: string; summary_json: any; category: string }): Promise<any> {
+        const response = await api.post('/agreements/mindmap-generation', data);
+        return response.data;
+    },
 }
 

@@ -1,0 +1,7 @@
+venv/
+cloud_vision.json
+vertex_ai.json
+.env
+service_account.json
+utils/__pycache__/
+.env

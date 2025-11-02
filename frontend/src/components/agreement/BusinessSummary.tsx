@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import type { BusinessOutput as ImportedBusinessOutput } from '../../types';
-import { videoGenerationAsync } from '../../store/agreementSlice';
+import { mindmapGenerationAsync, videoGenerationAsync } from '../../store/agreementSlice';
+import { toast } from 'react-toastify';
+import { MindMapModal } from './MindMap';
 
 const CircularScore: React.FC<{ score: number }> = ({ score }) => {
   // Score is out of 10, convert to percent
@@ -55,6 +57,9 @@ const BusinessSummary: React.FC<{ aiRawOutput: ImportedBusinessOutput }> = ({ ai
   const [videoStatus, setVideoStatus] = React.useState<'idle' | 'loading' | 'success'>('idle');
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [mindmapStatus, setMindmapStatus] = React.useState<'idle' | 'loading' | 'success'>('idle');
+  const [mindmapData, setMindmapData] = React.useState<any>(null);
+  const [showMindMapModal, setShowMindMapModal] = React.useState(false);
   const language = 'en';
 
   const handleVideoClick = async () => {
@@ -79,6 +84,37 @@ const BusinessSummary: React.FC<{ aiRawOutput: ImportedBusinessOutput }> = ({ ai
       }
     }
   };
+
+  const handleMindMapClick = async () => {
+
+    if (mindmapStatus === 'idle' && user?.uid) {
+      setMindmapStatus('loading');
+
+      try {
+        const response = await dispatch(mindmapGenerationAsync({
+          summary_json: JSON.stringify(aiRawOutput),
+          category: 'business',
+          uid: user.uid,
+        })).unwrap();
+        console.log("response", response);
+        if (response?.statusCode === 200 || response?.success === true) {
+          setMindmapData(response.data);
+          setMindmapStatus('success');
+          toast.success(response.message || "Mindmap Generated successfully!");
+        } else {
+          toast.error(response?.message || "Failed to generate mindmap");
+          setMindmapStatus('idle');
+        }
+      } catch (error) {
+        console.error("Error generating mindmap:", error);
+        toast.error("Failed to generate mindmap");
+        setMindmapStatus('idle');
+      }
+
+
+    }
+  };
+
   const handlePlayClick = () => setShowVideoModal(true);
   const handleCloseModal = () => setShowVideoModal(false);
 
@@ -90,7 +126,7 @@ const BusinessSummary: React.FC<{ aiRawOutput: ImportedBusinessOutput }> = ({ ai
     <div className="relative flex flex-col md:flex-row max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-col gap-0 w-full">
         {/* Fixed Title */}
-        <header className={`border-b px-2 py-6 bg-white sticky top-0 flex flex-col gap-1${showVideoModal ? ' z-0' : ' z-10'}`}>
+        <header className={`border-b px-2 py-6 bg-white sticky top-0 flex flex-col gap-1${showVideoModal || showMindMapModal ? ' z-0' : ' z-10'}`}>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
@@ -247,16 +283,59 @@ const BusinessSummary: React.FC<{ aiRawOutput: ImportedBusinessOutput }> = ({ ai
                   </button>
                 )}
               </div>
-              {/* Mind Map Section - Minimal button/icon only */}
+
+              {/* Mind Map Button */}
               <div className="flex-1 flex flex-col items-center justify-center min-w-[80px] max-h-[80px]">
-                <button
-                  className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-neutral-200 transition flex items-center justify-center gap-2 bg-neutral-100 text-neutral-800 border border-neutral-300"
-                  title="View Mind Map"
-                >
-                  <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
-                  View Mind Map
-                </button>
+                {mindmapStatus === 'idle' && (
+                  <button
+                    className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-green-200 transition flex items-center justify-center gap-2 bg-green-100 text-neutral-800 border border-neutral-300"
+                  
+                    onClick={handleMindMapClick}
+                    title="Generate Mind Map"
+                  >
+                     <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
+                    Generate Mind Map
+                  </button>
+                )}
+                {mindmapStatus === 'loading' && (
+                  <button
+                    className="w-full px-4 py-2 rounded-lg font-semibold shadow transition flex items-center justify-center gap-2 bg-green-200 text-neutral-800 border border-neutral-300"
+                    // className="bg-blue-100 text-blue-700 w-full px-2 py-2 rounded-lg font-semibold shadow flex items-center justify-center gap-2"
+                    disabled
+                    title="Generating..."
+                  >
+                    <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
+                    Generating
+                    <span className="ml-2">
+                      <span className="inline-block align-middle"> 
+                        <svg className="animate-spin h-6 w-6 text-green-700" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
+                )}
+                {mindmapStatus === 'success' && (
+                  <button
+                    className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-green-400 transition flex items-center justify-center gap-2 bg-green-300 text-gray-700 border border-neutral-300"
+                    onClick={() => setShowMindMapModal(true)}
+                    title="Open Mind Map"
+                  >
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2563eb"/><polygon points="10,8 16,12 10,16" fill="#fff"/></svg>
+                    Open Mind Map
+                  </button>
+                )}
               </div>
+              {/* Mind Map Modal Popup */}
+              {showMindMapModal && (
+                <MindMapModal 
+                  isOpen={showMindMapModal}
+                  onClose={() => setShowMindMapModal(false)}
+                  mindmapData={mindmapData}
+                />
+              )}
+
             </div>
           {/* Video Modal Popup */}
           {showVideoModal && (
