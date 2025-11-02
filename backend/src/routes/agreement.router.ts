@@ -2,6 +2,7 @@
 import { Router } from 'express';
 import { 
     agreementSummary,
+    MindMapGeneration,
     processAgreement,
     uploadFile,
     VideoGeneration,
@@ -16,6 +17,8 @@ router.route("/agreement-summary").post(authenticate, upload.fields([{ name: "fi
 router.route("/agreement-process").post(authenticate, processAgreement)
 
 router.route("/video-generation").post(authenticate, VideoGeneration)
+
+router.route("/mindmap-generation").post(MindMapGeneration)
 
 // upload file
 router.route("/upload").post(authenticate, upload.fields([{ name: "file", maxCount: 1 }]), uploadFile);

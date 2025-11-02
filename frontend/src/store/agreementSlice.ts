@@ -61,6 +61,21 @@ export const videoGenerationAsync = createAsyncThunk(
   }
 );
 
+export const mindmapGenerationAsync = createAsyncThunk(
+  'agreement/mindmapGeneration',
+  async (data: { uid: string; summary_json: any; category: string }, { rejectWithValue }) => {
+    try {
+      // Call the mindmap generation service
+      const response = await agreementService.mindmapGeneration(data);
+      return response;
+    } catch (error: any) {
+        const message = error.response?.data?.message || 'Process failed';
+        toast.error(message);
+        return rejectWithValue(message);
+    }
+  }
+);
+
 const agreementSlice = createSlice({
   name: 'agreement',
   initialState,
@@ -110,6 +125,20 @@ const agreementSlice = createSlice({
         state.loading = false;
         state.error = action.payload as string;
       }); 
+
+      // Mindmap Generation
+      builder
+      .addCase(mindmapGenerationAsync.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(mindmapGenerationAsync.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(mindmapGenerationAsync.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      });
   },
 });
 

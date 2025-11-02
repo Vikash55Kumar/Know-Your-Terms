@@ -1,9 +1,10 @@
 import { FileText } from "lucide-react";
 import React, { useState } from "react";
 import type { StudentOutput } from "../../types";
-import { videoGenerationAsync } from "../../store/agreementSlice";
+import { mindmapGenerationAsync, videoGenerationAsync } from "../../store/agreementSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { toast } from "react-toastify";
+import { MindMapModal } from "./MindMap";
 
 const CircularScore: React.FC<{ score: number }> = ({ score }) => {
   // Score is out of 10, convert to percent
@@ -58,6 +59,9 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
   // Video loading and modal state
   const [videoStatus, setVideoStatus] = React.useState<'idle' | 'loading' | 'success'>('idle');
   const [showVideoModal, setShowVideoModal] = React.useState(false);
+  const [mindmapStatus, setMindmapStatus] = React.useState<'idle' | 'loading' | 'success'>('idle');
+  const [mindmapData, setMindmapData] = React.useState<any>(null);
+  const [showMindMapModal, setShowMindMapModal] = React.useState(false);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const { user } = useAppSelector((state) => state.auth);
   const language = 'en';
@@ -92,7 +96,45 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
 
     }
   };
-  const handlePlayClick = () => setShowVideoModal(true);
+
+  console.log("mind", mindmapData);
+  
+  const handleMindMapClick = async () => {
+
+    if (mindmapStatus === 'idle' && user?.uid) {
+      setMindmapStatus('loading');
+
+      try {
+        const response = await dispatch(mindmapGenerationAsync({
+          summary_json: JSON.stringify(aiRawOutput),
+          category: 'student',
+          uid: user.uid,
+        })).unwrap();
+        console.log("response", response);
+        if (response?.statusCode === 200 || response?.success === true) {
+          setMindmapData(response.data);
+          setMindmapStatus('success');
+          toast.success(response.message || "Mindmap Generated successfully!");
+        } else {
+          toast.error(response?.message || "Failed to generate mindmap");
+          setMindmapStatus('idle');
+        }
+      } catch (error) {
+        console.error("Error generating mindmap:", error);
+        toast.error("Failed to generate mindmap");
+        setMindmapStatus('idle');
+      }
+
+
+    }
+  };
+  const handlePlayClick = () => {
+    if (mindmapStatus === 'success') {
+      setShowMindMapModal(true);
+    } else {
+      setShowVideoModal(true);
+    }
+  };
   const handleCloseModal = () => setShowVideoModal(false);
 
   return (
@@ -100,7 +142,7 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
       {/* Left: Scrollable Content */}
       <div className="flex-1 overflow-y-auto px-8 gap-0">
         {/* Fixed Header */}
-        <header className={`border-b px-2 py-6 bg-white sticky top-0 flex flex-col gap-1${showVideoModal ? ' z-0' : ' z-10'}`}>
+        <header className={`border-b px-2 py-6 bg-white sticky top-0 flex flex-col gap-1${showVideoModal || showMindMapModal ? ' z-0' : ' z-10'}`}>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
@@ -161,7 +203,7 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
           <div className="mb-2">
             <div className="font-semibold text-sm text-gray-700">Explicit Acts:</div>
             <ul className="list-disc pl-6 text-neutral-700 text-base">
-              {aiRawOutput.Applicable_Laws_and_Acts.Explicit_Acts.map((act, i) => (
+              {(aiRawOutput.Applicable_Laws_and_Acts?.Explicit_Acts ?? []).map((act, i) => (
                 <li key={i}><strong>{act.Act}</strong>: {act.Relevance}</li>
               ))}
             </ul>
@@ -169,7 +211,7 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
           <div>
             <div className="font-semibold text-sm text-gray-700">Implicit Acts:</div>
             <ul className="list-disc pl-6 text-neutral-700 text-base">
-              {aiRawOutput.Applicable_Laws_and_Acts.Implicit_Acts.map((act, i) => (
+              {(aiRawOutput.Applicable_Laws_and_Acts?.Implicit_Acts ?? []).map((act, i) => (
                 <li key={i}><strong>{act.Act}</strong>: {act.Reason}</li>
               ))}
             </ul>
@@ -261,17 +303,61 @@ const StudentSummary: React.FC<{ aiRawOutput: StudentOutput }> = ({ aiRawOutput 
                   </button>
                 )}
               </div>
-              {/* Mind Map Section - Minimal button/icon only */}
+              
+              {/* Mind Map Section */}
               <div className="flex-1 flex flex-col items-center justify-center min-w-[80px] max-h-[80px]">
-                <button
-                  className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-neutral-200 transition flex items-center justify-center gap-2 bg-neutral-100 text-neutral-800 border border-neutral-300"
-                  title="View Mind Map"
-                >
-                  <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
-                  View Mind Map
-                </button>
+                {mindmapStatus === 'idle' && (
+                  <button
+                    className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-green-200 transition flex items-center justify-center gap-2 bg-green-100 text-neutral-800 border border-neutral-300"
+                  
+                    onClick={handleMindMapClick}
+                    title="Generate Mind Map"
+                  >
+                     <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
+                    Generate Mind Map
+                  </button>
+                )}
+                {mindmapStatus === 'loading' && (
+                  <button
+                    className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-green-00 transition flex items-center justify-center gap-2 bg-green-300 text-neutral-800 border border-neutral-300"
+                    // className="bg-blue-100 text-blue-700 w-full px-2 py-2 rounded-lg font-semibold shadow flex items-center justify-center gap-2"
+                    disabled
+                    title="Generating..."
+                  >
+                    <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
+                    Generating
+                    <span className="ml-2">
+                      <span className="inline-block align-middle"> 
+                        <svg className="animate-spin h-6 w-6 text-green-700" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
+                )}
+                {mindmapStatus === 'success' && (
+                  <button
+                    className="w-full px-4 py-2 rounded-lg font-semibold shadow hover:bg-green-400 transition flex items-center justify-center gap-2 bg-green-300 text-gray-700 border border-neutral-300"
+                    onClick={() => setShowMindMapModal(true)}
+                    title="Open Mind Map"
+                  >
+                    <span role="img" aria-label="mindmap" className="text-2xl">🧠</span>
+                    Open Mind Map
+                  </button>
+                )}
               </div>
+              {/* Mind Map Modal Popup */}
+              {showMindMapModal && (
+                <MindMapModal 
+                  isOpen={showMindMapModal}
+                  onClose={() => setShowMindMapModal(false)}
+                  mindmapData={mindmapData}
+                />
+              )}
+
             </div>
+
           {/* Video Modal Popup */}
           {showVideoModal && (
             <div className="fixed inset-0 z-[999] flex w-full items-center justify-center bg-black bg-opacity-50">

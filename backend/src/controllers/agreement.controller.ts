@@ -245,6 +245,29 @@ const VideoGeneration = asyncHandler(async (req: Request, res: Response) => {
     }
 });
 
+const MindMapGeneration = asyncHandler(async (req: Request, res: Response) => {
+    const { summary_json, category } = req.body;
+
+    if (!summary_json) {
+        throw new ApiError(400, 'summary_json is required');
+    }
+
+    try {
+        const response = await axios.post(`${process.env.AI_MIND_MAP_MODEL_URL}/generate_mindmap`, {
+            summary_json,
+            category,
+        });
+
+        if (response.status !== 200) {
+            throw new ApiError(500, 'Failed to generate mindmap');
+        }
+        return res.status(200).json(new ApiResponse(200, response.data, 'Mindmap generated successfully'));
+    } catch (error) {
+        throw new ApiError(500, 'Mindmap generation failed');
+    }
+});
+
+
 // Translate any text to a target language using Google Translate API
 const translateTextController = asyncHandler(async (req: Request, res: Response) => {
     const { text, targetLanguage } = req.body;
@@ -285,7 +308,7 @@ const uploadFile = asyncHandler(async (req: Request, res: Response) => {
     }
 });
 
-export { agreementSummary, processAgreement, VideoGeneration, translateTextController, uploadFile };
+export { agreementSummary, processAgreement, VideoGeneration, MindMapGeneration, translateTextController, uploadFile };
 
         // let prompt = '';
         // switch (targetGroup) {
