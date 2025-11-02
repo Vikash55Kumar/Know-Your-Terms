@@ -402,9 +402,18 @@ def generate_mindmap_data(llm_client, summary_json_str: str, category: str) -> d
             raw_output = re.sub(r"\n```$", "", raw_output, flags=re.MULTILINE)
         raw_output = raw_output.strip()
 
+        # Remove newlines inside quoted strings (to avoid unterminated string errors)
+        def clean_newlines_in_strings(text):
+            # Replace newlines inside double quotes with a space
+            def replacer(match):
+                return match.group(0).replace('\n', ' ')
+            return re.sub(r'"(.*?)"', replacer, text, flags=re.DOTALL)
+
+        cleaned_output = clean_newlines_in_strings(raw_output)
+        cleaned_output = re.sub(r",\s*(\]|})", r"\1", cleaned_output) # Fix trailing commas
+
         try:
-            raw_output = re.sub(r",\s*(\]|})", r"\1", raw_output) # Fix trailing commas
-            mindmap_data = json.loads(raw_output)
+            mindmap_data = json.loads(cleaned_output)
             logging.info(f"Mind map JSON parsed successfully on attempt {attempt}.")
             if "label" not in mindmap_data:
                 logging.error(f"Generated JSON is missing root 'label' key (attempt {attempt}).")
@@ -414,7 +423,22 @@ def generate_mindmap_data(llm_client, summary_json_str: str, category: str) -> d
             return mindmap_data
         except json.JSONDecodeError as e:
             logging.error(f"Model output was not valid JSON (attempt {attempt}). Error: {e}")
-            logging.error(f"--- Raw Output ---:\n{raw_output}")
+            logging.error(f"--- Raw Output ---:\n{cleaned_output}")
+            # Try partial recovery: find last closing bracket
+            last_brace = cleaned_output.rfind('}')
+            if last_brace != -1:
+                partial = cleaned_output[:last_brace+1]
+                try:
+                    mindmap_data = json.loads(partial)
+                    logging.info(f"Partial mind map JSON parsed successfully on attempt {attempt}.")
+                    if "label" not in mindmap_data:
+                        logging.error(f"Partial JSON missing root 'label' key (attempt {attempt}).")
+                        if attempt == max_retries:
+                            return None
+                        continue
+                    return mindmap_data
+                except Exception as e2:
+                    logging.error(f"Partial JSON recovery failed (attempt {attempt}): {e2}")
             if attempt == max_retries:
                 return None
             continue

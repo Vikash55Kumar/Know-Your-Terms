@@ -2,7 +2,7 @@ import "react-circular-progressbar/dist/styles.css";
 import type { CitizenOutput } from "../../types";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import React, { useState } from "react";
-import { videoGenerationAsync } from "../../store/agreementSlice";
+import { mindmapGenerationAsync, videoGenerationAsync } from "../../store/agreementSlice";
 import { MindMapModal } from "./MindMap";
 
 const CircularScore: React.FC<{ score: number }> = ({ score }) => {
