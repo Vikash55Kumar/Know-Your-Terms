@@ -50,21 +50,38 @@ const agreementSummary = asyncHandler(async (req: Request, res: Response) => {
                 ...formData.getHeaders(),
             },
         });
-    
-        let agreementText = documentModelResponse.data.extracted_text.replace(/\\n/g, '\n');
-    
-        // console.log("Agreement text extracted ", agreementText);
-    
-        if (!agreementText) {
+        console.log("Document model response", documentModelResponse.data.suggested_action);
+
+        // Robust error handling for AI response
+        if (!documentModelResponse || !documentModelResponse.data) {
             await createAuditLog({
                 uid: uid || 'unknown',
                 action: 'AGREEMENT_SUMMARY',
                 status: 'failure',
                 entityType: 'Agreement',
-                details: documentModelResponse.data.suggested_action,
+                details: 'No response from document model',
             });
-            throw new ApiError(500, documentModelResponse.data.suggested_action);
+            throw new ApiError(500, 'No response from document model');
         }
+
+        // Check for extracted_text and category match
+        if (!documentModelResponse.data.extracted_text) {
+            let errorMsg = documentModelResponse.data.suggested_action || 'Document model did not return extracted_text.';
+            // If category mismatch, include that info
+            if (documentModelResponse.data.category && documentModelResponse.data.category !== category) {
+                errorMsg = `The AI classified this document as ${documentModelResponse.data.category}, which does not match your selected category '${category}'.`;
+            }
+            await createAuditLog({
+                uid: uid || 'unknown',
+                action: 'AGREEMENT_SUMMARY',
+                status: 'failure',
+                entityType: 'Agreement',
+                details: errorMsg,
+            });
+            throw new ApiError(400, errorMsg);
+        }
+
+        let agreementText = documentModelResponse.data.extracted_text.replace(/\n/g, '\n');
 
         const formData1 = new FormData();
         formData1.append('category', category);
@@ -130,7 +147,11 @@ const agreementSummary = asyncHandler(async (req: Request, res: Response) => {
             throw error;
         }
     } catch (error) {
-        throw new ApiError(500, 'Internal server error during agreement summary processing');
+        let errorMsg = 'Agreement summary failed';
+        if (error && typeof error === 'object' && 'message' in error && typeof (error as any).message === 'string') {
+            errorMsg = (error as any).message;
+        }
+        throw new ApiError(500, errorMsg);
     } finally {
             // Ensure stream is closed/destroyed and temporary file is removed
         try {
