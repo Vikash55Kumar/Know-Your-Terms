@@ -52,7 +52,8 @@ const InfoNode: React.FC<NodeProps> = (props) => {
 
   // Defensive: Ensure label and secondaryLabel are strings
   const label = typeof data.label === 'string' ? data.label : String(data.label ?? '');
-  const secondaryLabel = typeof data.secondaryLabel === 'string' ? data.secondaryLabel : (data.secondaryLabel != null ? String(data.secondaryLabel) : '');
+  let secondaryLabel = typeof data.secondaryLabel === 'string' ? data.secondaryLabel : (data.secondaryLabel != null ? String(data.secondaryLabel) : '');
+  if (secondaryLabel === 'N/A' || secondaryLabel === '') secondaryLabel = '';
   const icon = typeof data.icon === 'string' ? data.icon : String(data.icon ?? '');
   const status = typeof data.status === 'string' ? data.status : String(data.status ?? '');
 
@@ -74,7 +75,7 @@ const InfoNode: React.FC<NodeProps> = (props) => {
           <div className="text-xs opacity-70">{secondaryLabel}</div>
         )}
         {data.details && nodeType !== 'input' && (
-          <div className="text-xs mt-1 text-gray-600">{typeof data.details === 'string' ? data.details : String(data.details ?? '')}</div>
+          <div className="text-xs mt-1 text-gray-600">{String(data.details ?? '')}</div>
         )}
       </div>
     </div>

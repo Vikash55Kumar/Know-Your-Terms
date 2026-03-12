@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import React, { useState } from "react";
 import { mindmapGenerationAsync, videoGenerationAsync } from "../../store/agreementSlice";
 import { MindMapModal } from "./MindMap";
+import { toast } from "react-toastify";
 
 const CircularScore: React.FC<{ score: number }> = ({ score }) => {
   // Score is out of 10, convert to percent
