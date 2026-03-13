@@ -3,10 +3,25 @@ import admin from 'firebase-admin';
 dotenv.config();
 
 // const serviceAccount = require("./serviceAccountKey.json");
-const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG1 || "{}");
+const firebaseConfigStr = process.env.FIREBASE_CONFIG1;
 
-if (!serviceAccount) {
-  throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_KEY ");
+if (!firebaseConfigStr) {
+  throw new Error(
+    'Missing FIREBASE_CONFIG1 environment variable. ' +
+    'Set it to your Firebase service account JSON as a single-line minified string in your .env file. ' +
+    'See HELO.md for setup instructions.'
+  );
+}
+
+let serviceAccount: admin.ServiceAccount;
+try {
+  serviceAccount = JSON.parse(firebaseConfigStr);
+} catch (e) {
+  throw new Error(
+    'Invalid FIREBASE_CONFIG1: could not parse as JSON. ' +
+    'Ensure the value is a valid, single-line minified JSON string (no newlines). ' +
+    'See HELO.md for setup instructions.'
+  );
 }
 
 if (!admin.apps.length) {
