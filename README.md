@@ -207,7 +207,7 @@ nano .env
 
 <hr/>
 
-## 🔭 Projects Link: [KnowYourTerms](https://knowyourterms.ecovix.online/)
+## 🔭 Projects Link: [KnowYourTerms](https://knowyourterms.vikashkr.online/)
 
 
 
