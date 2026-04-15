@@ -45,5 +45,5 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HACKATHON_E2532 }}
-          projectId: presonal-project-478902
+          projectId: know-your-term
           entryPoint: frontend
