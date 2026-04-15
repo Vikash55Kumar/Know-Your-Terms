@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Upload, AlertCircle } from "lucide-react";
+import { Upload, AlertCircle, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 // Use shared types
@@ -245,7 +245,7 @@ Simple Summary: ${summary.Simple_Summary}`;
             {/* Header */}
             <header className="mb-8 text-center">
                 <h1 className="text-4xl font-bold text-black flex items-center justify-center gap-2 tracking-tight">
-                    📄 {targetGroupLabel[targetGroup]}
+                    <FileText className="w-8 h-8 text-[#1a237e]" /> {targetGroupLabel[targetGroup]}
                 </h1>
                 <p className="text-gray-800 text-lg mt-2">
                     {t('summaryPage.header.subtitle')}

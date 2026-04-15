@@ -3,6 +3,24 @@ import gemini from "../../assets/gemini.png";
 import indiankanoon from "../../assets/indiankanoon.png";
 import vertexAi from "../../assets/vertex.webp";
 import { useTranslation } from "react-i18next";
+import {
+  FileText,
+  Bot,
+  Scale,
+  Languages,
+  BookOpen,
+  FilePlus2,
+  Clapperboard,
+  Search,
+  Upload,
+  Sparkles,
+  GraduationCap,
+  BriefcaseBusiness,
+  Gavel,
+  Newspaper,
+  BookOpenCheck,
+  Users,
+} from "lucide-react";
 
 export default function LandingPage() {
   const { t } = useTranslation();
@@ -12,14 +30,14 @@ export default function LandingPage() {
       <section className="w-full max-w-6xl mx-auto py-20 bg-white rounded-3xl mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">{t("landing.features_title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <FeatureCard icon="📝" title={t("landing.features.agreement_summary.title")} desc={t("landing.features.agreement_summary.desc")} />
-          <FeatureCard icon="🤖" title={t("landing.features.legal_chatbot.title")} desc={t("landing.features.legal_chatbot.desc")} />
-          <FeatureCard icon="⚖️" title={t("landing.features.case_summary.title")} desc={t("landing.features.case_summary.desc")} />
-          <FeatureCard icon="🌐" title={t("landing.features.language_translation.title")} desc={t("landing.features.language_translation.desc")} />
-          <FeatureCard icon="📚" title={t("landing.features.agreement_process_guides.title")} desc={t("landing.features.agreement_process_guides.desc")} />
-          <FeatureCard icon="📝" title={t("landing.features.template_creation.title")} desc={t("landing.features.template_creation.desc")} />
-          <FeatureCard icon="🎬" title={t("landing.features.visual_video_summary.title")} desc={t("landing.features.visual_video_summary.desc")} />
-          <FeatureCard icon="🔍" title={t("landing.features.document_review.title")} desc={t("landing.features.document_review.desc")} />
+          <FeatureCard icon={<FileText className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.agreement_summary.title")} desc={t("landing.features.agreement_summary.desc")} />
+          <FeatureCard icon={<Bot className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.legal_chatbot.title")} desc={t("landing.features.legal_chatbot.desc")} />
+          <FeatureCard icon={<Scale className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.case_summary.title")} desc={t("landing.features.case_summary.desc")} />
+          <FeatureCard icon={<Languages className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.language_translation.title")} desc={t("landing.features.language_translation.desc")} />
+          <FeatureCard icon={<BookOpen className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.agreement_process_guides.title")} desc={t("landing.features.agreement_process_guides.desc")} />
+          <FeatureCard icon={<FilePlus2 className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.template_creation.title")} desc={t("landing.features.template_creation.desc")} />
+          <FeatureCard icon={<Clapperboard className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.visual_video_summary.title")} desc={t("landing.features.visual_video_summary.desc")} />
+          <FeatureCard icon={<Search className="w-7 h-7 text-[#1a237e]" />} title={t("landing.features.document_review.title")} desc={t("landing.features.document_review.desc")} />
         </div>
       </section>
 
@@ -27,9 +45,9 @@ export default function LandingPage() {
       <section className="w-full max-w-6xl mx-auto px-6 py-20 bg-[#e8eaf6] rounded-3xl shadow mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">{t("landing.how_it_works_title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <Step icon="📤" number="1" title={t("landing.how_it_works.step1.title")} desc={t("landing.how_it_works.step1.desc")} />
-          <Step icon="🤖" number="2" title={t("landing.how_it_works.step2.title")} desc={t("landing.how_it_works.step2.desc")} />
-          <Step icon="✨" number="3" title={t("landing.how_it_works.step3.title")} desc={t("landing.how_it_works.step3.desc")} />
+          <Step icon={<Upload className="w-8 h-8 text-[#1a237e]" />} number="1" title={t("landing.how_it_works.step1.title")} desc={t("landing.how_it_works.step1.desc")} />
+          <Step icon={<Bot className="w-8 h-8 text-[#1a237e]" />} number="2" title={t("landing.how_it_works.step2.title")} desc={t("landing.how_it_works.step2.desc")} />
+          <Step icon={<Sparkles className="w-8 h-8 text-[#1a237e]" />} number="3" title={t("landing.how_it_works.step3.title")} desc={t("landing.how_it_works.step3.desc")} />
         </div>
       </section>
 
@@ -51,12 +69,12 @@ export default function LandingPage() {
       <section className="w-full max-w-6xl mx-auto py-20 rounded-3xl mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">{t("landing.who_is_it_for_title")}</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-          <AudienceCard icon="🎓" title={t("landing.audience.students")} desc={t("landing.audience_desc.students")} />
-          <AudienceCard icon="🧑‍💼" title={t("landing.audience.business_owners")} desc={t("landing.audience_desc.business_owners")} />
-          <AudienceCard icon="👩‍⚖️" title={t("landing.audience.judges")} desc={t("landing.audience_desc.judges")} />
-          <AudienceCard icon="📰" title={t("landing.audience.journalists")} desc={t("landing.audience_desc.journalists")} />
-          <AudienceCard icon="🧑‍🎓" title={t("landing.audience.law_students")} desc={t("landing.audience_desc.law_students")} />
-          <AudienceCard icon="🧑‍🤝‍🧑" title={t("landing.audience.citizens")} desc={t("landing.audience_desc.citizens")} />
+          <AudienceCard icon={<GraduationCap className="w-6 h-6 text-[#1a237e]" />} title={t("landing.audience.students")} desc={t("landing.audience_desc.students")} />
+          <AudienceCard icon={<BriefcaseBusiness className="w-6 h-6 text-[#1a237e]" />} title={t("landing.audience.business_owners")} desc={t("landing.audience_desc.business_owners")} />
+          <AudienceCard icon={<Gavel className="w-6 h-6 text-[#1a237e]" />} title={t("landing.audience.judges")} desc={t("landing.audience_desc.judges")} />
+          <AudienceCard icon={<Newspaper className="w-6 h-6 text-[#1a237e]" />} title={t("landing.audience.journalists")} desc={t("landing.audience_desc.journalists")} />
+          <AudienceCard icon={<BookOpenCheck className="w-6 h-6 text-[#1a237e]" />} title={t("landing.audience.law_students")} desc={t("landing.audience_desc.law_students")} />
+          <AudienceCard icon={<Users className="w-6 h-6 text-[#1a237e]" />} title={t("landing.audience.citizens")} desc={t("landing.audience_desc.citizens")} />
         </div>
       </section>
 

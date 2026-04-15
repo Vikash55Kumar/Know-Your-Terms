@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ApiError } from '../utility/ApiError';
 import { Translate } from '@google-cloud/translate/build/src/v2';
 
-const geminiApiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const geminiApiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 const geminiAPIKey = process.env.GEMINI_API_KEY;
 const generativelanguageApiKey = process.env.GENERATIVE_LANGUAGE_API_KEY;
 

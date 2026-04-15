@@ -1,6 +1,7 @@
 // Icon emojis used for dashboard features
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { FileText, FilePenLine, Scale, Bot } from "lucide-react";
 
 export default function Dashboard() {
     const navigate = useNavigate();
@@ -9,25 +10,25 @@ export default function Dashboard() {
     {
       name: t('dashboard.features.agreement_summary.title'),
       description: t('dashboard.features.agreement_summary.desc'),
-      icon: "📄",
+      icon: <FileText className="w-7 h-7 text-[#1a237e]" />,
       path: "/dashboard/role-selection",
     },
     {
       name: t('dashboard.features.process_agreement.title'),
       description: t('dashboard.features.process_agreement.desc'),
-      icon: "📝",
+      icon: <FilePenLine className="w-7 h-7 text-[#1a237e]" />,
       path: "/dashboard/process/summary",
     },
     {
       name: t('dashboard.features.case_summary.title'),
       description: t('dashboard.features.case_summary.desc'),
-      icon: "⚖️",
+      icon: <Scale className="w-7 h-7 text-[#1a237e]" />,
       path: "/dashboard/case/case-details",
     },
     {
       name: t('dashboard.features.chatbot_assistant.title'),
       description: t('dashboard.features.chatbot_assistant.desc'),
-      icon: "🤖",
+      icon: <Bot className="w-7 h-7 text-[#1a237e]" />,
       path: "/chatbot",
     },
   ];
@@ -54,7 +55,7 @@ export default function Dashboard() {
             className="cursor-pointer border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all bg-white"
           >
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-3xl">{feature.icon}</span>
+              <span>{feature.icon}</span>
               <h2 className="text-xl font-semibold text-gray-900">
                 {feature.name}
               </h2>
