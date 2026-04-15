@@ -4,6 +4,7 @@ import Button from "../../../components/common/Button";
 import { agreementProcessAsync } from "../../../store/agreementSlice";
 import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import { FileText } from "lucide-react";
 
 function Spinner({ loading }: { loading: boolean }) {
     return (
@@ -58,7 +59,7 @@ export default function AgreementProcess() {
         {/* Header */}
         <header className="mb-8 text-center">
             <h1 className="text-4xl font-bold text-black flex items-center justify-center gap-2 tracking-tight">
-            📑 {t('agreementProcess.header.title')}
+            <FileText className="w-8 h-8 text-[#1a237e]" /> {t('agreementProcess.header.title')}
             </h1>
             <p className="text-gray-800 text-lg mt-2">
             {t('agreementProcess.header.subtitle')}

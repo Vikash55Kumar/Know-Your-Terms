@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "presonal-project-478902"
-  }
+    "yes": "know-your-term"
+  },
+  "targets": {},
+  "etags": {}
 }

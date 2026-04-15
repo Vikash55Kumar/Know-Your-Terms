@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { FileText, FilePenLine, Scale, Bot } from "lucide-react";
 
 const LanguageDropdown = ({ show, onEnter, onLeave, onChange }: {
     show: boolean;
@@ -97,25 +98,25 @@ const SolutionsDropdown = [
   {
     titleKey: "solutions.agreement_summary.title",
     descKey: "solutions.agreement_summary.desc",
-    icon: "📄",
+    icon: <FileText className="w-5 h-5 text-[#1a237e]" />,
     href: "/dashboard/role-selection",
   },
   {
     titleKey: "solutions.process_agreement.title",
     descKey: "solutions.process_agreement.desc",
-    icon: "📝",
+    icon: <FilePenLine className="w-5 h-5 text-[#1a237e]" />,
     href: "/dashboard/process/summary",
   },
   {
     titleKey: "solutions.case_summary.title",
     descKey: "solutions.case_summary.desc",
-    icon: "⚖️",
+    icon: <Scale className="w-5 h-5 text-[#1a237e]" />,
     href: "/dashboard/case/case-details",
   },
   {
     titleKey: "solutions.chatbot_assistant.title",
     descKey: "solutions.chatbot_assistant.desc",
-    icon: "🤖",
+    icon: <Bot className="w-5 h-5 text-[#1a237e]" />,
     href: "/chatbot",
   },
 ];

@@ -56,7 +56,7 @@ const Chatbot: React.FC = () => {
                 console.error('Gemini API key is not set. Please check your .env file.');
                 throw new Error('API key is not configured');
             }
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${geminiKey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`;
 
             const systemPrompt = "Act as an expert in Indian legal topics, with a focus on providing detailed and comprehensive answers. If a query is unrelated to Indian law, start by reading whether the user is a student, a startup owner, or a citizen, and respond accordingly to their further questions. Politely inform the user that you can only assist with legal topics and recommend that they consult another resource for their specific question. If necessary, remind the user that you are not a lawyer and cannot provide legal advice. Provide answers in approximately 75 words.";
 
